@@ -18,6 +18,11 @@ import {
 } from "lucide-react";
 import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
+import DonNormanImg from "@assets/Visionaries/Don-Norman_headshot.jpg";
+import JakobNielsenImg from "@assets/Visionaries/jakob-nielsen.webp";
+import AlanCooperImg from "@assets/Visionaries/AlanCooper.jpg";
+import JesseGarrettImg from "@assets/Visionaries/Jesse-James-Garrett.jpg";
+import SteveKrugImg from "@assets/Visionaries/Steve_Krug.png";
 
 export default function ProfessionalFormalizationSection() {
   const timelineEvents = [
@@ -389,57 +394,76 @@ export default function ProfessionalFormalizationSection() {
           </div>
           
           <div className="space-y-12">
-            {pioneers.map((pioneer) => (
-              <Card key={pioneer.name} className="p-8 bg-card/50 backdrop-blur border-accent/30" data-testid={`pioneer-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
-                <div className="grid lg:grid-cols-3 gap-8">
-                  {/* Profile Info */}
-                  <div className="lg:col-span-1">
-                    <div className="mb-4">
-                      <h4 className="text-2xl font-bold mb-1">{pioneer.name}</h4>
-                      <p className="text-accent text-sm font-semibold">{pioneer.title}</p>
-                      <p className="text-muted-foreground text-sm">{pioneer.role}</p>
-                      <p className="text-muted-foreground text-xs mt-1">{pioneer.company}</p>
-                    </div>
-                    
-                    <div className="mb-4">
-                      <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">Key Publication</p>
-                      <p className="text-sm font-medium">{pioneer.keyPublication}</p>
-                    </div>
-                    
-                    <div>
-                      <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">Philosophy</p>
-                      <p className="text-sm italic text-foreground/70">{pioneer.philosophy}</p>
-                    </div>
-                  </div>
-                  
-                  {/* Contributions & Impact */}
-                  <div className="lg:col-span-2">
-                    <blockquote className="border-l-4 border-accent/50 pl-4 mb-6">
-                      <p className="text-lg italic text-foreground/80">"{pioneer.quote}"</p>
-                    </blockquote>
-                    
-                    <div className="grid sm:grid-cols-2 gap-6">
-                      <div>
-                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-3">Key Contributions</p>
-                        <ul className="space-y-2">
-                          {pioneer.contributions.map((contribution, index) => (
-                            <li key={index} className="flex items-start gap-2 text-sm">
-                              <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                              <span className="text-foreground/80">{contribution}</span>
-                            </li>
-                          ))}
-                        </ul>
+            {pioneers.map((pioneer, index) => {
+              const images = [
+                DonNormanImg,
+                JakobNielsenImg,
+                AlanCooperImg,
+                JesseGarrettImg,
+                SteveKrugImg
+              ];
+              
+              return (
+                <Card key={pioneer.name} className="p-8 bg-card/50 backdrop-blur border-accent/30" data-testid={`pioneer-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
+                  <div className="grid lg:grid-cols-3 gap-8">
+                    {/* Profile Info with Image */}
+                    <div className="lg:col-span-1">
+                      {/* Profile Image */}
+                      <div className="mb-6">
+                        <img 
+                          src={images[index]} 
+                          alt={`${pioneer.name} - ${pioneer.title}`}
+                          className="w-full aspect-square object-cover rounded-lg border border-accent/20"
+                        />
+                      </div>
+                      
+                      <div className="mb-4">
+                        <h4 className="text-2xl font-bold mb-1">{pioneer.name}</h4>
+                        <p className="text-accent text-sm font-semibold">{pioneer.title}</p>
+                        <p className="text-muted-foreground text-sm">{pioneer.role}</p>
+                        <p className="text-muted-foreground text-xs mt-1">{pioneer.company}</p>
+                      </div>
+                      
+                      <div className="mb-4">
+                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">Key Publication</p>
+                        <p className="text-sm font-medium">{pioneer.keyPublication}</p>
                       </div>
                       
                       <div>
-                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-3">Industry Impact</p>
-                        <p className="text-sm text-foreground/80">{pioneer.impact}</p>
+                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">Philosophy</p>
+                        <p className="text-sm italic text-foreground/70">{pioneer.philosophy}</p>
+                      </div>
+                    </div>
+                    
+                    {/* Contributions & Impact */}
+                    <div className="lg:col-span-2">
+                      <blockquote className="border-l-4 border-accent/50 pl-4 mb-6">
+                        <p className="text-lg italic text-foreground/80">"{pioneer.quote}"</p>
+                      </blockquote>
+                      
+                      <div className="grid sm:grid-cols-2 gap-6">
+                        <div>
+                          <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-3">Key Contributions</p>
+                          <ul className="space-y-2">
+                            {pioneer.contributions.map((contribution, idx) => (
+                              <li key={idx} className="flex items-start gap-2 text-sm">
+                                <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
+                                <span className="text-foreground/80">{contribution}</span>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                        
+                        <div>
+                          <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-3">Industry Impact</p>
+                          <p className="text-sm text-foreground/80">{pioneer.impact}</p>
+                        </div>
                       </div>
                     </div>
                   </div>
-                </div>
-              </Card>
-            ))}
+                </Card>
+              );
+            })}
           </div>
         </div>
 

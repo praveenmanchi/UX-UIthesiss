@@ -7,7 +7,7 @@ import ExpandablePioneerCard from "@/components/expandable-pioneer-card";
 import FadeInSection from "@/components/fade-in-section";
 import VannevarBushImg from "@assets/Visionaries/Vannevar-Bush-1500-800.jpg";
 import DouglasEngelbartImg from "@assets/Visionaries/Douglas_Engelbart.jpg";
-import IvanSutherlandImg from "@assets/Visionaries/Ivan_Sutherland_1592.jpg";
+import IvanSutherlandImg from "@assets/Visionaries/300px-Ivan_Sutherland_1592.jpg";
 import AlanKayImg from "@assets/Visionaries/Kay.webp";
 import LarryTeslerImg from "@assets/Visionaries/Larry Tesler .jpg";
 
@@ -99,168 +99,201 @@ export default function OriginsSection() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8" data-testid="section-origins">
-      <div className="max-w-6xl mx-auto">
-        {/* Opening Narrative */}
-        <div className="max-w-4xl mx-auto mb-20">
-          <h2 className="font-display text-5xl sm:text-6xl font-bold mb-8 leading-tight" data-testid="text-origins-heading">
-            Before the pixel, there was the vision
-          </h2>
-          
-          <div className="prose prose-lg space-y-6 text-foreground/90 leading-relaxed">
-            <p className="text-xl">
-              Long before screens glowed with graphical interfaces, before mice clicked and fingers tapped, visionaries imagined a future where humans and computers would collaborate as partners. This is the untold prehistory of UX/UI design — a story that begins not with pixels, but with profound questions about human cognition and information architecture.
-            </p>
+    <>
+      {/* Opening Hero Section with Dark Sage Background */}
+      <section 
+        className="py-20 px-6 sm:px-8 lg:px-12 bg-[#6b7a5d]" 
+        data-testid="section-origins-hero"
+      >
+        <div className="max-w-5xl mx-auto">
+          <div className="space-y-12">
+            {/* Section Label and Pagination Dots */}
+            <div className="flex items-start justify-between">
+              <span 
+                className="text-black/60 uppercase tracking-[0.2em] text-xs font-sans font-medium" 
+                data-testid="label-section-1"
+              >
+                Section 1
+              </span>
+              
+              {/* Pagination Dots */}
+              <div className="flex items-center gap-2" data-testid="pagination-dots">
+                <div className="w-2.5 h-2.5 rounded-full bg-black" data-testid="dot-active" />
+                <div className="w-2.5 h-2.5 rounded-full bg-black/20" data-testid="dot-inactive-1" />
+                <div className="w-2.5 h-2.5 rounded-full bg-black/20" data-testid="dot-inactive-2" />
+                <div className="w-2.5 h-2.5 rounded-full bg-black/20" data-testid="dot-inactive-3" />
+              </div>
+            </div>
             
-            <p>
-              In the aftermath of World War II, as early computers filled entire rooms and required specialized operators, a handful of pioneers dared to imagine something radical: machines that would augment human intelligence rather than merely calculate. They envisioned systems that would feel natural, interfaces that would disappear into intuition, and tools that would amplify human creativity.
-            </p>
-            
-            <p>
-              These weren't designers in the modern sense — they were mathematicians, engineers, and cognitive scientists. Yet their work laid the foundation for everything we now call user experience. They asked the questions that still drive our field: How should humans and computers communicate? What makes an interface intuitive? How can technology enhance rather than replace human capabilities?
-            </p>
-          </div>
-        </div>
+            {/* Headline */}
+            <h2 
+              className="font-display text-[2.75rem] sm:text-6xl lg:text-[4rem] font-normal leading-[1.1] text-black" 
+              data-testid="text-origins-heading"
+            >
+              Before the pixel, there was the vision
+            </h2>
 
-        {/* Timeline Section */}
-        <div className="mb-24">
-          <div className="flex items-center gap-4 mb-12">
-            <Clock className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-3xl font-semibold">Critical Moments in Pre-Digital Interface History</h3>
-          </div>
-          
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-accent/30" />
-            
-            {/* Timeline Events */}
-            <div className="space-y-12">
-              {timelineEvents.map((event, index) => (
-                <div
-                  key={event.year}
-                  className={`relative flex items-center ${
-                    index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                  }`}
-                  data-testid={`timeline-event-${event.year}`}
-                >
-                  <div className="flex-1" />
-                  
-                  {/* Center dot and year */}
-                  <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center gap-4">
-                    <div className="w-12 h-12 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center">
-                      {event.icon}
-                    </div>
-                  </div>
-                  
-                  {/* Content Card */}
-                  <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'} pl-20 md:pl-0`}>
-                    <Card className="p-6 bg-card/50 backdrop-blur border-accent/30 hover:border-accent/50 transition-colors">
-                      <div className="flex items-baseline gap-3 mb-2">
-                        <span className="text-2xl font-bold text-accent">{event.year}</span>
-                        <h4 className="text-xl font-semibold">{event.title}</h4>
-                      </div>
-                      <p className="text-sm text-muted-foreground mb-2">by {event.person}</p>
-                      <p className="text-foreground/80 mb-3">{event.description}</p>
-                      <div className="flex items-center gap-2">
-                        <div className="w-1 h-4 bg-accent/50" />
-                        <p className="text-sm font-medium text-accent/80">{event.impact}</p>
-                      </div>
-                    </Card>
-                  </div>
-                </div>
-              ))}
+            {/* Body Text */}
+            <div className="space-y-6 text-black/90">
+              <p className="text-[15px] leading-[1.8] text-justify">
+                Long before screens glowed with graphical interfaces, before mice clicked and fingers tapped, visionaries imagined a future where humans and computers would collaborate as partners. This is the untold prehistory of UX/UI design — a story that begins not with pixels, but with profound questions about human cognition and information architecture.
+              </p>
+
+              <p className="text-[15px] leading-[1.8] text-justify">
+                In the aftermath of World War II, as early computers filled entire rooms and required specialized operators, a handful of pioneers dared to imagine something radical: machines that would augment human intelligence rather than merely calculate. They envisioned systems that would feel natural, interfaces that would disappear into intuition, and tools that would amplify human creativity.
+              </p>
+
+              <p className="text-[15px] leading-[1.8] text-justify">
+                These weren't designers in the modern sense — they were mathematicians, engineers, and cognitive scientists. Yet their work laid the foundation for everything we now call user experience. They asked the questions that still drive our field: How should humans and computers communicate? What makes an interface intuitive? How can technology enhance rather than replace human capabilities?
+              </p>
             </div>
           </div>
         </div>
+      </section>
 
-        {/* Research Centers Callout */}
-        <Card className="p-8 mb-20 bg-accent/10 border-accent/30">
-          <div className="flex items-start gap-4">
-            <Users className="w-6 h-6 text-accent mt-1" />
-            <div>
-              <h4 className="text-xl font-semibold mb-3">Early HCI Research Centers</h4>
-              <div className="grid md:grid-cols-3 gap-6 text-foreground/80">
-                <div>
-                  <p className="font-semibold text-accent">MIT</p>
-                  <p className="text-sm">Lincoln Laboratory pioneered interactive computing with TX-0 and TX-2 computers, enabling Sutherland's Sketchpad.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-accent">Stanford Research Institute</p>
-                  <p className="text-sm">Engelbart's Augmentation Research Center developed NLS (oN-Line System), the first hypertext system with a mouse.</p>
-                </div>
-                <div>
-                  <p className="font-semibold text-accent">Xerox PARC</p>
-                  <p className="text-sm">The Computer Science Laboratory created Alto and Star, defining the desktop metaphor we still use today.</p>
-                </div>
+      {/* Main Content Section with Original Styling */}
+      <section className="py-24 px-4 sm:px-6 lg:px-8" data-testid="section-origins">
+        <div className="max-w-6xl mx-auto">
+          {/* Timeline Section */}
+          <div className="mb-24">
+            <div className="flex items-center gap-4 mb-12">
+              <Clock className="w-6 h-6 text-accent" />
+              <h3 className="font-display text-3xl font-semibold">Critical Moments in Pre-Digital Interface History</h3>
+            </div>
+            
+            <div className="relative">
+              {/* Timeline Line */}
+              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-accent/30" />
+              
+              {/* Timeline Events */}
+              <div className="space-y-12">
+                {timelineEvents.map((event, index) => (
+                  <div
+                    key={event.year}
+                    className={`relative flex items-center ${
+                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                    }`}
+                    data-testid={`timeline-event-${event.year}`}
+                  >
+                    <div className="flex-1" />
+                    
+                    {/* Center dot and year */}
+                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center gap-4">
+                      <div className="w-12 h-12 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center">
+                        {event.icon}
+                      </div>
+                    </div>
+                    
+                    {/* Content Card */}
+                    <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'} pl-20 md:pl-0`}>
+                      <Card className="p-6 bg-card/50 backdrop-blur border-accent/30 hover:border-accent/50 transition-colors">
+                        <div className="flex items-baseline gap-3 mb-2">
+                          <span className="text-2xl font-bold text-accent">{event.year}</span>
+                          <h4 className="text-xl font-semibold">{event.title}</h4>
+                        </div>
+                        <p className="text-sm text-muted-foreground mb-2">by {event.person}</p>
+                        <p className="text-foreground/80 mb-3">{event.description}</p>
+                        <div className="flex items-center gap-2">
+                          <div className="w-1 h-4 bg-accent/50" />
+                          <p className="text-sm font-medium text-accent/80">{event.impact}</p>
+                        </div>
+                      </Card>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
-        </Card>
 
-        {/* Pioneers Section */}
-        <FadeInSection className="mb-20">
-          <h3 className="font-display text-3xl font-semibold mb-12">The Visionaries Who Defined Our Digital Future</h3>
-          
-          <div className="space-y-6">
-            {pioneers.map((pioneer, index) => {
-              const images = [
-                VannevarBushImg,
-                DouglasEngelbartImg,
-                IvanSutherlandImg,
-                AlanKayImg,
-                LarryTeslerImg
-              ];
+          {/* Research Centers Callout */}
+          <Card className="p-8 mb-20 bg-accent/10 border-accent/30">
+            <div className="flex items-start gap-4">
+              <Users className="w-6 h-6 text-accent mt-1" />
+              <div>
+                <h4 className="text-xl font-semibold mb-3">Early HCI Research Centers</h4>
+                <div className="grid md:grid-cols-3 gap-6 text-foreground/80">
+                  <div>
+                    <p className="font-semibold text-accent">MIT</p>
+                    <p className="text-sm">Lincoln Laboratory pioneered interactive computing with TX-0 and TX-2 computers, enabling Sutherland's Sketchpad.</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-accent">Stanford Research Institute</p>
+                    <p className="text-sm">Engelbart's Augmentation Research Center developed NLS (oN-Line System), the first hypertext system with a mouse.</p>
+                  </div>
+                  <div>
+                    <p className="font-semibold text-accent">Xerox PARC</p>
+                    <p className="text-sm">The Computer Science Laboratory created Alto and Star, defining the desktop metaphor we still use today.</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </Card>
+
+          {/* Pioneers Section */}
+          <FadeInSection className="mb-20">
+            <h3 className="font-display text-3xl font-semibold mb-12">The Visionaries Who Defined Our Digital Future</h3>
+            
+            <div className="space-y-6">
+              {pioneers.map((pioneer, index) => {
+                const images = [
+                  VannevarBushImg,
+                  DouglasEngelbartImg,
+                  IvanSutherlandImg,
+                  AlanKayImg,
+                  LarryTeslerImg
+                ];
+                
+                return (
+                  <ExpandablePioneerCard
+                    key={pioneer.name}
+                    pioneer={pioneer}
+                    imageUrl={images[index]}
+                    index={index}
+                  />
+                );
+              })}
+            </div>
+          </FadeInSection>
+
+          {/* Pull Quote from Alan Kay */}
+          <PullQuote
+            quote="The best way to predict the future is to invent it."
+            attribution="Alan Kay"
+          />
+
+          {/* Data Callouts */}
+          <DataCallout
+            value="$220,000 in today's dollars"
+            label="The 1973 Xerox Alto cost ($32,000 originally) - making it accessible only to research institutions, yet it defined personal computing's future"
+            type="money"
+          />
+
+          {/* Birth of GUI Section */}
+          <div className="max-w-4xl mx-auto">
+            <Separator className="mb-12 bg-accent/20" />
+            
+            <h3 className="font-display text-3xl font-semibold mb-8">The Birth of Graphical Interfaces</h3>
+            
+            <div className="prose prose-lg space-y-6 text-foreground/90">
+              <p>
+                The transition from command-line interfaces to graphical user interfaces wasn't merely a technical evolution — it was a philosophical revolution. When the Xerox Alto displayed its first bitmapped screen in 1973, it represented a fundamental shift in how we conceive the relationship between humans and computers.
+              </p>
               
-              return (
-                <ExpandablePioneerCard
-                  key={pioneer.name}
-                  pioneer={pioneer}
-                  imageUrl={images[index]}
-                  index={index}
-                />
-              );
-            })}
-          </div>
-        </FadeInSection>
-
-        {/* Pull Quote from Alan Kay */}
-        <PullQuote
-          quote="The best way to predict the future is to invent it."
-          attribution="Alan Kay"
-        />
-
-        {/* Data Callouts */}
-        <DataCallout
-          value="$220,000 in today's dollars"
-          label="The 1973 Xerox Alto cost ($32,000 originally) - making it accessible only to research institutions, yet it defined personal computing's future"
-          type="money"
-        />
-
-        {/* Birth of GUI Section */}
-        <div className="max-w-4xl mx-auto">
-          <Separator className="mb-12 bg-accent/20" />
-          
-          <h3 className="font-display text-3xl font-semibold mb-8">The Birth of Graphical Interfaces</h3>
-          
-          <div className="prose prose-lg space-y-6 text-foreground/90">
-            <p>
-              The transition from command-line interfaces to graphical user interfaces wasn't merely a technical evolution — it was a philosophical revolution. When the Xerox Alto displayed its first bitmapped screen in 1973, it represented a fundamental shift in how we conceive the relationship between humans and computers.
-            </p>
-            
-            <p>
-              For the first time, computers could show rather than tell. Icons replaced commands. The mouse enabled direct manipulation. The desktop metaphor made abstract digital concepts tangible. These weren't just new features; they were new languages for human-computer interaction.
-            </p>
-            
-            <p>
-              The researchers at Xerox PARC didn't just create new technology — they created new possibilities for human expression and creativity. Their work proved that computers could be tools for everyone, not just programmers. The GUI democratized computing, setting the stage for the personal computer revolution and, ultimately, for the field of UX/UI design itself.
-            </p>
-            
-            <p className="text-xl font-medium text-accent">
-              What began as academic research in the 1960s and 1970s would, within a generation, transform into a multi-billion dollar industry and reshape human civilization. The foundations laid by these pioneers continue to support every swipe, tap, and click we make today.
-            </p>
+              <p>
+                For the first time, computers could show rather than tell. Icons replaced commands. The mouse enabled direct manipulation. The desktop metaphor made abstract digital concepts tangible. These weren't just new features; they were new languages for human-computer interaction.
+              </p>
+              
+              <p>
+                The researchers at Xerox PARC didn't just create new technology — they created new possibilities for human expression and creativity. Their work proved that computers could be tools for everyone, not just programmers. The GUI democratized computing, setting the stage for the personal computer revolution and, ultimately, for the field of UX/UI design itself.
+              </p>
+              
+              <p className="text-xl font-medium text-accent">
+                What began as academic research in the 1960s and 1970s would, within a generation, transform into a multi-billion dollar industry and reshape human civilization. The foundations laid by these pioneers continue to support every swipe, tap, and click we make today.
+              </p>
+            </div>
           </div>
         </div>
-      </div>
-    </section>
+      </section>
+    </>
   );
 }

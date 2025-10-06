@@ -1,6 +1,53 @@
 # Overview
 
-This is a React-based web application that presents "The History of UX/UI Design: A Treatise on Professional Claims" - a data-driven long-form article that mathematically debunks inflated UX/UI experience claims. The application is built as a single-page, content-focused website with a sophisticated editorial aesthetic inspired by https://18theses.com/, featuring advanced timeline visualizations, stacked area charts, proportional comparison bars, and interactive data visualizations. The tech stack combines a Vite-powered React frontend with an Express backend, using TypeScript throughout.
+This project is a React-based web application designed to present "The History of UX/UI Design: A Treatise on Professional Claims." Its primary purpose is to mathematically debunk inflated UX/UI experience claims through a data-driven long-form article. The application features a single-page, content-focused website with a sophisticated editorial aesthetic inspired by 18theses.com, incorporating advanced timeline visualizations, stacked area charts, proportional comparison bars, and interactive data visualizations. The technical stack comprises a Vite-powered React frontend with an Express backend, all implemented with TypeScript. The business vision is to provide a compelling, evidence-based narrative that challenges prevailing industry misconceptions about UX/UI expertise.
+
+## Recent Updates (October 6, 2025)
+
+### Industry Timeline Scatter Plot Added
+- Created scatter plot visualization "Industry Timeline: The Evolution of Design as a Business Function (1993-2025)"
+- Shows 6 major industry milestones: First UX Title (1993), Web Agencies (2000), iPhone Era (2007), Design Systems (2014), DesignOps (2020), AI Integration (2025)
+- Implemented three-era color coding: Foundation Era (purple #9f7aea), Digital Era (blue #4299e1), Modern Era (green #48bb78)
+- Y-axis categories: AI Augmentation, Operations, Systematization, Platform Shift, Service Business, Role Creation
+- Icons from Lucide React: Building2, Globe, Smartphone, Layers, GitBranch, Sparkles
+- Icon styling: 36x36px rounded squares with era-colored backgrounds, scale on hover
+- Hover tooltips show milestone name, year, and detail description
+- Replaced horizontal timeline with scatter plot in Industry & Economics section
+- Maintained light cream background (#f5f2ed) consistent with other visualizations
+
+### Professional Formalization Section - Pioneer Images Added
+- Added professional headshot images to "The Pioneers Who Defined the Field" section (5 pioneers)
+- Images imported from attached_assets/Visionaries/ folder:
+  - Don Norman (Don-Norman_headshot.jpg) - The Godfather of UX
+  - Jakob Nielsen (jakob-nielsen.webp) - The Usability Guru
+  - Alan Cooper (AlanCooper.jpg) - Father of Visual Basic
+  - Jesse James Garrett (Jesse-James-Garrett.jpg) - The Information Architect
+  - Steve Krug (Steve_Krug.png) - The Common Sense Advocate
+- Images display as square aspect-ratio photos with rounded borders and accent border styling
+- Layout: Left column shows image and basic info, right columns show contributions and impact
+- Fixed image import path for Ivan Sutherland in Origins section (corrected filename to 300px-Ivan_Sutherland_1592.jpg)
+
+### Professional Claims Section Enhancement
+- Replaced Professional Claims section content with original UX/UI thesis data (10 theses covering timeline impossibilities, tool availability, role creation, education, adoption curves, geography, technology prerequisites, methodologies, company hiring records, and community size statistics)
+- Enhanced typography with bold font weights for mathematical calculations and key values (53+ instances)
+- Implemented 32 interactive hover tooltips on mathematical values showing proof explanations using Radix UI Tooltip component
+- Fixed DOM nesting validation by wrapping component in single TooltipProvider
+- Maintained card-based editorial design with circled numbers (01-10), justified text, and light cream background (#f5f2ed)
+- Visual indicators: dotted underlines on hoverable values, cursor help icon, smooth tooltip animations
+
+### Tools & Methodology Section Redesign
+- Redesigned section UI to match editorial aesthetic with dark sage green header (#6b7a5d) and light cream content area
+- Created scatter plot visualization "Design Tools Evolution (1977-2019)" showing 19 real design tools with brand icons
+- Upgraded scatter plot with real tool brand icons from react-icons/si:
+  - Print Era: Apple II, Illustrator, PageMaker, Photoshop, HTML, CSS
+  - Web Era: Flash, Dreamweaver, Fireworks, Axure, OmniGraffle, Balsamiq
+  - Modern Era: Sketch, InVision, Framer, Figma, Adobe XD, Abstract, Storybook
+- Implemented three-era color coding: Print to Digital Era (cyan #4fd1c5), Web Revolution Era (red #f56565), Modern Design Tools Era (green #48bb78)
+- Organized content into 5 insights with circled numbers (01-05) matching theses section style
+- Scatter plot features: Y-axis tool categories (18 unique categories), X-axis years (1970-2020), animated icon appearances, hover tooltips with tool name and year
+- Icon styling: 28x28px rounded squares with era-colored backgrounds, scale on hover, white icon color
+- Fixed React duplicate key warnings by ensuring unique category names
+- Maintained justified text alignment and editorial typography throughout
 
 # User Preferences
 
@@ -11,195 +58,91 @@ Preferred communication style: Simple, everyday language.
 ## Frontend Architecture
 
 **Framework & Build System**
-- React 18 with TypeScript for type-safe component development
-- Vite as the build tool and development server, configured to serve the React app from the `client` directory
-- Wouter for lightweight client-side routing (single route to home page currently)
-- TanStack Query (React Query) for server state management with infinite stale time configured
+- React 18 with TypeScript for type-safe development.
+- Vite for fast builds and development, serving the React app from the `client` directory.
+- Wouter for lightweight client-side routing.
+- TanStack Query (React Query) for server state management with infinite stale time.
 
 **UI Component System**
-- Shadcn/ui component library using Radix UI primitives for accessible, unstyled components
-- Tailwind CSS for styling with custom design tokens (dark theme focused)
-- Custom fonts: Inter (sans), Space Grotesk (display), JetBrains Mono (monospace)
-- Component structure follows atomic design with reusable UI components in `client/src/components/ui/`
-- Custom page-specific components in `client/src/components/` for the defense article content
+- Shadcn/ui component library built on Radix UI primitives for accessibility.
+- Tailwind CSS for styling, utilizing custom design tokens (dark theme focused).
+- Custom fonts: Inter, Space Grotesk, JetBrains Mono.
+- Atomic design principles for UI components (`client/src/components/ui/`) and page-specific components (`client/src/components/`).
 
 **Design Decisions**
-- Dark theme as default with extensive CSS custom properties for theming
-- Single-page application structure presenting long-form content
-- Content sections separated by dividers for visual hierarchy
-- Responsive design using Tailwind's mobile-first approach
+- Default dark theme with extensive CSS custom properties.
+- Single-page application structure for long-form content.
+- Visual hierarchy achieved through content section dividers.
+- Responsive design following a mobile-first approach.
+- Editorial design inspiration from 18theses.com, using distinct visual identities for sections (e.g., light cream for introduction, dark sage for origins) and justified text alignment.
+- Card-based layouts for sections like "Professional Claims," maintaining a clean, content-focused aesthetic.
 
 ## Backend Architecture
 
 **Server Framework**
-- Express.js server with TypeScript
-- Custom Vite integration for development with HMR (Hot Module Replacement)
-- Middleware for JSON parsing with raw body capture for potential webhook handling
-- Request/response logging middleware for API routes (paths starting with `/api`)
+- Express.js server with TypeScript.
+- Vite integration for HMR during development.
+- Middleware for JSON parsing and request/response logging for API routes.
 
 **Data Layer**
-- Drizzle ORM configured for PostgreSQL dialect
-- Schema defined in `shared/schema.ts` for code sharing between frontend and backend
-- Current schema includes a users table with username/password fields
-- Zod schemas generated from Drizzle for runtime validation
-- In-memory storage implementation (`MemStorage`) as fallback/development option
-- Storage interface pattern (`IStorage`) allows swapping between different storage implementations
+- Drizzle ORM for PostgreSQL.
+- Shared schema (`shared/schema.ts`) for type safety across frontend and backend.
+- Zod schemas for runtime validation.
+- `IStorage` interface pattern for flexible storage implementations, with `MemStorage` as a fallback.
 
 **Server Architecture Decisions**
-- Module-based routing system with routes registered in `server/routes.ts`
-- API routes prefixed with `/api` convention
-- HTTP server wraps Express for WebSocket potential (server returned from `registerRoutes`)
-- Separation of concerns: routes, storage layer, and server setup are distinct modules
+- Module-based routing system (`server/routes.ts`).
+- API routes are prefixed with `/api`.
+- HTTP server wraps Express, allowing for future WebSocket integration.
 
-## External Dependencies
+## System Design Choices & Features
 
-**Database**
-- PostgreSQL via Neon serverless driver (`@neondatabase/serverless`)
-- Connection configured through `DATABASE_URL` environment variable
-- Drizzle Kit for migrations (output to `./migrations` directory)
+**Data Visualizations**
+- **TimelineTrack**: Horizontal timeline with interactive events, detail panels, era groupings, and background shading.
+- **StackedAreaChart**: Recharts-based area charts with gradient fills and custom tooltips for market share.
+- **ProportionalBarGroup**: Horizontal stacked bars with smooth animations and hover tooltips for comparative data.
+- **CurvedToolTimeline**: SVG-based curved timeline showing design tool evolution, relationships, and category filtering with interactive elements.
 
-**UI Libraries**
-- Comprehensive Radix UI component primitives for accessible UI elements
-- Embla Carousel for carousel functionality
-- Lucide React for iconography
-- Date-fns for date manipulation
-- Class Variance Authority (CVA) for variant-based component styling
+**Navigation & Interactivity**
+- **Timeline Mini-Map Navigation**: Compact, sticky bottom timeline for quick navigation and progress tracking.
+- **Dynamic Navigation Header**: Header that hides and reappears as a sticky navigation with active section highlighting.
+- **Animations**: Extensive use of Framer Motion for smooth spring animations, fade-in effects, and transitions.
 
-**Development Tools**
-- Replit-specific plugins for development (cartographer, dev banner, runtime error overlay)
-- TSX for running TypeScript in development
-- ESBuild for production builds
-
-**Session Management**
-- Connect-pg-simple for PostgreSQL-backed session storage (installed but not yet implemented)
-
-**Build & Deployment**
-- Vite build outputs to `dist/public` for static assets
-- Server bundle outputs to `dist/index.js` via ESBuild
-- Production mode serves built static files from Express
-- Development mode uses Vite middleware for HMR
-
-**Configuration Approach**
-- Path aliases configured consistently across TypeScript and Vite (`@/`, `@shared/`, `@assets/`)
-- Environment-based configuration (NODE_ENV for dev/production switching)
-- Shared schema between client and server promotes type safety across the stack
-
-# Recent Changes
-
-## Timeline Visualization Enhancements (October 2025)
-
-**Design Inspiration**
-- Redesigned timeline visualizations based on reference images from https://18theses.com/
-- Implemented editorial aesthetic with muted color palette and sophisticated interactions
-- Dark backgrounds with sage greens, warm creams, and deep charcoal tones
-- Added terracotta highlights for accent elements
-
-**New Timeline Components**
-
-1. **TimelineTrack** (`client/src/components/timeline-track.tsx`)
-   - Horizontal timeline with large dots (16px) and glow effects
-   - Vertical marker lines extending from each event
-   - Expandable detail panels with rich descriptions and impact statements
-   - Framer-motion spring animations for smooth interactions
-   - Integrated in GUI Revolution and Tools & Methodology sections
-
-2. **StackedAreaChart** (`client/src/components/stacked-area-chart.tsx`)
-   - Area chart visualization using Recharts
-   - Gradient fills with muted color palette
-   - Dark background matching editorial theme
-   - Custom tooltips showing market share evolution
-   - Used for Mac vs Windows market visualization
-
-3. **ProportionalBarGroup** (`client/src/components/proportional-bar-group.tsx`)
-   - Horizontal stacked bars for proportional comparisons
-   - Smooth width animations with framer-motion
-   - Hover tooltips for detailed breakdowns
-   - Market share comparison visualizations
-
-4. **CurvedToolTimeline** (`client/src/components/curved-tool-timeline.tsx`)
-   - SVG-based curved timeline using quadratic bezier paths
-   - 14 design tools (Sketch, Figma, Adobe XD, InVision, etc.) plotted from 1990-2023
-   - Curved dashed path connecting tool dots along smooth trajectory
-   - Interactive hover/click states showing tool details in expandable card
-   - Tool icons from react-icons/si for brand logos and lucide-react for generic icons
-   - AnimatePresence wrapper for smooth exit animations
-   - Comprehensive data-testid attributes including legend items
-   - Integrated in Tools & Methodology section for Design Tool Evolution
-
-**Color System Updates**
-- Added timeline-specific CSS variables in `client/src/index.css`:
-  - `--timeline-sage`: Muted sage green (hsl 88, 16%, 55%)
-  - `--timeline-cream`: Warm cream (hsl 56, 24%, 82%)
-  - `--timeline-charcoal`: Deep charcoal (hsl 120, 5%, 8%)
-  - `--timeline-terracotta`: Terracotta highlight (hsl 15, 65%, 55%)
-  - Timeline utility classes for dots, markers, and containers
-
-**Component Integration**
-- Replaced basic InteractiveTimeline with TimelineTrack in GUI Revolution section
-- Added StackedAreaChart for market share evolution visualization
-- Integrated ProportionalBarGroup for horizontal comparison bars
-- Added TimelineTrack to Tools & Methodology section for UX tool evolution
-- All timeline components feature fade-in animations using FadeInSection wrapper
-
-**Design Patterns**
-- Editorial typography with generous spacing
-- Monospace fonts for years and numerical data
-- Spring animations (not linear) for natural motion
-- Glassmorphism effects on expandable cards
-- Responsive behavior with Tailwind breakpoints
+**Color System**
+- Muted editorial color palette with CSS variables for sage, cream, charcoal, and terracotta accents.
 
 **Accessibility & Testing**
-- Comprehensive data-testid attributes added to all timeline components
-- Test IDs follow pattern: {type}-{target}-{id} for unique identification
-- All interactive elements and meaningful display content are testable
-- IDs are stable across renders for reliable automated testing
+- Comprehensive `data-testid` attributes for automated testing.
 
-## Advanced Timeline Features (October 2025)
+## Build & Deployment
+- Vite outputs static assets to `dist/public`.
+- ESBuild bundles the server to `dist/index.js`.
+- Production mode serves static files via Express; development mode uses Vite middleware.
+- Consistent path aliases across TypeScript and Vite.
+- Environment-based configuration (NODE_ENV).
 
-**Era Groupings & Background Shading**
-- TimelineTrack now displays historical eras with subtle gradient backgrounds
-- Defined 5 UX/UI history eras: Early Computing (1960-1984), GUI Revolution (1984-1995), Web Era (1995-2010), Modern Era (2010-2020), AI Era (2020+)
-- Era backgrounds use low-opacity gradients (0.08-0.15) to avoid interfering with interactive elements
-- Era labels show name and year range positioned above timeline
-- Backgrounds automatically calculate positions based on visible events
+# External Dependencies
 
-**Connection Lines & Tool Relationships**
-- CurvedToolTimeline shows evolution relationships between 14 design tools
-- 11 tool relationships defined (e.g., Photoshop → Flash → Fireworks for graphics, Sketch → Figma for UI design)
-- Curved connection lines using quadratic bezier paths between related tools
-- Color-coded by relationship type with lighter opacity (0.15 default, 0.5 on hover)
-- Connections become more visible when hovering over related tools to reduce visual noise
-- Only visible when both connected tools pass category filters
+**Database**
+- PostgreSQL via Neon serverless driver (`@neondatabase/serverless`).
+- Drizzle Kit for schema migrations.
 
-**Timeline Mini-Map Navigation** (`client/src/components/timeline-minimap.tsx`)
-- Compact overview timeline showing all events as interactive dots
-- Positioned sticky at bottom with glassmorphic backdrop blur styling
-- Clickable dots to jump to specific years/events with smooth scroll behavior
-- Current scroll position indicator (terracotta colored active dot)
-- Progress bar showing position through timeline
-- Hover tooltips showing year labels
-- Integrated in GUI Revolution section
+**UI Libraries**
+- Radix UI component primitives.
+- Embla Carousel for carousels.
+- Lucide React for iconography.
+- Date-fns for date manipulation.
+- Class Variance Authority (CVA) for variant-based component styling.
+- Recharts for charting.
+- Framer Motion for animations.
+- Wouter for routing.
+- TanStack Query (React Query) for data fetching.
 
-**Category Filtering**
-- Filter controls added to CurvedToolTimeline for tool categories
-- Categories extracted dynamically: Graphics, UI Design, Prototyping, Animation, Development, etc.
-- Toggle buttons with active/inactive states using timeline colors
-- Smooth fade animations (opacity transitions) for tools when filters change
-- Path curve automatically updates to connect only visible tools
-- "Clear Filters" button appears when any filters are active
-- All filter controls have proper data-testid attributes (filter-{category}, filter-clear)
-- Non-visible tools fade to 15% opacity instead of hiding completely
+**Development Tools**
+- Replit-specific plugins (cartographer, dev banner, runtime error overlay).
+- TSX for TypeScript execution in development.
+- ESBuild for production builds.
 
-**Navigation Improvements**
-- NavigationHeader now hides automatically when scrolling past hero section
-- StickyNavigation appears after hero with section links (Origins, Revolution, Formalization, Tools, Economics, Claims)
-- Smooth transitions between the two navigation states prevent overlap
-- Active section highlighting as user scrolls through content
-
-**Technical Implementation**
-- All enhancements use framer-motion for smooth spring animations
-- Comprehensive data-testid attributes on all interactive elements
-- Responsive design with mobile considerations (floating indicator hidden on mobile)
-- Maintains editorial aesthetic with muted sage/cream/charcoal/terracotta color palette
-- IntersectionObserver API for efficient scroll tracking
-- Fixed framer-motion opacity warnings by adding explicit initial values
+**Session Management**
+- Connect-pg-simple (installed, but implementation pending).
+```

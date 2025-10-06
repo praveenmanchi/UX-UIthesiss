@@ -25,12 +25,12 @@ export default function HeroSection() {
           >
             <span className="block">The</span>
             <span className="block text-accent inline-flex items-center gap-4">
-              {/* <svg className="inline-block" width="80" height="60" viewBox="0 0 80 60" fill="none">
+              <svg className="inline-block" width="80" height="60" viewBox="0 0 80 60" fill="none">
                 <rect width="80" height="60" fill="currentColor" fillOpacity="0.1" />
                 <rect x="10" y="10" width="60" height="8" fill="currentColor" />
                 <rect x="10" y="26" width="60" height="8" fill="currentColor" />
                 <rect x="10" y="42" width="60" height="8" fill="currentColor" />
-              </svg> */}
+              </svg>
               UX & UI
             </span>
             <span className="block">Reformation</span>
@@ -87,7 +87,7 @@ export default function HeroSection() {
           <div>
             <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Written By</p>
             <p className="font-semibold">Praveen Manchi</p>
-            <p className="text-muted-foreground">UX/UI Designer</p>
+            <p className="text-muted-foreground">UX/UI designer</p>
           </div>
           <div>
             <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Published</p>
