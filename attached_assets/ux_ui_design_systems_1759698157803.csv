@@ -1,0 +1,7 @@
+year,company,system_name,adoption_scale,maturity_level
+1987,Apple,Human Interface Guidelines,10000,60
+2006,Yahoo!,Design Pattern Library,50000,70
+2014,Google,Material Design,1000000,95
+2016,IBM,Carbon Design System,100000,85
+2018,Microsoft,Fluent Design,500000,80
+2020,Shopify,Polaris,50000,75
