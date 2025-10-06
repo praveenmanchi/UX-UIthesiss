@@ -10,7 +10,6 @@ import JobMarketChart from "@/components/job-market-chart";
 import ThesesSection from "@/components/theses-section";
 import IndustryEconomicsSection from "@/components/industry-economics-section";
 import Footer from "@/components/footer";
-import ProgressIndicator from "@/components/progress-indicator";
 import StickyNavigation from "@/components/sticky-navigation";
 import ScrollProgress from "@/components/scroll-progress";
 import SectionDivider from "@/components/section-divider";
@@ -22,7 +21,6 @@ export default function Home() {
       <NavigationHeader />
       <HeroSection />
       <StickyNavigation />
-      <ProgressIndicator />
       
       {/* Section 01: Origins */}
       <SectionDivider number="01" label="Origins" />
