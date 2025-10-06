@@ -1,6 +1,5 @@
 import { ArrowDown } from "lucide-react";
 import { useEffect, useState } from "react";
-import BylineStrip from "./byline-strip";
 
 export default function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,91 +9,107 @@ export default function HeroSection() {
   }, []);
 
   return (
-    <section className="relative min-h-screen flex flex-col items-center justify-center px-4 sm:px-6 lg:px-8 overflow-hidden">
-      {/* Animated Design Element - Geometric Shapes */}
-      <div 
-        className={`absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 transition-all duration-1000 ${
-          isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
-        }`}
-        style={{ transitionDelay: '800ms' }}
-      >
-        <div className="relative">
-          {/* Main geometric shape - design tool inspired */}
-          <div className="relative animate-float">
-            <div 
-              className="absolute w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-lg bg-accent/10 rotate-12"
-              style={{ animation: 'float 6s ease-in-out infinite' }}
-            />
-            <div 
-              className="absolute w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-lg bg-accent/5 rotate-6"
-              style={{ animation: 'float 6s ease-in-out infinite 0.5s' }}
-            />
-            <div 
-              className="absolute w-32 h-32 sm:w-40 sm:h-40 md:w-48 md:h-48 rounded-lg border border-accent/20"
-              style={{ animation: 'pulse 3s ease-in-out infinite' }}
-            />
-          </div>
-        </div>
-      </div>
-
-      {/* Main Content */}
-      <div className="relative z-10 max-w-6xl w-full text-center space-y-16">
-        {/* Title and Subtitle */}
+    <section className="relative min-h-screen flex flex-col px-4 sm:px-6 lg:px-8 overflow-hidden">
+      {/* Main Grid Layout - Side Alignment */}
+      <div className="flex-1 grid lg:grid-cols-2 gap-12 items-center max-w-7xl w-full mx-auto py-20">
+        {/* Left Column - Content */}
         <div className="space-y-8">
           <h1 
             className={`font-display font-bold leading-[0.9] tracking-tighter transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
             style={{ 
-              fontSize: 'clamp(3.5rem, 12vw, 9rem)',
+              fontSize: 'clamp(3rem, 8vw, 7rem)',
               transitionDelay: '100ms'
             }}
           >
-            <span className="block">The History of</span>
-            <span className="block text-accent">UX/UI Design</span>
+            <span className="block">The</span>
+            <span className="block text-accent inline-flex items-center gap-4">
+              <svg className="inline-block" width="80" height="60" viewBox="0 0 80 60" fill="none">
+                <rect width="80" height="60" fill="currentColor" fillOpacity="0.1" />
+                <rect x="10" y="10" width="60" height="8" fill="currentColor" />
+                <rect x="10" y="26" width="60" height="8" fill="currentColor" />
+                <rect x="10" y="42" width="60" height="8" fill="currentColor" />
+              </svg>
+              UX & UI
+            </span>
+            <span className="block">Reformation</span>
           </h1>
           
           <h2 
             className={`font-display text-muted-foreground leading-tight transition-all duration-700 ${
-              isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+              isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
             style={{ 
-              fontSize: 'clamp(1.5rem, 4vw, 3rem)',
+              fontSize: 'clamp(1.25rem, 3vw, 2rem)',
               transitionDelay: '300ms'
             }}
           >
-            A Comprehensive Analysis of
+            How User Experience and Interface Design
             <br />
-            Professional Evolution & Claims
+            Evolved from Academic Research to Global Industry
           </h2>
         </div>
 
-        {/* Enhanced Byline Strip */}
+        {/* Right Column - Decorative Element */}
         <div 
-          className={`w-full max-w-4xl mx-auto transition-all duration-700 ${
-            isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
+          className={`hidden lg:flex items-center justify-center transition-all duration-1000 ${
+            isVisible ? 'opacity-100 scale-100' : 'opacity-0 scale-95'
           }`}
           style={{ transitionDelay: '500ms' }}
         >
-          <BylineStrip />
+          <div className="relative w-full h-[500px]">
+            {/* Animated geometric shapes */}
+            <div className="absolute inset-0 flex items-center justify-center">
+              <div 
+                className="absolute w-64 h-64 rounded-2xl bg-accent/10 rotate-12"
+                style={{ animation: 'float 6s ease-in-out infinite' }}
+              />
+              <div 
+                className="absolute w-64 h-64 rounded-2xl bg-accent/5 rotate-6"
+                style={{ animation: 'float 6s ease-in-out infinite 0.5s' }}
+              />
+              <div 
+                className="absolute w-64 h-64 rounded-2xl border-2 border-accent/30"
+                style={{ animation: 'pulse 3s ease-in-out infinite' }}
+              />
+            </div>
+          </div>
         </div>
       </div>
 
-      {/* Scroll Indicator */}
+      {/* Bottom Metadata Strip */}
       <div 
-        className={`absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 transition-all duration-700 ${
+        className={`border-t border-border py-6 transition-all duration-700 ${
           isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-8'
         }`}
         style={{ transitionDelay: '700ms' }}
-        data-testid="text-scroll-indicator"
       >
-        <span className="text-xs font-mono text-muted uppercase tracking-wider">Scroll to read</span>
-        <ArrowDown 
-          className="w-5 h-5 text-accent animate-bounce"
-          style={{ animationDelay: '1s' }}
-        />
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+          <div>
+            <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Written By</p>
+            <p className="font-semibold">Praveen Manchi</p>
+            <p className="text-muted-foreground">Product Designer</p>
+          </div>
+          <div>
+            <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Published</p>
+            <p className="font-semibold">January 2025</p>
+          </div>
+          <div>
+            <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Length</p>
+            <p className="font-semibold">30 Min</p>
+            <p className="text-muted-foreground">~7,500 Words</p>
+          </div>
+          <div className="flex items-end">
+            <div className="flex flex-col items-start gap-2">
+              <span className="text-xs font-mono text-muted uppercase tracking-wider flex items-center gap-2">
+                <ArrowDown className="w-3 h-3" />
+                Scroll to read
+              </span>
+            </div>
+          </div>
+        </div>
       </div>
-
     </section>
   );
 }

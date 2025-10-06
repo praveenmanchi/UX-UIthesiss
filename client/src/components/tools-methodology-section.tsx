@@ -13,14 +13,54 @@ import {
   TrendingUp,
   Package
 } from 'lucide-react';
+import CurvedToolTimeline from '@/components/curved-tool-timeline';
 import UXTimelineChart from '@/components/ux-timeline-chart';
 import MarketShareChart from '@/components/market-share-chart';
 import SkillsEvolutionChart from '@/components/skills-evolution-chart';
 import UXToolEvolutionChart from '@/components/ux-tool-evolution-chart';
 import PullQuote from '@/components/pull-quote';
 import DataCallout from '@/components/data-callout';
+import FadeInSection from '@/components/fade-in-section';
 
 export default function ToolsMethodologySection() {
+  const toolTimelineEvents = [
+    {
+      year: "1997",
+      title: "Dreamweaver Era",
+      description: "WYSIWYG HTML editing brought visual web design to the masses. Designers adapted print tools like Photoshop (1990) for the web via image slicing.",
+      details: "Flash (1996) enabled interactive animations, but designers struggled with limited tools purpose-built for digital interfaces.",
+      impact: "Designers began adapting print tools for digital media, marking the transition from static to interactive design"
+    },
+    {
+      year: "2005",
+      title: "Web-Native Tools Emerge",
+      description: "Fireworks and OmniGraffle introduced web-optimized workflows. Balsamiq (2008) revolutionized rapid low-fidelity prototyping.",
+      details: "This era saw the first tools specifically designed for web workflow rather than adapted from print design.",
+      impact: "Purpose-built tools for digital design emerged, establishing UX as a distinct discipline"
+    },
+    {
+      year: "2010",
+      title: "Sketch Revolution",
+      description: "Sketch became the first UI-focused design tool, transforming how designers created digital interfaces with vector-based workflows.",
+      details: "InVision (2013) and Marvel (2013) brought clickable prototypes, while Framer (2014) enabled code-based advanced interactions.",
+      impact: "Specialized tools for UI design and prototyping established the modern UX toolkit"
+    },
+    {
+      year: "2016",
+      title: "Figma & Collaboration",
+      description: "Figma introduced real-time collaboration, allowing multiple designers to work simultaneously. Adobe XD (2017) integrated with the Adobe ecosystem.",
+      details: "Abstract (2017) brought version control to design, while Zeplin bridged the design-to-development handoff gap.",
+      impact: "Cloud-based, real-time collaborative design became the industry standard"
+    },
+    {
+      year: "2023",
+      title: "AI & Systems",
+      description: "AI tools like Midjourney and DALL-E entered design workflows. Design systems (Material, Carbon) became essential for consistency at scale.",
+      details: "Penpot (2021) offered open-source collaboration, while Storybook enabled component-driven development.",
+      impact: "Systematic design and AI augmentation defined the cutting edge of modern UX practice"
+    }
+  ];
+
   const toolTimeline = [
     {
       era: "1990s",
@@ -248,9 +288,49 @@ export default function ToolsMethodologySection() {
       </div>
 
       {/* Tool Evolution Timeline */}
+      <FadeInSection className="py-16 px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto">
+          <CurvedToolTimeline
+            title="Design Tool Evolution Timeline"
+            description="From print adaptation to AI-augmented design systems — interactive timeline showing the tools that defined modern UX"
+          />
+        </div>
+      </FadeInSection>
+      
+      {/* Detailed Tool Timeline (Legacy) */}
       <div className="py-16 px-4 sm:px-6 lg:px-8 bg-secondary/20">
         <div className="max-w-7xl mx-auto">
-          <h3 className="text-3xl font-display font-bold mb-8 text-center">Design Tool Evolution Timeline</h3>
+          <h3 className="text-3xl font-display font-bold mb-12 text-center">Tool Ecosystem by Era</h3>
+          
+          {/* Detailed Year Timeline */}
+          <div className="mb-12 overflow-x-auto">
+            <div className="min-w-[800px] relative pb-8">
+              {/* Timeline Line */}
+              <div className="absolute top-8 left-0 right-0 h-0.5 bg-accent/30" />
+              
+              {/* Year Markers */}
+              <div className="flex justify-between items-start relative">
+                {[
+                  { year: "1990", event: "Photoshop", color: "blue" },
+                  { year: "1996", event: "Flash", color: "red" },
+                  { year: "1997", event: "Dreamweaver", color: "green" },
+                  { year: "2005", event: "OmniGraffle", color: "purple" },
+                  { year: "2008", event: "Balsamiq", color: "yellow" },
+                  { year: "2010", event: "Sketch", color: "accent" },
+                  { year: "2013", event: "InVision", color: "pink" },
+                  { year: "2016", event: "Figma", color: "accent" },
+                  { year: "2020", event: "Systems Era", color: "accent" },
+                  { year: "2023", event: "AI Tools", color: "accent" }
+                ].map((marker, index) => (
+                  <div key={marker.year} className="flex flex-col items-center">
+                    <div className={`w-4 h-4 rounded-full ${marker.color === 'accent' ? 'bg-accent border-2 border-accent' : 'bg-accent/30 border border-accent/50'} mb-2 z-10 relative bg-background`} />
+                    <span className="text-xs font-mono font-bold text-accent">{marker.year}</span>
+                    <span className="text-xs text-muted-foreground text-center mt-1 max-w-[60px]">{marker.event}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
           
           <div className="space-y-12">
             {toolTimeline.map((era, index) => (

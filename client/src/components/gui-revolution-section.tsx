@@ -1,60 +1,52 @@
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Monitor, MousePointer, Package, Trophy, Zap, DollarSign, TrendingUp, Users, Briefcase, BarChart2 } from "lucide-react";
+import { Monitor, MousePointer, Package, Users, Briefcase, BarChart2, Zap, Trophy, DollarSign, TrendingUp } from "lucide-react";
 import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
+import TimelineTrack from "@/components/timeline-track";
+import TimelineMinimap from "@/components/timeline-minimap";
+import StackedAreaChart from "@/components/stacked-area-chart";
+import ProportionalBarGroup from "@/components/proportional-bar-group";
+import FadeInSection from "@/components/fade-in-section";
+import AnimatedLineChart from "@/components/animated-line-chart";
+import AnimatedBarChart from "@/components/animated-bar-chart";
 
 export default function GuiRevolutionSection() {
   const timelineEvents = [
     {
       year: "1983",
-      company: "Apple",
-      product: "Lisa",
-      price: "$9,995",
-      adjustedPrice: "$31,000 (2025)",
-      description: "First mass-marketed personal computer with a GUI and mouse",
-      impact: "Commercial failure, only 10,000 units sold",
-      milestone: "Proved GUI was possible for personal computers"
+      title: "Apple Lisa",
+      description: "First mass-marketed personal computer with a GUI and mouse. Priced at $9,995 ($31,000 in 2025 dollars), it was a commercial failure with only 10,000 units sold.",
+      details: "Despite poor sales, the Lisa proved that graphical interfaces were technically viable for personal computers, paving the way for future innovations.",
+      impact: "Proved GUI was possible for personal computers, establishing the foundation for the Macintosh"
     },
     {
       year: "1984",
-      company: "Apple", 
-      product: "Macintosh",
-      price: "$2,495",
-      adjustedPrice: "$7,500 (2025)",
-      description: "The computer for the rest of us - affordable GUI computing",
-      impact: "Sold 70,000 units in first 100 days",
-      milestone: "Made GUI accessible to creative professionals"
+      title: "Macintosh Launch",
+      description: "The computer for the rest of us - affordable GUI computing at $2,495 ($7,500 in 2025). Sold 70,000 units in first 100 days, finally making graphical interfaces accessible.",
+      details: "With its famous 1984 Super Bowl commercial and revolutionary design, the Macintosh transformed Apple from a niche player into a cultural phenomenon.",
+      impact: "Made GUI accessible to creative professionals and established Apple as an innovation leader"
     },
     {
       year: "1985",
-      company: "Microsoft",
-      product: "Windows 1.0",
-      price: "$99",
-      adjustedPrice: "$280 (2025)",
-      description: "Microsoft's first graphical operating environment for MS-DOS",
-      impact: "Initially poor reception, limited functionality",
-      milestone: "Microsoft's entry into GUI market"
+      title: "Windows 1.0",
+      description: "Microsoft's first graphical operating environment for MS-DOS, priced at just $99 ($280 in 2025). Initially received poor reviews due to limited functionality.",
+      details: "Though criticized as a Mac copycat, Windows 1.0 marked Microsoft's strategic entry into the GUI market that would eventually dominate the industry.",
+      impact: "Microsoft's entry into GUI market, beginning a decades-long competition with Apple"
     },
     {
       year: "1990",
-      company: "Microsoft",
-      product: "Windows 3.0",
-      price: "$149",
-      adjustedPrice: "$350 (2025)",
-      description: "First commercially successful version of Windows",
-      impact: "Sold 10 million copies in 2 years",
-      milestone: "GUI becomes mainstream on PCs"
+      title: "Windows 3.0 Breakthrough",
+      description: "First commercially successful version of Windows at $149 ($350 in 2025). Sold 10 million copies in 2 years, finally delivering a usable GUI for the PC masses.",
+      details: "Windows 3.0's Program Manager and File Manager became the standard interface pattern, and its improved performance made it viable for business use.",
+      impact: "GUI becomes mainstream on PCs, shifting market dominance from Apple to Microsoft"
     },
     {
       year: "1995",
-      company: "Microsoft",
-      product: "Windows 95",
-      price: "$209",
-      adjustedPrice: "$420 (2025)",
-      description: "Revolutionary OS with Start menu and taskbar",
-      impact: "40 million copies in first year",
-      milestone: "GUI becomes essential for all computer users"
+      title: "Windows 95 Revolution",
+      description: "Revolutionary OS with the iconic Start menu and taskbar, priced at $209 ($420 in 2025). Sold 40 million copies in the first year with a $700 million marketing campaign.",
+      details: "The Start Me Up campaign featuring The Rolling Stones made Windows 95 a cultural event. Lines formed at midnight launches worldwide.",
+      impact: "GUI becomes essential for all computer users, achieving over 90% market share by 2000"
     }
   ];
 
@@ -168,12 +160,54 @@ export default function GuiRevolutionSection() {
     }
   ];
 
-  const marketMilestones = [
-    { year: "1984", macs: 0.07, windows: 0, total: 0.07, label: "Mac launches" },
-    { year: "1985", macs: 0.2, windows: 0.02, total: 0.22, label: "Windows 1.0" },
-    { year: "1990", macs: 1.5, windows: 10, total: 11.5, label: "Windows 3.0" },
-    { year: "1995", macs: 4.5, windows: 60, total: 64.5, label: "Windows 95" },
-    { year: "2000", macs: 3.5, windows: 300, total: 303.5, label: "Peak dominance" }
+  const marketAreaData = [
+    { year: "1984", macs: 0.07, windows: 0 },
+    { year: "1985", macs: 0.2, windows: 0.02 },
+    { year: "1987", macs: 0.8, windows: 0.5 },
+    { year: "1990", macs: 1.5, windows: 10 },
+    { year: "1992", macs: 3.0, windows: 25 },
+    { year: "1995", macs: 4.5, windows: 60 },
+    { year: "1997", macs: 4.0, windows: 150 },
+    { year: "2000", macs: 3.5, windows: 300 }
+  ];
+
+  const proportionalBarData = [
+    {
+      year: "1984",
+      label: "Mac launches",
+      segments: [
+        { value: 0.07, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
+        { value: 0.01, color: "hsl(56, 22%, 75%)", label: "Other GUI" }
+      ],
+      total: 0.08
+    },
+    {
+      year: "1990",
+      label: "Windows 3.0 breakthrough",
+      segments: [
+        { value: 1.5, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
+        { value: 10, color: "hsl(56, 22%, 75%)", label: "Windows" }
+      ],
+      total: 11.5
+    },
+    {
+      year: "1995",
+      label: "Windows 95 dominance",
+      segments: [
+        { value: 4.5, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
+        { value: 60, color: "hsl(56, 22%, 75%)", label: "Windows" }
+      ],
+      total: 64.5
+    },
+    {
+      year: "2000",
+      label: "Peak market saturation",
+      segments: [
+        { value: 3.5, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
+        { value: 300, color: "hsl(56, 22%, 75%)", label: "Windows" }
+      ],
+      total: 303.5
+    }
   ];
 
   return (
@@ -196,63 +230,18 @@ export default function GuiRevolutionSection() {
           </div>
         </div>
 
-        {/* Historical Timeline */}
-        <div className="mb-24">
-          <div className="flex items-center gap-4 mb-12">
-            <TrendingUp className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-3xl font-semibold">The Race to Democratize Computing</h3>
-          </div>
-          
-          <div className="relative">
-            {/* Timeline Line */}
-            <div className="absolute left-8 top-0 bottom-0 w-0.5 bg-gradient-to-b from-accent/50 via-accent/30 to-transparent" />
-            
-            <div className="space-y-8">
-              {timelineEvents.map((event, index) => (
-                <div key={event.year} className="relative pl-20" data-testid={`timeline-${event.year}`}>
-                  {/* Year Badge */}
-                  <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-background border-2 border-accent/50 flex items-center justify-center">
-                    <span className="text-sm font-bold">{event.year}</span>
-                  </div>
-                  
-                  {/* Content Card */}
-                  <Card className={`p-6 ${event.company === 'Apple' ? 'bg-gradient-to-r from-accent/10 to-transparent' : 'bg-gradient-to-r from-blue-500/10 to-transparent'} border-accent/30`}>
-                    <div className="flex flex-wrap items-center gap-4 mb-3">
-                      <div className={`px-3 py-1 rounded-full text-xs font-semibold ${event.company === 'Apple' ? 'bg-accent/20 text-accent' : 'bg-blue-500/20 text-blue-400'}`}>
-                        {event.company}
-                      </div>
-                      <h4 className="text-2xl font-bold">{event.product}</h4>
-                      <div className="flex items-center gap-2 text-sm">
-                        <DollarSign className="w-4 h-4" />
-                        <span className="font-mono">{event.price}</span>
-                        <span className="text-muted-foreground">({event.adjustedPrice})</span>
-                      </div>
-                    </div>
-                    
-                    <p className="text-foreground/80 mb-3">{event.description}</p>
-                    
-                    <div className="flex flex-col sm:flex-row gap-4 pt-3 border-t border-accent/20">
-                      <div className="flex items-start gap-2">
-                        <Trophy className="w-4 h-4 text-accent mt-0.5" />
-                        <div>
-                          <p className="text-xs text-muted-foreground">Market Impact</p>
-                          <p className="text-sm font-medium">{event.impact}</p>
-                        </div>
-                      </div>
-                      <div className="flex items-start gap-2">
-                        <Zap className="w-4 h-4 text-accent mt-0.5" />
-                        <div>
-                          <p className="text-xs text-muted-foreground">Historical Significance</p>
-                          <p className="text-sm font-medium">{event.milestone}</p>
-                        </div>
-                      </div>
-                    </div>
-                  </Card>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
+        {/* Historical Timeline - Interactive */}
+        <FadeInSection className="mb-24 relative">
+          <TimelineTrack 
+            events={timelineEvents}
+            title="The Race to Democratize Computing"
+            description="From Xerox PARC to Windows 95: How two companies transformed computing forever"
+          />
+          <TimelineMinimap 
+            events={timelineEvents}
+            sectionId="revolution"
+          />
+        </FadeInSection>
 
         {/* Pull Quote */}
         <PullQuote
@@ -335,48 +324,24 @@ export default function GuiRevolutionSection() {
           </div>
         </div>
 
-        {/* Market Evolution Visual */}
-        <div className="mb-24">
-          <Card className="p-8 bg-gradient-to-br from-accent/10 to-transparent border-accent/30">
-            <h4 className="text-2xl font-semibold mb-6 flex items-center gap-3">
-              <BarChart2 className="w-6 h-6 text-accent" />
-              GUI Operating System Adoption (Millions of Users)
-            </h4>
-            
-            <div className="space-y-4">
-              {marketMilestones.map((milestone) => (
-                <div key={milestone.year} className="flex items-center gap-4">
-                  <span className="font-mono text-sm w-12">{milestone.year}</span>
-                  <div className="flex-1">
-                    <div className="flex h-8 rounded overflow-hidden bg-background/50">
-                      {milestone.macs > 0 && (
-                        <div 
-                          className="bg-accent/70 flex items-center justify-center text-xs font-semibold"
-                          style={{ width: `${(milestone.macs / milestone.total) * 100}%` }}
-                        >
-                          {milestone.macs >= 1 && `Mac: ${milestone.macs}M`}
-                        </div>
-                      )}
-                      {milestone.windows > 0 && (
-                        <div 
-                          className="bg-blue-500/70 flex items-center justify-center text-xs font-semibold"
-                          style={{ width: `${(milestone.windows / milestone.total) * 100}%` }}
-                        >
-                          {milestone.windows >= 1 && `Win: ${milestone.windows}M`}
-                        </div>
-                      )}
-                    </div>
-                  </div>
-                  <span className="text-sm text-muted-foreground w-24">{milestone.label}</span>
-                </div>
-              ))}
-            </div>
-            
-            <p className="text-sm text-muted-foreground mt-6">
-              By 2000, Windows dominated with over 90% market share, but Apple's focus on design excellence influenced the entire industry.
-            </p>
-          </Card>
-        </div>
+        {/* Market Share Stacked Area Chart */}
+        <StackedAreaChart
+          data={marketAreaData}
+          areas={[
+            { dataKey: "macs", name: "Macintosh Users", color: "hsl(88, 20%, 48%)" },
+            { dataKey: "windows", name: "Windows Users", color: "hsl(56, 22%, 75%)" }
+          ]}
+          title="GUI Operating System Adoption (1984-2000)"
+          description="The dramatic shift from Macintosh dominance to Windows ubiquity"
+          yAxisLabel="Users (millions)"
+        />
+
+        {/* Proportional Market Share Bars */}
+        <ProportionalBarGroup
+          data={proportionalBarData}
+          title="Market Share Evolution"
+          description="Comparative market dominance at key milestones in GUI history"
+        />
 
         {/* Core Design Principles */}
         <div className="mb-24">

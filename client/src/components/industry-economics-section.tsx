@@ -18,6 +18,49 @@ export default function IndustryEconomicsSection() {
           </p>
         </div>
 
+        {/* Timeline Introduction */}
+        <div className="mb-16">
+          <div className="border-l-2 border-accent/30 pl-8">
+            <h3 className="font-display text-2xl sm:text-3xl font-semibold mb-2">
+              Industry Timeline: The Evolution of Design as a Business Function
+            </h3>
+            <p className="text-foreground/70">
+              How UX/UI evolved from an academic curiosity to a strategic business imperative
+            </p>
+          </div>
+        </div>
+
+        {/* Horizontal Timeline */}
+        <div className="mb-20">
+          <div className="relative">
+            {/* Timeline Line */}
+            <div className="hidden md:block absolute top-16 left-0 right-0 h-0.5 bg-gradient-to-r from-accent/20 via-accent/50 to-accent/20" />
+            
+            {/* Timeline Points */}
+            <div className="grid grid-cols-1 md:grid-cols-6 gap-4 md:gap-2">
+              {[
+                { year: "1993", event: "First UX Title", detail: "Don Norman at Apple" },
+                { year: "2000", event: "Web Agencies", detail: "UX becomes service" },
+                { year: "2007", event: "iPhone Era", detail: "Mobile UX explosion" },
+                { year: "2014", event: "Design Systems", detail: "Scalable design" },
+                { year: "2020", event: "DesignOps", detail: "Design operations" },
+                { year: "2025", event: "AI Integration", detail: "AI-assisted design" }
+              ].map((milestone, index) => (
+                <div key={milestone.year} className="relative flex flex-col items-center text-center">
+                  <div className="w-12 h-12 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center mb-4 md:mb-8 z-10 relative bg-background">
+                    <span className="text-xs font-bold">{index + 1}</span>
+                  </div>
+                  <div className="space-y-1">
+                    <p className="font-mono font-bold text-accent text-sm">{milestone.year}</p>
+                    <p className="text-sm font-semibold">{milestone.event}</p>
+                    <p className="text-xs text-muted-foreground">{milestone.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
         {/* Company Evolution Timeline */}
         <div className="space-y-8">
           <div className="border-l-2 border-accent/30 pl-8">

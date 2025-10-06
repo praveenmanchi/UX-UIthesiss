@@ -3,6 +3,8 @@ import { Separator } from "@/components/ui/separator";
 import { Clock, Cpu, Monitor, Mouse, Users, Lightbulb } from "lucide-react";
 import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
+import ExpandablePioneerCard from "@/components/expandable-pioneer-card";
+import FadeInSection from "@/components/fade-in-section";
 
 export default function OriginsSection() {
   const timelineEvents = [
@@ -191,36 +193,30 @@ export default function OriginsSection() {
         </Card>
 
         {/* Pioneers Section */}
-        <div className="mb-20">
+        <FadeInSection className="mb-20">
           <h3 className="font-display text-3xl font-semibold mb-12">The Visionaries Who Defined Our Digital Future</h3>
           
-          <div className="space-y-8">
-            {pioneers.map((pioneer) => (
-              <Card key={pioneer.name} className="p-8 bg-card/50 backdrop-blur border-border hover:border-accent/30 transition-colors" data-testid={`pioneer-${pioneer.name.replace(' ', '-').toLowerCase()}`}>
-                <div className="grid md:grid-cols-3 gap-6">
-                  <div className="md:col-span-1">
-                    <h4 className="text-2xl font-semibold mb-1">{pioneer.name}</h4>
-                    <p className="text-sm text-muted-foreground mb-2">{pioneer.years}</p>
-                    <p className="text-accent font-medium">{pioneer.title}</p>
-                  </div>
-                  
-                  <div className="md:col-span-2 space-y-4">
-                    <p className="text-foreground/80">{pioneer.contribution}</p>
-                    
-                    <blockquote className="border-l-4 border-accent/50 pl-4 italic text-foreground/70">
-                      "{pioneer.quote}"
-                    </blockquote>
-                    
-                    <div className="flex items-center gap-2">
-                      <div className="w-2 h-2 rounded-full bg-accent/50" />
-                      <p className="text-sm font-medium text-accent/80">{pioneer.legacy}</p>
-                    </div>
-                  </div>
-                </div>
-              </Card>
-            ))}
+          <div className="space-y-6">
+            {pioneers.map((pioneer, index) => {
+              const images = [
+                '/attached_assets/stock_images/professional_portrai_fac45af9.jpg',
+                '/attached_assets/stock_images/professional_portrai_01f95629.jpg',
+                '/attached_assets/stock_images/professional_portrai_7ba6a37d.jpg',
+                '/attached_assets/stock_images/professional_portrai_07716728.jpg',
+                '/attached_assets/stock_images/professional_portrai_fce32b37.jpg'
+              ];
+              
+              return (
+                <ExpandablePioneerCard
+                  key={pioneer.name}
+                  pioneer={pioneer}
+                  imageUrl={images[index]}
+                  index={index}
+                />
+              );
+            })}
           </div>
-        </div>
+        </FadeInSection>
 
         {/* Pull Quote from Alan Kay */}
         <PullQuote

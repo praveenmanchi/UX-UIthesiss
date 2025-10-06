@@ -7,10 +7,8 @@ import { cn } from "@/lib/utils";
 
 export default function StickyNavigation() {
   const [isVisible, setIsVisible] = useState(false);
-  const [isScrollingUp, setIsScrollingUp] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("");
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const lastScrollY = useRef(0);
   const scrollTimeout = useRef<NodeJS.Timeout>();
 
   const sections = [
@@ -30,17 +28,6 @@ export default function StickyNavigation() {
       // Show navigation after scrolling past hero section
       const shouldBeVisible = currentScrollY > heroHeight;
       setIsVisible(shouldBeVisible);
-      
-      // Detect scroll direction for show/hide behavior
-      if (shouldBeVisible) {
-        if (currentScrollY < lastScrollY.current) {
-          setIsScrollingUp(true);
-        } else if (currentScrollY > lastScrollY.current) {
-          setIsScrollingUp(false);
-        }
-      }
-      
-      lastScrollY.current = currentScrollY;
 
       // Update active section based on scroll position
       const sectionElements = sections.map(section => ({
@@ -103,8 +90,7 @@ export default function StickyNavigation() {
         className={cn(
           "fixed top-0 left-0 right-0 z-40 transition-all duration-300",
           "bg-background/90 backdrop-blur-md border-b border-accent/20",
-          isVisible && isScrollingUp ? "translate-y-0" : "-translate-y-full",
-          isVisible ? "opacity-100" : "opacity-0"
+          isVisible ? "translate-y-0 opacity-100" : "-translate-y-full opacity-0"
         )}
         data-testid="sticky-navigation"
       >
