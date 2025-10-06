@@ -5,6 +5,11 @@ import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
 import ExpandablePioneerCard from "@/components/expandable-pioneer-card";
 import FadeInSection from "@/components/fade-in-section";
+import VannevarBushImg from "@assets/Visionaries/Vannevar-Bush-1500-800.jpg";
+import DouglasEngelbartImg from "@assets/Visionaries/Douglas_Engelbart.jpg";
+import IvanSutherlandImg from "@assets/Visionaries/Ivan_Sutherland_1592.jpg";
+import AlanKayImg from "@assets/Visionaries/Kay.webp";
+import LarryTeslerImg from "@assets/Visionaries/Larry Tesler .jpg";
 
 export default function OriginsSection() {
   const timelineEvents = [
@@ -199,11 +204,11 @@ export default function OriginsSection() {
           <div className="space-y-6">
             {pioneers.map((pioneer, index) => {
               const images = [
-                '/attached_assets/stock_images/professional_portrai_fac45af9.jpg',
-                '/attached_assets/stock_images/professional_portrai_01f95629.jpg',
-                '/attached_assets/stock_images/professional_portrai_7ba6a37d.jpg',
-                '/attached_assets/stock_images/professional_portrai_07716728.jpg',
-                '/attached_assets/stock_images/professional_portrai_fce32b37.jpg'
+                VannevarBushImg,
+                DouglasEngelbartImg,
+                IvanSutherlandImg,
+                AlanKayImg,
+                LarryTeslerImg
               ];
               
               return (

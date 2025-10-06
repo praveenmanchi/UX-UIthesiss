@@ -31,7 +31,7 @@ export default function HeroSection() {
                 <rect x="10" y="26" width="60" height="8" fill="currentColor" />
                 <rect x="10" y="42" width="60" height="8" fill="currentColor" />
               </svg>
-              UX & UI
+              Defense
             </span>
             <span className="block">Reformation</span>
           </h1>
@@ -88,8 +88,8 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
           <div>
             <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Written By</p>
-            <p className="font-semibold">Praveen Manchi</p>
-            <p className="text-muted-foreground">Product Designer</p>
+            <p className="font-semibold">UX/UI Research Team</p>
+            <p className="text-muted-foreground">Historical Analysis</p>
           </div>
           <div>
             <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Published</p>

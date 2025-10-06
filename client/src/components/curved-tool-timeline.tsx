@@ -304,7 +304,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
             {/* Curved path */}
             <motion.path
               d={generateCurvePath()}
-              stroke="hsl(var(--timeline-sage))"
+              stroke="var(--timeline-sage)"
               strokeWidth="0.3"
               fill="none"
               strokeDasharray="1 1"
@@ -370,7 +370,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
                     y1={tool.position.y}
                     x2={tool.position.x}
                     y2={tool.position.y - 5}
-                    stroke="hsl(var(--timeline-sage))"
+                    stroke="var(--timeline-sage)"
                     strokeWidth="0.1"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: isVisible ? 0.3 : 0.1 }}
@@ -383,8 +383,8 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
                     cy={tool.position.y}
                     r={hoveredTool === tool.id || selectedTool === tool.id ? 1.2 : 0.8}
                     fill={hoveredTool === tool.id || selectedTool === tool.id 
-                      ? "hsl(var(--timeline-terracotta))" 
-                      : "hsl(var(--timeline-sage))"}
+                      ? "var(--timeline-terracotta)" 
+                      : "var(--timeline-sage)"}
                     className={isVisible ? "cursor-pointer" : "cursor-not-allowed"}
                     initial={{ scale: 0, opacity: 0 }}
                     animate={{ 
@@ -400,7 +400,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
                     onClick={() => isVisible && setSelectedTool(selectedTool === tool.id ? null : tool.id)}
                     style={{
                       filter: hoveredTool === tool.id || selectedTool === tool.id 
-                        ? "drop-shadow(0 0 8px hsl(var(--timeline-terracotta)))" 
+                        ? "drop-shadow(0 0 8px var(--timeline-terracotta))" 
                         : "none"
                     }}
                     data-testid={`tool-dot-${tool.id}`}
@@ -412,7 +412,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
                     y={tool.position.y - 6}
                     textAnchor="middle"
                     className="font-mono text-[2.5px] sm:text-[3px] pointer-events-none"
-                    fill="hsl(var(--timeline-cream))"
+                    fill="var(--timeline-cream)"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: isVisible ? 1 : 0.2 }}
                     transition={{ duration: 0.3 }}
@@ -427,7 +427,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
                     y={tool.position.y + 3}
                     textAnchor="middle"
                     className="font-mono text-[2px] pointer-events-none"
-                    fill="hsl(var(--timeline-sage))"
+                    fill="var(--timeline-sage)"
                     fillOpacity="0.6"
                     initial={{ opacity: 0 }}
                     animate={{ opacity: isVisible ? 0.6 : 0.15 }}
@@ -492,7 +492,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
           <span>Selected/Hover</span>
         </div>
         <div className="flex items-center gap-2" data-testid="legend-path">
-          <div className="h-0.5 w-8 bg-timeline-sage opacity-30" style={{ backgroundImage: 'repeating-linear-gradient(90deg, hsl(var(--timeline-sage)), hsl(var(--timeline-sage)) 4px, transparent 4px, transparent 8px)' }} />
+          <div className="h-0.5 w-8 bg-timeline-sage opacity-30" style={{ backgroundImage: 'repeating-linear-gradient(90deg, var(--timeline-sage), var(--timeline-sage) 4px, transparent 4px, transparent 8px)' }} />
           <span>Timeline Path</span>
         </div>
       </div>
