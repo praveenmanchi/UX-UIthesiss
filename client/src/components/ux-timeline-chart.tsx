@@ -66,18 +66,18 @@ export default function UXTimelineChart() {
       <section id="formalization" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-6">
-            <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-6 transition-all duration-300 hover:border-[#8AA97A]/20">
+            <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-[#8AA97A]/20">
               <div className="mb-4">
                 <span className="text-[#f4f4e4]/50 uppercase tracking-wider text-xs font-mono">Fig 03</span>
-                <h3 className="text-2xl font-semibold font-display text-[#f4f4e4] mt-1">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-[#f4f4e4] mt-1">
                   UX/UI Professional Roles Evolution Timeline
                 </h3>
-                <p className="text-sm text-[#f4f4e4]/70 mt-2">
+                <p className="text-xs sm:text-sm md:text-base text-[#f4f4e4]/70 mt-2">
                   Exponential growth of UX professionals from GUI inception to industry maturity
                 </p>
               </div>
               
-              <div className="w-full h-96">
+              <div className="w-full h-64 sm:h-80 md:h-96">
                 <ResponsiveContainer width="100%" height="100%">
                   <LineChart data={data} margin={{ top: 20, right: 30, left: 60, bottom: 60 }}>
                     <CartesianGrid 
@@ -89,27 +89,29 @@ export default function UXTimelineChart() {
                     <XAxis 
                       dataKey="year" 
                       stroke="transparent"
-                      tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                      tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                      className="text-xs sm:text-sm"
                       axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                       tickLine={false}
                       label={{ 
                         value: 'Year', 
                         position: 'insideBottom', 
                         offset: -10,
-                        style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 12 }
+                        style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
                       }}
                       domain={[1970, 2025]}
                     />
                     <YAxis 
                       stroke="transparent"
-                      tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                      tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                      className="text-xs sm:text-sm"
                       axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                       tickLine={false}
                       label={{ 
                         value: 'Professional Roles (log scale)', 
                         angle: -90, 
                         position: 'insideLeft',
-                        style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 12 }
+                        style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
                       }}
                       scale="log"
                       domain={[1, 1000000]}

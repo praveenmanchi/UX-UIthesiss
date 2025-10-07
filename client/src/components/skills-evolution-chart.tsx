@@ -119,7 +119,7 @@ const CustomTooltip = ({ active, payload }: any) => {
 // Custom legend component with interactivity
 const CustomLegend = ({ payload, onToggle, hiddenPeriods }: any) => {
   return (
-    <div className="flex flex-wrap justify-center gap-3 mt-6">
+    <div className="flex flex-wrap justify-center gap-2 sm:gap-3 md:gap-4 mt-6">
       {payload.map((entry: any) => {
         const isHidden = hiddenPeriods.includes(entry.value);
         return (
@@ -138,7 +138,7 @@ const CustomLegend = ({ payload, onToggle, hiddenPeriods }: any) => {
                 backgroundColor: isHidden ? '#666' : entry.color,
               }}
             />
-            <span className="text-xs text-[#f4f4e4]/90 font-medium">
+            <span className="text-xs sm:text-sm text-[#f4f4e4]/90 font-medium">
               {entry.value}
             </span>
           </button>
@@ -171,18 +171,18 @@ export default function SkillsEvolutionChart() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-6 transition-all duration-300 hover:border-[#8AA97A]/20">
+        <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-[#8AA97A]/20">
           <div className="mb-6">
             <span className="text-[#f4f4e4]/50 uppercase tracking-wider text-xs font-mono">Fig 03</span>
-            <h3 className="text-2xl font-semibold font-display text-[#f4f4e4] mt-1">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-[#f4f4e4] mt-1">
               Evolution of UX/UI Skill Requirements
             </h3>
-            <p className="text-sm text-[#f4f4e4]/70 mt-2">
+            <p className="text-xs sm:text-sm md:text-base text-[#f4f4e4]/70 mt-2">
               Relative importance of skills over time (0-100 scale)
             </p>
           </div>
           
-          <div className="h-[500px] w-full">
+          <div className="h-64 sm:h-80 md:h-96 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <RadarChart data={skillsData}>
                 <PolarGrid 
@@ -192,13 +192,14 @@ export default function SkillsEvolutionChart() {
                 />
                 <PolarAngleAxis 
                   dataKey="skill"
-                  tick={{ fill: '#f4f4e4', opacity: 0.8, fontSize: 11 }}
-                  className="text-xs"
+                  tick={{ fill: '#f4f4e4', opacity: 0.8, fontSize: 10 }}
+                  className="text-xs sm:text-sm"
                 />
                 <PolarRadiusAxis 
                   angle={90}
                   domain={[0, 100]}
-                  tick={{ fill: '#f4f4e4', opacity: 0.5, fontSize: 10 }}
+                  tick={{ fill: '#f4f4e4', opacity: 0.5, fontSize: 9 }}
+                  className="text-xs"
                   tickCount={6}
                 />
                 

@@ -109,14 +109,14 @@ export default function TimelineTrack({ events, title, description }: TimelineTr
           transition={{ duration: 0.6 }}
           className="mb-12"
         >
-          <h3 className="font-display text-3xl font-semibold mb-4">{title}</h3>
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-4">{title}</h3>
           {description && (
-            <p className="text-lg text-muted-foreground">{description}</p>
+            <p className="text-sm sm:text-base md:text-lg text-muted-foreground">{description}</p>
           )}
         </motion.div>
       )}
 
-      <div className="relative px-4 sm:px-8">
+      <div className="relative px-4 sm:px-6 md:px-8">
         {/* Era Background Shading */}
         {eraBackgrounds.map((era, index) => (
           <motion.div
@@ -136,8 +136,8 @@ export default function TimelineTrack({ events, title, description }: TimelineTr
           >
             {/* Era Label */}
             <div className="absolute -top-8 left-1/2 -translate-x-1/2">
-              <p className="text-xs font-mono text-muted-foreground/60 whitespace-nowrap" data-testid={`era-label-${era.name.toLowerCase().replace(/\s+/g, '-')}`}>
-                {era.name} <span className="text-[10px]">({era.yearRange})</span>
+              <p className="text-[10px] sm:text-xs font-mono text-muted-foreground/60 whitespace-nowrap" data-testid={`era-label-${era.name.toLowerCase().replace(/\s+/g, '-')}`}>
+                {era.name} <span className="text-[9px] sm:text-[10px]">({era.yearRange})</span>
               </p>
             </div>
           </motion.div>
@@ -189,10 +189,10 @@ export default function TimelineTrack({ events, title, description }: TimelineTr
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1 + 0.2 }}
               >
-                <p className="font-mono text-xl font-bold text-timeline-cream" data-testid={`timeline-year-${index}`}>
+                <p className="font-mono text-base sm:text-lg md:text-xl font-bold text-timeline-cream" data-testid={`timeline-year-${index}`}>
                   {event.year}
                 </p>
-                <p className="text-sm text-muted-foreground mt-1 line-clamp-2" data-testid={`timeline-title-${index}`}>
+                <p className="text-xs sm:text-sm text-muted-foreground mt-1 line-clamp-2" data-testid={`timeline-title-${index}`}>
                   {event.title}
                 </p>
               </motion.div>
@@ -215,24 +215,24 @@ export default function TimelineTrack({ events, title, description }: TimelineTr
               }}
               className="mt-8"
             >
-              <Card className="p-6 sm:p-8 chart-dark-container border-timeline-sage/30" data-testid={`timeline-detail-${activeIndex}`}>
+              <Card className="p-4 sm:p-6 md:p-8 chart-dark-container border-timeline-sage/30" data-testid={`timeline-detail-${activeIndex}`}>
                 <div className="space-y-4">
                   <div className="flex flex-col sm:flex-row sm:items-baseline gap-2 sm:gap-4">
-                    <h4 className="font-display text-2xl sm:text-3xl font-bold text-timeline-cream" data-testid={`timeline-detail-year-${activeIndex}`}>
+                    <h4 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-timeline-cream" data-testid={`timeline-detail-year-${activeIndex}`}>
                       {events[activeIndex].year}
                     </h4>
-                    <span className="text-lg text-timeline-sage" data-testid={`timeline-detail-title-${activeIndex}`}>
+                    <span className="text-base sm:text-lg md:text-xl text-timeline-sage" data-testid={`timeline-detail-title-${activeIndex}`}>
                       {events[activeIndex].title}
                     </span>
                   </div>
 
-                  <p className="text-base sm:text-lg text-foreground/90 leading-relaxed" data-testid={`timeline-detail-description-${activeIndex}`}>
+                  <p className="text-sm sm:text-base md:text-lg text-foreground/90 leading-relaxed" data-testid={`timeline-detail-description-${activeIndex}`}>
                     {events[activeIndex].description}
                   </p>
 
                   {events[activeIndex].details && (
                     <div className="pt-4 border-t border-timeline-sage/20">
-                      <p className="text-sm text-muted-foreground" data-testid={`timeline-detail-details-${activeIndex}`}>
+                      <p className="text-xs sm:text-sm text-muted-foreground" data-testid={`timeline-detail-details-${activeIndex}`}>
                         {events[activeIndex].details}
                       </p>
                     </div>
@@ -240,10 +240,10 @@ export default function TimelineTrack({ events, title, description }: TimelineTr
 
                   {events[activeIndex].impact && (
                     <div className="mt-4 p-4 bg-timeline-sage/10 rounded-lg border border-timeline-sage/20">
-                      <p className="text-xs uppercase tracking-wider text-timeline-sage font-semibold mb-2">
+                      <p className="text-xs sm:text-sm uppercase tracking-wider text-timeline-sage font-semibold mb-2">
                         Impact
                       </p>
-                      <p className="text-sm text-foreground/80" data-testid={`timeline-detail-impact-${activeIndex}`}>
+                      <p className="text-xs sm:text-sm text-foreground/80" data-testid={`timeline-detail-impact-${activeIndex}`}>
                         {events[activeIndex].impact}
                       </p>
                     </div>

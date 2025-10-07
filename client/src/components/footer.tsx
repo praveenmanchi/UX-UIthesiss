@@ -100,20 +100,20 @@ export default function Footer() {
   return (
     <footer className="bg-background border-t border-accent mt-32">
       {/* Email Capture Section */}
-      <section className="bg-secondary/20 py-16 px-4 sm:px-6 lg:px-8">
+      <section className="bg-secondary/20 py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="max-w-2xl mx-auto text-center">
             {!isSubscribed ? (
               <>
-                <h3 className="font-display text-3xl font-semibold mb-3">Stay Updated on UX/UI Research</h3>
-                <p className="text-muted-foreground mb-8">Get insights on design evolution and industry analysis</p>
+                <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-3">Stay Updated on UX/UI Research</h3>
+                <p className="text-sm sm:text-base text-muted-foreground mb-8">Get insights on design evolution and industry analysis</p>
                 
                 <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
                   <Input
                     type="email"
                     placeholder="Enter your email"
                     value={email}
-                    onChange={(e) => setEmail(e.target.value)}
+                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
                     className="flex-1 bg-background border-accent/30 focus:border-accent"
                     required
                     data-testid="input-email-subscribe"
@@ -135,15 +135,15 @@ export default function Footer() {
                   </Button>
                 </form>
                 
-                <p className="text-xs text-muted-foreground mt-4">
+                <p className="text-xs sm:text-sm text-muted-foreground mt-4">
                   We respect your privacy. Unsubscribe at any time.
                 </p>
               </>
             ) : (
               <div className="flex flex-col items-center justify-center space-y-3">
                 <CheckCircle className="w-12 h-12 text-accent" />
-                <h3 className="font-display text-2xl font-semibold">Thank You for Subscribing!</h3>
-                <p className="text-muted-foreground">You'll receive our latest research insights soon.</p>
+                <h3 className="font-display text-xl sm:text-2xl font-semibold">Thank You for Subscribing!</h3>
+                <p className="text-sm sm:text-base text-muted-foreground">You'll receive our latest research insights soon.</p>
               </div>
             )}
           </div>
@@ -151,14 +151,14 @@ export default function Footer() {
       </section>
 
       {/* Resources Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-display text-2xl font-semibold mb-12 text-center">Research Resources</h3>
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-12 text-center">Research Resources</h3>
           
           <div className="grid grid-cols-1 md:grid-cols-3 gap-12">
             {/* Key References */}
             <div>
-              <h4 className="font-semibold text-lg mb-6 text-accent">Key References</h4>
+              <h4 className="font-semibold text-base sm:text-lg mb-6 text-accent">Key References</h4>
               <ul className="space-y-4">
                 {resources.keyReferences.map((ref, index) => (
                   <li key={index}>
@@ -167,11 +167,11 @@ export default function Footer() {
                       className="group flex flex-col space-y-1"
                       data-testid={`link-reference-${index}`}
                     >
-                      <span className="text-foreground group-hover:text-accent transition-colors flex items-center">
+                      <span className="text-sm sm:text-base text-foreground group-hover:text-accent transition-colors flex items-center">
                         {ref.name}
                         <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </span>
-                      <span className="text-sm text-muted-foreground">{ref.description}</span>
+                      <span className="text-xs sm:text-sm text-muted-foreground">{ref.description}</span>
                     </a>
                   </li>
                 ))}
@@ -180,7 +180,7 @@ export default function Footer() {
 
             {/* Data Sources */}
             <div>
-              <h4 className="font-semibold text-lg mb-6 text-accent">Data Sources</h4>
+              <h4 className="font-semibold text-base sm:text-lg mb-6 text-accent">Data Sources</h4>
               <ul className="space-y-4">
                 {resources.dataSources.map((source, index) => (
                   <li key={index}>
@@ -189,11 +189,11 @@ export default function Footer() {
                       className="group flex flex-col space-y-1"
                       data-testid={`link-datasource-${index}`}
                     >
-                      <span className="text-foreground group-hover:text-accent transition-colors flex items-center">
+                      <span className="text-sm sm:text-base text-foreground group-hover:text-accent transition-colors flex items-center">
                         {source.name}
                         <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </span>
-                      <span className="text-sm text-muted-foreground">{source.description}</span>
+                      <span className="text-xs sm:text-sm text-muted-foreground">{source.description}</span>
                     </a>
                   </li>
                 ))}
@@ -202,7 +202,7 @@ export default function Footer() {
 
             {/* Further Reading */}
             <div>
-              <h4 className="font-semibold text-lg mb-6 text-accent">Further Reading</h4>
+              <h4 className="font-semibold text-base sm:text-lg mb-6 text-accent">Further Reading</h4>
               <ul className="space-y-4">
                 {resources.furtherReading.map((article, index) => (
                   <li key={index}>
@@ -211,11 +211,11 @@ export default function Footer() {
                       className="group flex flex-col space-y-1"
                       data-testid={`link-reading-${index}`}
                     >
-                      <span className="text-foreground group-hover:text-accent transition-colors flex items-center">
+                      <span className="text-sm sm:text-base text-foreground group-hover:text-accent transition-colors flex items-center">
                         {article.name}
                         <ExternalLink className="w-3 h-3 ml-1 opacity-0 group-hover:opacity-100 transition-opacity" />
                       </span>
-                      <span className="text-sm text-muted-foreground">{article.description}</span>
+                      <span className="text-xs sm:text-sm text-muted-foreground">{article.description}</span>
                     </a>
                   </li>
                 ))}
@@ -225,8 +225,8 @@ export default function Footer() {
 
           {/* Research Methodology */}
           <div className="mt-12 p-6 bg-secondary/10 rounded-lg border border-accent/20">
-            <h4 className="font-semibold text-lg mb-3 text-accent">Research Methodology</h4>
-            <p className="text-sm text-muted-foreground leading-relaxed">
+            <h4 className="font-semibold text-base sm:text-lg mb-3 text-accent">Research Methodology</h4>
+            <p className="text-xs sm:text-sm text-muted-foreground leading-relaxed">
               This research synthesizes data from multiple sources including academic papers, industry reports, 
               employment statistics, and historical documentation. We employed quantitative analysis of salary 
               trends, job market data, and tool adoption rates, combined with qualitative analysis of design 
@@ -240,14 +240,14 @@ export default function Footer() {
       <Separator className="bg-accent/20" />
 
       {/* Citations Section */}
-      <section className="py-16 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
         <div className="max-w-7xl mx-auto">
-          <h3 className="font-display text-2xl font-semibold mb-8 text-center">Citations</h3>
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-8 text-center">Citations</h3>
           
           <div className="max-w-4xl mx-auto">
             <ol className="space-y-3">
               {citations.map((citation) => (
-                <li key={citation.id} className="flex text-sm">
+                <li key={citation.id} className="flex text-xs sm:text-sm">
                   <span className="text-accent font-semibold mr-3 min-w-[20px]">[{citation.id}]</span>
                   <span className="text-muted-foreground">
                     {citation.author}. ({citation.year}). <em>{citation.title}</em>. {citation.source}.
@@ -262,7 +262,7 @@ export default function Footer() {
       <Separator className="bg-accent/20" />
 
       {/* Bottom Footer */}
-      <section className="py-12 px-4 sm:px-6 lg:px-8">
+      <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
         <div className="max-w-7xl mx-auto">
           <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
             {/* Logo and Description */}
@@ -273,9 +273,9 @@ export default function Footer() {
                   <path d="M2 17L12 22L22 17" stroke="#8AA97A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                   <path d="M2 12L12 17L22 12" stroke="#8AA97A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
                 </svg>
-                <span className="font-display font-bold text-lg">UX/UI Timeline</span>
+                <span className="font-display font-bold text-base sm:text-lg">UX/UI Timeline</span>
               </div>
-              <p className="text-sm text-muted-foreground">
+              <p className="text-xs sm:text-sm text-muted-foreground">
                 Comprehensive research on the evolution of user experience design from 1980 to 2024.
               </p>
             </div>
@@ -284,20 +284,20 @@ export default function Footer() {
             <div className="md:col-span-2">
               <div className="grid grid-cols-2 gap-8">
                 <div>
-                  <h4 className="font-semibold mb-4 text-accent">Research</h4>
+                  <h4 className="font-semibold text-sm sm:text-base mb-4 text-accent">Research</h4>
                   <ul className="space-y-2">
                     <li>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-about">
+                      <a href="#" className="text-xs sm:text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-about">
                         About This Research
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-methodology">
+                      <a href="#" className="text-xs sm:text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-methodology">
                         Methodology
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-contact">
+                      <a href="#" className="text-xs sm:text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-contact">
                         Contact
                       </a>
                     </li>
@@ -305,20 +305,20 @@ export default function Footer() {
                 </div>
                 
                 <div>
-                  <h4 className="font-semibold mb-4 text-accent">Legal</h4>
+                  <h4 className="font-semibold text-sm sm:text-base mb-4 text-accent">Legal</h4>
                   <ul className="space-y-2">
                     <li>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-privacy">
+                      <a href="#" className="text-xs sm:text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-privacy">
                         Privacy Policy
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-terms">
+                      <a href="#" className="text-xs sm:text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-terms">
                         Terms of Use
                       </a>
                     </li>
                     <li>
-                      <a href="#" className="text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-license">
+                      <a href="#" className="text-xs sm:text-sm text-muted-foreground hover:text-accent transition-colors" data-testid="link-license">
                         License
                       </a>
                     </li>
@@ -329,7 +329,7 @@ export default function Footer() {
 
             {/* Social Links */}
             <div className="md:col-span-1">
-              <h4 className="font-semibold mb-4 text-accent">Connect</h4>
+              <h4 className="font-semibold text-sm sm:text-base mb-4 text-accent">Connect</h4>
               <div className="flex space-x-4">
                 <a 
                   href="#" 
@@ -371,7 +371,7 @@ export default function Footer() {
 
           {/* Copyright & Attribution */}
           <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-sm text-muted-foreground text-center md:text-left">
+            <div className="text-xs sm:text-sm text-muted-foreground text-center md:text-left">
               <p>© 2024 UX/UI Timeline Research. All rights reserved.</p>
               <p className="mt-1">
                 Licensed under{' '}
@@ -381,7 +381,7 @@ export default function Footer() {
               </p>
             </div>
             
-            <div className="text-sm text-muted-foreground text-center md:text-right">
+            <div className="text-xs sm:text-sm text-muted-foreground text-center md:text-right">
               <p>Data compiled from public sources.</p>
               <p className="mt-1">Last updated: January 2025</p>
             </div>

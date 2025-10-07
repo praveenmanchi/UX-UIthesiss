@@ -93,11 +93,11 @@ export default function IndustryTimelineScatter() {
   const getEraColor = (era: string) => {
     switch (era) {
       case "Foundation Era":
-        return "#9f7aea"; // Purple
+        return "#7A9A8A"; // Muted sage-teal
       case "Digital Era":
-        return "#4299e1"; // Blue
+        return "#C8956B"; // Terracotta
       case "Modern Era":
-        return "#48bb78"; // Green
+        return "#8AA97A"; // Sage
       default:
         return "#a0aec0";
     }
@@ -113,34 +113,34 @@ export default function IndustryTimelineScatter() {
   };
 
   return (
-    <div className="w-full bg-[#f5f2ed] py-12 px-6 rounded-lg">
+    <div className="w-full bg-[#f5f2ed] py-8 sm:py-10 md:py-12 px-4 sm:px-6 rounded-lg">
       <div className="max-w-6xl mx-auto">
-        <h3 className="text-2xl md:text-3xl font-display font-bold text-center mb-2 text-black">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-2 text-black">
           Industry Timeline: The Evolution of Design as a Business Function (1993-2025)
         </h3>
         
         {/* Legend */}
-        <div className="flex justify-center gap-6 mb-8 flex-wrap">
+        <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 mb-8 flex-wrap">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#9f7aea]" />
-            <span className="text-sm text-black">Foundation Era (1993-2004)</span>
+            <div className="w-3 h-3 rounded-full bg-[#7A9A8A]" />
+            <span className="text-xs sm:text-sm font-sans text-black">Foundation Era (1993-2004)</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#4299e1]" />
-            <span className="text-sm text-black">Digital Era (2005-2014)</span>
+            <div className="w-3 h-3 rounded-full bg-[#C8956B]" />
+            <span className="text-xs sm:text-sm font-sans text-black">Digital Era (2005-2014)</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#48bb78]" />
-            <span className="text-sm text-black">Modern Era (2015-2025)</span>
+            <div className="w-3 h-3 rounded-full bg-[#8AA97A]" />
+            <span className="text-xs sm:text-sm font-sans text-black">Modern Era (2015-2025)</span>
           </div>
         </div>
 
         {/* Chart Container */}
-        <div className="relative bg-white/30 border border-black/10 rounded-lg p-8">
+        <div className="relative bg-white/30 border border-black/10 rounded-lg p-4 sm:p-6 md:p-8">
           {/* Y-axis labels */}
-          <div className="absolute left-0 top-8 bottom-8 w-32 flex flex-col justify-between text-right pr-4">
+          <div className="absolute left-0 top-4 sm:top-6 md:top-8 bottom-4 sm:bottom-6 md:bottom-8 w-24 sm:w-28 md:w-32 flex flex-col justify-between text-right pr-2 sm:pr-3 md:pr-4">
             {categories.map((cat, index) => (
-              <div key={cat} className="text-xs text-black/70 leading-tight" style={{ 
+              <div key={cat} className="text-[10px] sm:text-xs font-sans text-black/70 leading-tight" style={{ 
                 transform: 'translateY(-50%)',
                 position: 'absolute',
                 top: `${(index / (categories.length - 1)) * 100}%`,
@@ -152,7 +152,7 @@ export default function IndustryTimelineScatter() {
           </div>
 
           {/* Chart area */}
-          <div className="ml-32 relative" style={{ height: '400px' }}>
+          <div className="ml-24 sm:ml-28 md:ml-32 relative h-64 sm:h-80 md:h-96">
             {/* Grid lines - vertical */}
             {years.map((year) => (
               <div
@@ -187,7 +187,7 @@ export default function IndustryTimelineScatter() {
               >
                 {/* Icon container with colored background */}
                 <div 
-                  className="w-9 h-9 rounded-lg flex items-center justify-center p-2 shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg"
+                  className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 rounded-lg flex items-center justify-center p-1 sm:p-1.5 md:p-2 shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg"
                   style={{
                     backgroundColor: getEraColor(milestone.era),
                     color: 'white'
@@ -211,7 +211,7 @@ export default function IndustryTimelineScatter() {
               {years.map((year) => (
                 <div
                   key={`x-label-${year}`}
-                  className="text-xs text-black/70 font-mono"
+                  className="text-[10px] sm:text-xs text-black/70 font-mono"
                   style={{ 
                     position: 'absolute',
                     left: `${getXPosition(year)}%`,

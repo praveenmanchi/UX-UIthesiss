@@ -211,20 +211,20 @@ export default function GuiRevolutionSection() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8" data-testid="section-gui-revolution">
+    <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12" data-testid="section-gui-revolution">
       <div className="max-w-6xl mx-auto">
         {/* Opening Narrative */}
         <div className="max-w-4xl mx-auto mb-20">
-          <h2 className="font-display text-5xl sm:text-6xl font-bold mb-8 leading-tight" data-testid="text-revolution-heading">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 leading-tight" data-testid="text-revolution-heading">
             The GUI Wars: When Computing Became Personal
           </h2>
           
           <div className="prose prose-lg space-y-6 text-foreground/90 leading-relaxed">
-            <p className="text-xl">
+            <p className="text-base sm:text-lg lg:text-xl">
               In 1979, a young Steve Jobs walked into Xerox PARC and witnessed the future. What he saw — a computer controlled by pointing and clicking rather than typing commands — would spark a revolution that transformed computers from corporate tools into personal creative instruments. This is the story of how two companies, Apple and Microsoft, took an academic research project and turned it into the foundation of modern computing.
             </p>
             
-            <p>
+            <p className="text-sm sm:text-base">
               The commercialization of the graphical user interface wasn't just a business competition; it was a battle for the soul of computing. Would computers be beautiful, intuitive tools for creative expression, as Apple envisioned? Or practical, affordable utilities for every desk, as Microsoft pursued? The answer, ultimately, was both — but the journey there reshaped entire industries and established design principles we still follow today.
             </p>
           </div>
@@ -254,18 +254,18 @@ export default function GuiRevolutionSection() {
           <div className="flex items-start gap-4">
             <Briefcase className="w-6 h-6 text-red-400 mt-1" />
             <div>
-              <h4 className="text-xl font-semibold mb-3 text-red-400">The Look and Feel Lawsuits</h4>
+              <h4 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3 text-red-400">The Look and Feel Lawsuits</h4>
               <div className="space-y-3 text-foreground/80">
-                <p>
+                <p className="text-sm sm:text-base">
                   <span className="font-semibold">1988:</span> Apple sues Microsoft for copyright infringement over Windows 2.0, claiming it copies the "look and feel" of Macintosh.
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   <span className="font-semibold">1989:</span> Apple extends lawsuit to HP's NewWave, seeking to establish GUI elements as copyrightable expression.
                 </p>
-                <p>
+                <p className="text-sm sm:text-base">
                   <span className="font-semibold">1994:</span> Courts rule that GUI elements are functional, not artistic expression. Microsoft wins, establishing that interface concepts cannot be monopolized.
                 </p>
-                <p className="font-medium text-accent">
+                <p className="font-medium text-accent text-sm sm:text-base">
                   Impact: This ruling allowed GUI innovation to flourish across the industry, preventing any single company from owning fundamental interface concepts.
                 </p>
               </div>
@@ -275,30 +275,30 @@ export default function GuiRevolutionSection() {
 
         {/* Company Profiles */}
         <div className="mb-24">
-          <h3 className="font-display text-3xl font-semibold mb-12">Two Visions, One Revolution</h3>
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-12">Two Visions, One Revolution</h3>
           
           <div className="grid lg:grid-cols-2 gap-8">
             {companyProfiles.map((profile) => (
               <Card key={profile.company} className="p-8 bg-card/50 backdrop-blur border-accent/30" data-testid={`profile-${profile.company.toLowerCase()}`}>
                 <div className="mb-6">
-                  <h4 className="text-3xl font-bold mb-2">{profile.company}</h4>
-                  <p className="text-lg text-accent">{profile.philosophy}</p>
-                  <p className="text-sm text-muted-foreground mt-1">Led by {profile.leader}</p>
+                  <h4 className="text-2xl sm:text-3xl font-bold mb-2">{profile.company}</h4>
+                  <p className="text-base sm:text-lg text-accent">{profile.philosophy}</p>
+                  <p className="text-xs sm:text-sm text-muted-foreground mt-1">Led by {profile.leader}</p>
                 </div>
                 
-                <blockquote className="border-l-4 border-accent/50 pl-4 mb-6 italic text-foreground/70">
+                <blockquote className="border-l-4 border-accent/50 pl-4 mb-6 italic text-sm sm:text-base text-foreground/70">
                   "{profile.quote}"
-                  <footer className="text-sm mt-2 not-italic">— {profile.leader}</footer>
+                  <footer className="text-xs sm:text-sm mt-2 not-italic">— {profile.leader}</footer>
                 </blockquote>
                 
                 <div className="space-y-4 mb-6">
-                  <p className="text-sm font-medium text-accent">Strategy:</p>
-                  <p className="text-sm text-foreground/80">{profile.marketStrategy}</p>
+                  <p className="text-xs sm:text-sm font-medium text-accent">Strategy:</p>
+                  <p className="text-xs sm:text-sm text-foreground/80">{profile.marketStrategy}</p>
                   
                   <div className="space-y-2">
-                    <p className="text-sm font-medium text-accent">Key Moments:</p>
+                    <p className="text-xs sm:text-sm font-medium text-accent">Key Moments:</p>
                     {profile.keyMoments.map((moment) => (
-                      <div key={moment.year} className="flex gap-3 text-sm">
+                      <div key={moment.year} className="flex gap-3 text-xs sm:text-sm">
                         <span className="font-mono text-accent/70">{moment.year}</span>
                         <div className="flex-1">
                           <p className="font-medium">{moment.event}</p>
@@ -311,12 +311,12 @@ export default function GuiRevolutionSection() {
                 
                 <div className="grid grid-cols-2 gap-4 pt-4 border-t border-accent/20">
                   <div>
-                    <p className="text-2xl font-bold text-accent">{profile.revenue1990}</p>
-                    <p className="text-xs text-muted-foreground">1990 Revenue</p>
+                    <p className="text-xl sm:text-2xl font-bold text-accent">{profile.revenue1990}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">1990 Revenue</p>
                   </div>
                   <div>
-                    <p className="text-2xl font-bold text-accent">{profile.marketShare1990}</p>
-                    <p className="text-xs text-muted-foreground">1990 Market Share</p>
+                    <p className="text-xl sm:text-2xl font-bold text-accent">{profile.marketShare1990}</p>
+                    <p className="text-xs sm:text-sm text-muted-foreground">1990 Market Share</p>
                   </div>
                 </div>
               </Card>
@@ -345,7 +345,7 @@ export default function GuiRevolutionSection() {
 
         {/* Core Design Principles */}
         <div className="mb-24">
-          <h3 className="font-display text-3xl font-semibold mb-12">Design Principles That Shaped Computing</h3>
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-12">Design Principles That Shaped Computing</h3>
           
           <div className="grid gap-6">
             {designPrinciples.map((principle) => (
@@ -357,20 +357,20 @@ export default function GuiRevolutionSection() {
                   
                   <div className="flex-1">
                     <div className="flex flex-wrap items-baseline gap-3 mb-3">
-                      <h4 className="text-2xl font-bold">{principle.name}</h4>
-                      <span className="text-sm text-muted-foreground">({principle.fullName})</span>
+                      <h4 className="text-xl sm:text-2xl font-bold">{principle.name}</h4>
+                      <span className="text-xs sm:text-sm text-muted-foreground">({principle.fullName})</span>
                     </div>
                     
-                    <p className="text-foreground/80 mb-4">{principle.description}</p>
+                    <p className="text-sm sm:text-base text-foreground/80 mb-4">{principle.description}</p>
                     
                     <div className="grid sm:grid-cols-2 gap-4 pt-4 border-t border-accent/20">
                       <div>
-                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Historical Example</p>
-                        <p className="text-sm text-foreground/70">{principle.example}</p>
+                        <p className="text-xs sm:text-sm text-accent font-semibold uppercase tracking-wider mb-1">Historical Example</p>
+                        <p className="text-xs sm:text-sm text-foreground/70">{principle.example}</p>
                       </div>
                       <div>
-                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-1">Modern Legacy</p>
-                        <p className="text-sm text-foreground/70">{principle.modernUsage}</p>
+                        <p className="text-xs sm:text-sm text-accent font-semibold uppercase tracking-wider mb-1">Modern Legacy</p>
+                        <p className="text-xs sm:text-sm text-foreground/70">{principle.modernUsage}</p>
                       </div>
                     </div>
                   </div>
@@ -391,18 +391,18 @@ export default function GuiRevolutionSection() {
         <div className="max-w-4xl mx-auto">
           <Separator className="mb-12 bg-accent/20" />
           
-          <h3 className="font-display text-3xl font-semibold mb-8">From Revolution to Foundation</h3>
+          <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-8">From Revolution to Foundation</h3>
           
           <div className="prose prose-lg space-y-6 text-foreground/90">
-            <p>
+            <p className="text-sm sm:text-base">
               The GUI revolution of the 1980s and 1990s wasn't just about making computers easier to use — it was about reimagining the relationship between humans and machines. Apple's vision of computers as "bicycles for the mind" and Microsoft's dream of "a computer on every desk" both came true, creating an industry worth trillions and transforming how humanity creates, communicates, and thinks.
             </p>
             
-            <p>
+            <p className="text-sm sm:text-base">
               The principles established during these GUI wars — direct manipulation, visual consistency, WYSIWYG editing — became so fundamental that we now take them for granted. Every smartphone swipe, every drag-and-drop action, every menu you navigate traces its lineage back to these pioneering days when two companies fought to define the future of human-computer interaction.
             </p>
             
-            <p className="text-xl font-medium text-accent">
+            <p className="text-base sm:text-lg lg:text-xl font-medium text-accent">
               What started as a $32,000 research computer at Xerox became a $3 trillion industry. The GUI didn't just change how we use computers — it changed what computers could be: not just tools for calculation, but extensions of human creativity and thought.
             </p>
           </div>

@@ -400,17 +400,17 @@ export default function ThesesSection() {
 
   return (
     <TooltipProvider delayDuration={300}>
-      <section className="py-20 px-4 bg-[#f5f2ed]" data-testid="section-theses">
+      <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-[#f5f2ed]" data-testid="section-theses">
         <div className="max-w-4xl mx-auto space-y-12">
           {/* Section Label */}
           <div className="text-center mb-16">
             <h2 
-              className="text-xs uppercase tracking-[0.2em] text-[#6b6b6b] mb-4"
+              className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#6b6b6b] mb-4"
               data-testid="label-professional-claims"
             >
               Professional Claims
             </h2>
-            <h3 className="text-4xl md:text-5xl font-display font-light leading-tight text-black">
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-display font-light leading-tight text-black">
               Mathematical Proofs of Timeline Impossibilities
             </h3>
           </div>
@@ -428,7 +428,7 @@ export default function ThesesSection() {
                     className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-black flex items-center justify-center"
                     data-testid={`number-thesis-${thesis.number}`}
                   >
-                    <span className="text-black font-mono text-sm font-bold">
+                    <span className="text-black font-mono text-xs sm:text-sm font-bold">
                       {String(thesis.number).padStart(2, '0')}
                     </span>
                   </div>
@@ -436,13 +436,13 @@ export default function ThesesSection() {
                   {/* Content */}
                   <div className="flex-1 space-y-4">
                     <h4 
-                      className="text-xl md:text-2xl font-display font-bold leading-tight text-black"
+                      className="text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight text-black"
                       data-testid={`title-thesis-${thesis.number}`}
                     >
                       {thesis.title}
                     </h4>
                     <div 
-                      className="text-[15px] leading-[1.8] text-justify text-black/90"
+                      className="text-sm sm:text-base leading-[1.8] text-justify text-black/90"
                       data-testid={`description-thesis-${thesis.number}`}
                     >
                       {thesis.content}

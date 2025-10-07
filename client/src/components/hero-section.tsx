@@ -15,11 +15,10 @@ export default function HeroSection() {
         {/* Left Column - Content */}
         <div className="space-y-8">
           <h1 
-            className={`font-display font-bold leading-[0.9] tracking-tighter transition-all duration-700 ${
+            className={`font-display font-bold text-4xl sm:text-5xl lg:text-6xl leading-[0.9] tracking-tighter transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
             style={{ 
-              fontSize: 'clamp(3rem, 8vw, 7rem)',
               transitionDelay: '100ms'
             }}
           >
@@ -31,21 +30,22 @@ export default function HeroSection() {
                 <rect x="10" y="26" width="60" height="8" fill="currentColor" />
                 <rect x="10" y="42" width="60" height="8" fill="currentColor" />
               </svg>
-              UX & UI
+              Defense
             </span>
             <span className="block">Reformation</span>
           </h1>
           
           <h2 
-            className={`font-display text-muted-foreground leading-tight transition-all duration-700 ${
+            className={`font-display text-xl sm:text-2xl lg:text-3xl text-muted-foreground leading-tight transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
             style={{ 
-              fontSize: 'clamp(1.25rem, 3vw, 2rem)',
               transitionDelay: '300ms'
             }}
           >
-            How User Experience and Interface Design Evolved from Academic Research to Global Industry
+            How User Experience and Interface Design
+            <br />
+            Evolved from Academic Research to Global Industry
           </h2>
         </div>
 
@@ -83,24 +83,24 @@ export default function HeroSection() {
         }`}
         style={{ transitionDelay: '700ms' }}
       >
-        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm">
+        <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm sm:text-base">
           <div>
-            <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Written By</p>
-            <p className="font-semibold">Praveen Manchi</p>
-            <p className="text-muted-foreground">UX/UI designer</p>
+            <p className="text-muted-foreground uppercase tracking-wider text-xs sm:text-sm mb-1">Written By</p>
+            <p className="font-semibold text-sm sm:text-base">UX/UI Research Team</p>
+            <p className="text-muted-foreground text-xs sm:text-sm">Historical Analysis</p>
           </div>
           <div>
-            <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Published</p>
-            <p className="font-semibold">January 2025</p>
+            <p className="text-muted-foreground uppercase tracking-wider text-xs sm:text-sm mb-1">Published</p>
+            <p className="font-semibold text-sm sm:text-base">January 2025</p>
           </div>
           <div>
-            <p className="text-muted-foreground uppercase tracking-wider text-xs mb-1">Length</p>
-            <p className="font-semibold">30 Min</p>
-            <p className="text-muted-foreground">~7,500 Words</p>
+            <p className="text-muted-foreground uppercase tracking-wider text-xs sm:text-sm mb-1">Length</p>
+            <p className="font-semibold text-sm sm:text-base">30 Min</p>
+            <p className="text-muted-foreground text-xs sm:text-sm">~7,500 Words</p>
           </div>
           <div className="flex items-end">
             <div className="flex flex-col items-start gap-2">
-              <span className="text-xs font-mono text-muted uppercase tracking-wider flex items-center gap-2">
+              <span className="text-xs sm:text-sm font-mono text-muted uppercase tracking-wider flex items-center gap-2">
                 <ArrowDown className="w-3 h-3" />
                 Scroll to read
               </span>

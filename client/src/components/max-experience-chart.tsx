@@ -36,16 +36,16 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 export default function MaxExperienceChart() {
   return (
     <div className="w-full">
-      <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-6 transition-all duration-300 hover:border-[#8AA97A]/20">
+      <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-[#8AA97A]/20">
         <div className="mb-4">
           <span className="text-[#f4f4e4]/50 uppercase tracking-wider text-xs font-mono">Fig 02</span>
-          <h3 className="text-2xl font-semibold font-display text-[#f4f4e4] mt-1">Maximum UX/UI Experience by Professional Category</h3>
-          <p className="text-sm text-[#f4f4e4]/70 mt-2">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-[#f4f4e4] mt-1">Maximum UX/UI Experience by Professional Category</h3>
+          <p className="text-xs sm:text-sm md:text-base text-[#f4f4e4]/70 mt-2">
             Years of potential experience across different generations of UX professionals in 2025
           </p>
         </div>
         
-        <div className="h-96 w-full">
+        <div className="h-64 sm:h-80 md:h-96 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <BarChart data={data} margin={{ top: 30, right: 30, left: 80, bottom: 80 }}>
               <CartesianGrid 
@@ -57,7 +57,8 @@ export default function MaxExperienceChart() {
               <XAxis 
                 dataKey="role" 
                 stroke="transparent"
-                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                className="text-xs sm:text-sm"
                 angle={-45}
                 textAnchor="end"
                 height={100}
@@ -66,14 +67,15 @@ export default function MaxExperienceChart() {
               />
               <YAxis 
                 stroke="transparent"
-                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                className="text-xs sm:text-sm"
                 axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                 tickLine={false}
                 label={{ 
                   value: 'Maximum Years of Experience', 
                   angle: -90, 
                   position: 'insideLeft',
-                  style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 12 }
+                  style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
                 }}
                 domain={[0, 35]}
               />

@@ -35,13 +35,13 @@ export default function ProportionalBarGroup({
       }}
       data-testid="proportional-bar-group"
     >
-      <Card className="p-6 sm:p-8 chart-dark-container">
+      <Card className="p-4 sm:p-6 md:p-8 chart-dark-container">
         <div className="mb-8">
-          <h4 className="font-display text-2xl sm:text-3xl font-bold text-timeline-cream mb-2">
+          <h4 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-timeline-cream mb-2">
             {title}
           </h4>
           {description && (
-            <p className="text-sm sm:text-base text-muted-foreground">
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
               {description}
             </p>
           )}
@@ -64,14 +64,14 @@ export default function ProportionalBarGroup({
               {/* Year and Label */}
               <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-2 mb-2">
                 <div className="flex items-baseline gap-3">
-                  <span className="font-mono text-lg font-bold text-timeline-cream" data-testid={`bar-year-${index}`}>
+                  <span className="font-mono text-base sm:text-lg md:text-xl font-bold text-timeline-cream" data-testid={`bar-year-${index}`}>
                     {item.year}
                   </span>
-                  <span className="text-sm text-muted-foreground" data-testid={`bar-label-${index}`}>
+                  <span className="text-xs sm:text-sm text-muted-foreground" data-testid={`bar-label-${index}`}>
                     {item.label}
                   </span>
                 </div>
-                <span className="text-xs text-timeline-sage font-semibold" data-testid={`bar-total-${index}`}>
+                <span className="text-xs sm:text-sm text-timeline-sage font-semibold" data-testid={`bar-total-${index}`}>
                   Total: {item.total}M users
                 </span>
               </div>
@@ -120,14 +120,14 @@ export default function ProportionalBarGroup({
               </div>
 
               {/* Segment Labels */}
-              <div className="flex flex-wrap gap-4 mt-2">
+              <div className="flex flex-wrap gap-2 sm:gap-3 md:gap-4 mt-2">
                 {item.segments.map((segment, segmentIndex) => (
                   <div key={segmentIndex} className="flex items-center gap-2" data-testid={`segment-label-${index}-${segmentIndex}`}>
                     <div
                       className="w-3 h-3 rounded-full"
                       style={{ backgroundColor: segment.color }}
                     />
-                    <span className="text-xs text-foreground/70" data-testid={`segment-text-${index}-${segmentIndex}`}>
+                    <span className="text-xs sm:text-sm text-foreground/70" data-testid={`segment-text-${index}-${segmentIndex}`}>
                       {segment.label}: {segment.value}M
                     </span>
                   </div>

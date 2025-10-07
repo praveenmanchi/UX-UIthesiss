@@ -1,59 +1,97 @@
 import { Card } from "@/components/ui/card";
 import { Separator } from "@/components/ui/separator";
-import { Clock, Cpu, Monitor, Mouse, Users, Lightbulb } from "lucide-react";
+import { Clock, Cpu, Monitor, Mouse, Users, Lightbulb, Package } from "lucide-react";
 import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
 import ExpandablePioneerCard from "@/components/expandable-pioneer-card";
 import FadeInSection from "@/components/fade-in-section";
+import ComputingDemocratizationScatter from "@/components/computing-democratization-scatter";
+import { motion } from "framer-motion";
+import { ReactNode } from "react";
 import VannevarBushImg from "@assets/Visionaries/Vannevar-Bush-1500-800.jpg";
 import DouglasEngelbartImg from "@assets/Visionaries/Douglas_Engelbart.jpg";
 import IvanSutherlandImg from "@assets/Visionaries/300px-Ivan_Sutherland_1592.jpg";
 import AlanKayImg from "@assets/Visionaries/Kay.webp";
 import LarryTeslerImg from "@assets/Visionaries/Larry Tesler .jpg";
 
+interface CriticalMomentDataPoint {
+  name: string;
+  year: number;
+  category: string;
+  era: "Early Era" | "GUI Era";
+  icon: ReactNode;
+  person: string;
+  description: string;
+}
+
 export default function OriginsSection() {
-  const timelineEvents = [
+  const criticalMomentsData: CriticalMomentDataPoint[] = [
     {
-      year: "1945",
-      title: "The Memex Vision",
-      person: "Vannevar Bush",
-      description: "Conceived the Memex - a theoretical device that would store books, records, and communications, allowing users to follow associative trails through information.",
-      impact: "Precursor to hypertext and the World Wide Web",
-      icon: <Lightbulb className="w-5 h-5" />
-    },
-    {
-      year: "1963",
-      title: "Birth of Computer Graphics",
+      name: "Sketchpad",
+      year: 1963,
+      category: "Computer Graphics",
+      era: "Early Era",
+      icon: <Monitor className="w-full h-full" />,
       person: "Ivan Sutherland",
-      description: "Created Sketchpad at MIT - the first program to use a graphical user interface with a light pen for direct manipulation.",
-      impact: "First GUI program, foundation of CAD systems",
-      icon: <Monitor className="w-5 h-5" />
+      description: "First GUI program with light pen for direct manipulation"
     },
     {
-      year: "1968",
-      title: "The Mother of All Demos",
+      name: "Mother of All Demos",
+      year: 1968,
+      category: "Input Devices",
+      era: "Early Era",
+      icon: <Mouse className="w-full h-full" />,
       person: "Douglas Engelbart",
-      description: "Demonstrated the computer mouse, windows, hypertext, graphics, video conferencing, and collaborative real-time editing.",
-      impact: "90-minute demo that defined computing's future",
-      icon: <Mouse className="w-5 h-5" />
+      description: "Demonstrated mouse, windows, hypertext, and collaboration"
     },
     {
-      year: "1973",
-      title: "First GUI Computer",
+      name: "Xerox Alto",
+      year: 1973,
+      category: "GUI Systems",
+      era: "GUI Era",
+      icon: <Cpu className="w-full h-full" />,
       person: "Xerox PARC Team",
-      description: "The Xerox Alto became the first computer designed with a graphical user interface and mouse as primary interaction.",
-      impact: "Cost $32,000 ($220,000 in 2025 dollars)",
-      icon: <Cpu className="w-5 h-5" />
+      description: "First computer with GUI and mouse as primary interaction"
     },
     {
-      year: "1981",
-      title: "Commercial GUI Era",
+      name: "Xerox Star",
+      year: 1981,
+      category: "Commercial Products",
+      era: "GUI Era",
+      icon: <Package className="w-full h-full" />,
       person: "Xerox Corporation",
-      description: "The Xerox Star (8010) became the first commercially available computer with a GUI, icons, folders, and WYSIWYG editing.",
-      impact: "Inspired Apple Lisa and Macintosh",
-      icon: <Monitor className="w-5 h-5" />
+      description: "First commercial computer with GUI, icons, and WYSIWYG"
     }
   ];
+
+  const criticalMomentsCategories = [
+    "Computer Graphics",
+    "Input Devices",
+    "GUI Systems",
+    "Commercial Products"
+  ];
+
+  const criticalMomentsYears = [1963, 1968, 1973, 1978, 1981];
+  
+  const getCriticalMomentsEraColor = (era: string) => {
+    switch (era) {
+      case "Early Era":
+        return "#7A9A8A"; // Muted sage-teal
+      case "GUI Era":
+        return "#C8956B"; // Terracotta
+      default:
+        return "#a0aec0";
+    }
+  };
+
+  const getCriticalMomentsYPosition = (category: string) => {
+    const index = criticalMomentsCategories.indexOf(category);
+    return (index / (criticalMomentsCategories.length - 1)) * 100;
+  };
+
+  const getCriticalMomentsXPosition = (year: number) => {
+    return ((year - 1963) / (1981 - 1963)) * 100;
+  };
 
   const pioneers = [
     {
@@ -102,7 +140,7 @@ export default function OriginsSection() {
     <>
       {/* Opening Hero Section with Dark Sage Background */}
       <section 
-        className="py-20 px-6 sm:px-8 lg:px-12 bg-[#6b7a5d]" 
+        className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-[#6b7a5d]" 
         data-testid="section-origins-hero"
       >
         <div className="max-w-5xl mx-auto">
@@ -110,7 +148,7 @@ export default function OriginsSection() {
             {/* Section Label and Pagination Dots */}
             <div className="flex items-start justify-between">
               <span 
-                className="text-black/60 uppercase tracking-[0.2em] text-xs font-sans font-medium" 
+                className="text-black/60 uppercase tracking-[0.2em] text-xs sm:text-sm font-sans font-medium" 
                 data-testid="label-section-1"
               >
                 Section 1
@@ -127,7 +165,7 @@ export default function OriginsSection() {
             
             {/* Headline */}
             <h2 
-              className="font-display text-[2.75rem] sm:text-6xl lg:text-[4rem] font-normal leading-[1.1] text-black" 
+              className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.1] text-black" 
               data-testid="text-origins-heading"
             >
               Before the pixel, there was the vision
@@ -135,15 +173,15 @@ export default function OriginsSection() {
 
             {/* Body Text */}
             <div className="space-y-6 text-black/90">
-              <p className="text-[15px] leading-[1.8] text-justify">
+              <p className="text-sm sm:text-base leading-[1.8] text-justify">
                 Long before screens glowed with graphical interfaces, before mice clicked and fingers tapped, visionaries imagined a future where humans and computers would collaborate as partners. This is the untold prehistory of UX/UI design — a story that begins not with pixels, but with profound questions about human cognition and information architecture.
               </p>
 
-              <p className="text-[15px] leading-[1.8] text-justify">
+              <p className="text-sm sm:text-base leading-[1.8] text-justify">
                 In the aftermath of World War II, as early computers filled entire rooms and required specialized operators, a handful of pioneers dared to imagine something radical: machines that would augment human intelligence rather than merely calculate. They envisioned systems that would feel natural, interfaces that would disappear into intuition, and tools that would amplify human creativity.
               </p>
 
-              <p className="text-[15px] leading-[1.8] text-justify">
+              <p className="text-sm sm:text-base leading-[1.8] text-justify">
                 These weren't designers in the modern sense — they were mathematicians, engineers, and cognitive scientists. Yet their work laid the foundation for everything we now call user experience. They asked the questions that still drive our field: How should humans and computers communicate? What makes an interface intuitive? How can technology enhance rather than replace human capabilities?
               </p>
             </div>
@@ -152,55 +190,118 @@ export default function OriginsSection() {
       </section>
 
       {/* Main Content Section with Original Styling */}
-      <section className="py-24 px-4 sm:px-6 lg:px-8" data-testid="section-origins">
+      <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12" data-testid="section-origins">
         <div className="max-w-6xl mx-auto">
-          {/* Timeline Section */}
+          {/* Critical Moments Scatter Plot */}
           <div className="mb-24">
-            <div className="flex items-center gap-4 mb-12">
-              <Clock className="w-6 h-6 text-accent" />
-              <h3 className="font-display text-3xl font-semibold">Critical Moments in Pre-Digital Interface History</h3>
-            </div>
-            
-            <div className="relative">
-              {/* Timeline Line */}
-              <div className="absolute left-0 md:left-1/2 transform md:-translate-x-px h-full w-0.5 bg-accent/30" />
-              
-              {/* Timeline Events */}
-              <div className="space-y-12">
-                {timelineEvents.map((event, index) => (
-                  <div
-                    key={event.year}
-                    className={`relative flex items-center ${
-                      index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                    }`}
-                    data-testid={`timeline-event-${event.year}`}
-                  >
-                    <div className="flex-1" />
-                    
-                    {/* Center dot and year */}
-                    <div className="absolute left-0 md:left-1/2 transform md:-translate-x-1/2 flex items-center gap-4">
-                      <div className="w-12 h-12 rounded-full bg-accent/20 border-2 border-accent flex items-center justify-center">
-                        {event.icon}
+            <div className="w-full bg-[#f5f2ed] py-12 px-6 rounded-lg">
+              <div className="max-w-6xl mx-auto">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-2 text-black">
+                  Critical Moments in Pre-Digital Interface History
+                </h3>
+                
+                {/* Legend */}
+                <div className="flex justify-center gap-6 mb-8 flex-wrap">
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#7A9A8A]" />
+                    <span className="text-xs sm:text-sm font-sans text-black">Early Era (1963-1970)</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <div className="w-3 h-3 rounded-full bg-[#C8956B]" />
+                    <span className="text-xs sm:text-sm font-sans text-black">GUI Era (1971-1981)</span>
+                  </div>
+                </div>
+
+                {/* Chart Container */}
+                <div className="relative bg-white/30 border border-black/10 rounded-lg p-4 sm:p-6 md:p-8">
+                  {/* Y-axis labels */}
+                  <div className="absolute left-0 top-4 sm:top-6 md:top-8 bottom-4 sm:bottom-6 md:bottom-8 w-24 sm:w-32 md:w-40 flex flex-col justify-between text-right pr-2 sm:pr-3 md:pr-4">
+                    {criticalMomentsCategories.map((cat, index) => (
+                      <div key={cat} className="text-[10px] sm:text-xs font-sans text-black/70 leading-tight" style={{ 
+                        transform: 'translateY(-50%)',
+                        position: 'absolute',
+                        top: `${(index / (criticalMomentsCategories.length - 1)) * 100}%`,
+                        right: '1rem'
+                      }}>
+                        {cat}
                       </div>
-                    </div>
-                    
-                    {/* Content Card */}
-                    <div className={`flex-1 ${index % 2 === 0 ? 'md:pr-16' : 'md:pl-16'} pl-20 md:pl-0`}>
-                      <Card className="p-6 bg-card/50 backdrop-blur border-accent/30 hover:border-accent/50 transition-colors">
-                        <div className="flex items-baseline gap-3 mb-2">
-                          <span className="text-2xl font-bold text-accent">{event.year}</span>
-                          <h4 className="text-xl font-semibold">{event.title}</h4>
+                    ))}
+                  </div>
+
+                  {/* Chart area */}
+                  <div className="ml-24 sm:ml-32 md:ml-40 relative h-64 sm:h-72 md:h-[350px]">
+                    {/* Grid lines - vertical */}
+                    {criticalMomentsYears.map((year) => (
+                      <div
+                        key={`grid-v-${year}`}
+                        className="absolute top-0 bottom-0 border-l border-black/5"
+                        style={{ left: `${getCriticalMomentsXPosition(year)}%` }}
+                      />
+                    ))}
+
+                    {/* Grid lines - horizontal */}
+                    {criticalMomentsCategories.map((cat, index) => (
+                      <div
+                        key={`grid-h-${cat}`}
+                        className="absolute left-0 right-0 border-t border-black/5"
+                        style={{ top: `${(index / (criticalMomentsCategories.length - 1)) * 100}%` }}
+                      />
+                    ))}
+
+                    {/* Data points with icons */}
+                    {criticalMomentsData.map((moment, index) => (
+                      <motion.div
+                        key={`${moment.name}-${index}`}
+                        initial={{ scale: 0, opacity: 0 }}
+                        animate={{ scale: 1, opacity: 1 }}
+                        transition={{ delay: index * 0.15, duration: 0.5 }}
+                        className="absolute cursor-pointer transform -translate-x-1/2 -translate-y-1/2 group"
+                        style={{
+                          left: `${getCriticalMomentsXPosition(moment.year)}%`,
+                          top: `${getCriticalMomentsYPosition(moment.category)}%`,
+                        }}
+                        data-testid={`icon-${moment.category.toLowerCase().replace(/\s+/g, '-')}-${moment.name.toLowerCase().replace(/\s+/g, '-')}`}
+                      >
+                        {/* Icon container with colored background */}
+                        <div 
+                          className="w-6 h-6 sm:w-7 sm:h-7 md:w-9 md:h-9 rounded-lg flex items-center justify-center p-1 sm:p-1.5 md:p-2 shadow-md transition-all duration-200 group-hover:scale-125 group-hover:shadow-lg"
+                          style={{
+                            backgroundColor: getCriticalMomentsEraColor(moment.era),
+                            color: 'white'
+                          }}
+                        >
+                          {moment.icon}
                         </div>
-                        <p className="text-sm text-muted-foreground mb-2">by {event.person}</p>
-                        <p className="text-foreground/80 mb-3">{event.description}</p>
-                        <div className="flex items-center gap-2">
-                          <div className="w-1 h-4 bg-accent/50" />
-                          <p className="text-sm font-medium text-accent/80">{event.impact}</p>
+                        
+                        {/* Hover tooltip */}
+                        <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
+                          <div className="bg-black text-white text-xs rounded-lg px-3 py-2 shadow-xl max-w-xs">
+                            <div className="font-bold">{moment.name}</div>
+                            <div className="text-white/70">{moment.year} - {moment.person}</div>
+                            <div className="text-white/60 text-[10px] mt-1">{moment.description}</div>
+                          </div>
                         </div>
-                      </Card>
+                      </motion.div>
+                    ))}
+
+                    {/* X-axis labels */}
+                    <div className="absolute left-0 right-0 -bottom-6 flex justify-between">
+                      {criticalMomentsYears.map((year) => (
+                        <div
+                          key={`x-label-${year}`}
+                          className="text-[10px] sm:text-xs text-black/70 font-mono"
+                          style={{ 
+                            position: 'absolute',
+                            left: `${getCriticalMomentsXPosition(year)}%`,
+                            transform: 'translateX(-50%)'
+                          }}
+                        >
+                          {year}
+                        </div>
+                      ))}
                     </div>
                   </div>
-                ))}
+                </div>
               </div>
             </div>
           </div>
@@ -210,19 +311,19 @@ export default function OriginsSection() {
             <div className="flex items-start gap-4">
               <Users className="w-6 h-6 text-accent mt-1" />
               <div>
-                <h4 className="text-xl font-semibold mb-3">Early HCI Research Centers</h4>
+                <h4 className="text-xl sm:text-2xl md:text-3xl font-semibold mb-3">Early HCI Research Centers</h4>
                 <div className="grid md:grid-cols-3 gap-6 text-foreground/80">
                   <div>
-                    <p className="font-semibold text-accent">MIT</p>
-                    <p className="text-sm">Lincoln Laboratory pioneered interactive computing with TX-0 and TX-2 computers, enabling Sutherland's Sketchpad.</p>
+                    <p className="font-semibold text-accent text-sm sm:text-base">MIT</p>
+                    <p className="text-sm sm:text-base">Lincoln Laboratory pioneered interactive computing with TX-0 and TX-2 computers, enabling Sutherland's Sketchpad.</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-accent">Stanford Research Institute</p>
-                    <p className="text-sm">Engelbart's Augmentation Research Center developed NLS (oN-Line System), the first hypertext system with a mouse.</p>
+                    <p className="font-semibold text-accent text-sm sm:text-base">Stanford Research Institute</p>
+                    <p className="text-sm sm:text-base">Engelbart's Augmentation Research Center developed NLS (oN-Line System), the first hypertext system with a mouse.</p>
                   </div>
                   <div>
-                    <p className="font-semibold text-accent">Xerox PARC</p>
-                    <p className="text-sm">The Computer Science Laboratory created Alto and Star, defining the desktop metaphor we still use today.</p>
+                    <p className="font-semibold text-accent text-sm sm:text-base">Xerox PARC</p>
+                    <p className="text-sm sm:text-base">The Computer Science Laboratory created Alto and Star, defining the desktop metaphor we still use today.</p>
                   </div>
                 </div>
               </div>
@@ -231,9 +332,9 @@ export default function OriginsSection() {
 
           {/* Pioneers Section */}
           <FadeInSection className="mb-20">
-            <h3 className="font-display text-3xl font-semibold mb-12">The Visionaries Who Defined Our Digital Future</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-12">The Visionaries Who Defined Our Digital Future</h3>
             
-            <div className="space-y-6">
+            <div className="space-y-8">
               {pioneers.map((pioneer, index) => {
                 const images = [
                   VannevarBushImg,
@@ -244,12 +345,43 @@ export default function OriginsSection() {
                 ];
                 
                 return (
-                  <ExpandablePioneerCard
-                    key={pioneer.name}
-                    pioneer={pioneer}
-                    imageUrl={images[index]}
-                    index={index}
-                  />
+                  <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`visionary-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
+                    <div className="grid md:grid-cols-[300px_1fr] gap-0">
+                      {/* Image Section */}
+                      <div className="bg-black/40">
+                        <img 
+                          src={images[index]} 
+                          alt={pioneer.name}
+                          className="w-full h-full object-cover"
+                        />
+                      </div>
+                      
+                      {/* Content Section */}
+                      <div className="p-8 space-y-6">
+                        {/* Header */}
+                        <div className="space-y-1">
+                          <h4 className="text-2xl sm:text-3xl font-bold">{pioneer.name}</h4>
+                          <p className="text-xs sm:text-sm text-muted-foreground font-mono">{pioneer.years}</p>
+                          <p className="text-accent text-sm sm:text-base font-semibold">{pioneer.title}</p>
+                        </div>
+                        
+                        {/* Contribution */}
+                        <p className="text-sm sm:text-base text-foreground/90 leading-relaxed">
+                          {pioneer.contribution}
+                        </p>
+                        
+                        {/* Quote */}
+                        <blockquote className="border-l-4 border-accent/40 pl-6 py-2">
+                          <p className="italic text-sm sm:text-base text-foreground/80">"{pioneer.quote}"</p>
+                        </blockquote>
+                        
+                        {/* Legacy */}
+                        <p className="text-sm sm:text-base text-foreground/70">
+                          {pioneer.legacy}
+                        </p>
+                      </div>
+                    </div>
+                  </Card>
                 );
               })}
             </div>
@@ -269,28 +401,33 @@ export default function OriginsSection() {
           />
 
           {/* Birth of GUI Section */}
-          <div className="max-w-4xl mx-auto">
+          <div className="max-w-4xl mx-auto mb-24">
             <Separator className="mb-12 bg-accent/20" />
             
-            <h3 className="font-display text-3xl font-semibold mb-8">The Birth of Graphical Interfaces</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-8">The Birth of Graphical Interfaces</h3>
             
             <div className="prose prose-lg space-y-6 text-foreground/90">
-              <p>
+              <p className="text-sm sm:text-base">
                 The transition from command-line interfaces to graphical user interfaces wasn't merely a technical evolution — it was a philosophical revolution. When the Xerox Alto displayed its first bitmapped screen in 1973, it represented a fundamental shift in how we conceive the relationship between humans and computers.
               </p>
               
-              <p>
+              <p className="text-sm sm:text-base">
                 For the first time, computers could show rather than tell. Icons replaced commands. The mouse enabled direct manipulation. The desktop metaphor made abstract digital concepts tangible. These weren't just new features; they were new languages for human-computer interaction.
               </p>
               
-              <p>
+              <p className="text-sm sm:text-base">
                 The researchers at Xerox PARC didn't just create new technology — they created new possibilities for human expression and creativity. Their work proved that computers could be tools for everyone, not just programmers. The GUI democratized computing, setting the stage for the personal computer revolution and, ultimately, for the field of UX/UI design itself.
               </p>
               
-              <p className="text-xl font-medium text-accent">
+              <p className="text-base sm:text-lg lg:text-xl font-medium text-accent">
                 What began as academic research in the 1960s and 1970s would, within a generation, transform into a multi-billion dollar industry and reshape human civilization. The foundations laid by these pioneers continue to support every swipe, tap, and click we make today.
               </p>
             </div>
+          </div>
+
+          {/* Computing Democratization Scatter Plot */}
+          <div className="mb-24">
+            <ComputingDemocratizationScatter />
           </div>
         </div>
       </section>

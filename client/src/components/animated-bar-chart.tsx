@@ -26,25 +26,30 @@ export default function AnimatedBarChart({ data, title, description, bars }: Ani
       viewport={{ once: true }}
       transition={{ duration: 0.6 }}
     >
-      <Card className="p-6 glass-card">
+      <Card className="p-4 sm:p-6 md:p-8 glass-card">
         <div className="mb-6">
-          <h4 className="text-xl font-semibold mb-2">{title}</h4>
+          <h4 className="text-lg sm:text-xl md:text-2xl font-semibold mb-2">{title}</h4>
           {description && (
-            <p className="text-sm text-muted-foreground">{description}</p>
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground">{description}</p>
           )}
         </div>
         
-        <ResponsiveContainer width="100%" height={300}>
+        <div className="h-64 sm:h-80 md:h-96 w-full">
+          <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
             <CartesianGrid strokeDasharray="3 3" stroke="rgba(138, 169, 122, 0.1)" />
             <XAxis 
               dataKey="name" 
               stroke="rgba(244, 244, 228, 0.5)"
-              style={{ fontSize: '12px', fontFamily: 'JetBrains Mono' }}
+              tick={{ fontSize: 10 }}
+              className="text-xs sm:text-sm"
+              style={{ fontFamily: 'JetBrains Mono' }}
             />
             <YAxis 
               stroke="rgba(244, 244, 228, 0.5)"
-              style={{ fontSize: '12px', fontFamily: 'JetBrains Mono' }}
+              tick={{ fontSize: 10 }}
+              className="text-xs sm:text-sm"
+              style={{ fontFamily: 'JetBrains Mono' }}
             />
             <Tooltip
               contentStyle={{
@@ -58,8 +63,9 @@ export default function AnimatedBarChart({ data, title, description, bars }: Ani
             <Legend 
               wrapperStyle={{ 
                 fontFamily: 'JetBrains Mono',
-                fontSize: '12px'
+                fontSize: '11px'
               }}
+              className="text-xs sm:text-sm"
             />
             {bars.map((bar) => (
               <Bar
@@ -72,6 +78,7 @@ export default function AnimatedBarChart({ data, title, description, bars }: Ani
             ))}
           </BarChart>
         </ResponsiveContainer>
+        </div>
       </Card>
     </motion.div>
   );

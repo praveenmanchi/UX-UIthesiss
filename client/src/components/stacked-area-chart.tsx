@@ -31,8 +31,8 @@ export default function StackedAreaChart({
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-timeline-charcoal border border-timeline-sage/30 p-4 rounded-lg shadow-xl" data-testid="chart-tooltip">
-          <p className="font-mono text-timeline-cream font-bold mb-2" data-testid="tooltip-label">{label}</p>
+        <div className="bg-black border border-accent/20 p-4 rounded-lg shadow-xl" data-testid="chart-tooltip">
+          <p className="font-mono text-white font-bold mb-2" data-testid="tooltip-label">{label}</p>
           {payload.map((entry: any, index: number) => (
             <div key={index} className="flex items-center gap-2 text-sm" data-testid={`tooltip-entry-${index}`}>
               <div
@@ -40,7 +40,7 @@ export default function StackedAreaChart({
                 style={{ backgroundColor: entry.color }}
               />
               <span className="text-foreground/80">{entry.name}:</span>
-              <span className="font-semibold text-timeline-cream" data-testid={`tooltip-value-${index}`}>
+              <span className="font-semibold text-white" data-testid={`tooltip-value-${index}`}>
                 {typeof entry.value === 'number' ? entry.value.toFixed(1) : entry.value}M
               </span>
             </div>
@@ -65,17 +65,17 @@ export default function StackedAreaChart({
     >
       <Card className="chart-dark-container">
         <div className="mb-6">
-          <h4 className="font-display text-2xl sm:text-3xl font-bold text-timeline-cream mb-2">
+          <h4 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-timeline-cream mb-2">
             {title}
           </h4>
           {description && (
-            <p className="text-sm sm:text-base text-muted-foreground">
+            <p className="text-xs sm:text-sm md:text-base text-muted-foreground">
               {description}
             </p>
           )}
         </div>
 
-        <div className="w-full h-[300px] sm:h-[400px]" data-testid="chart-container">
+        <div className="w-full h-64 sm:h-80 md:h-96" data-testid="chart-container">
           <ResponsiveContainer width="100%" height="100%">
             <AreaChart
               data={data}
@@ -114,20 +114,22 @@ export default function StackedAreaChart({
               <XAxis
                 dataKey="year"
                 stroke="hsl(var(--timeline-sage))"
-                tick={{ fill: "hsl(var(--timeline-cream))", fontSize: 12 }}
+                tick={{ fill: "hsl(var(--timeline-cream))", fontSize: 10 }}
+                className="text-xs sm:text-sm"
                 tickLine={{ stroke: "hsl(var(--timeline-sage))" }}
               />
 
               <YAxis
                 stroke="hsl(var(--timeline-sage))"
-                tick={{ fill: "hsl(var(--timeline-cream))", fontSize: 12 }}
+                tick={{ fill: "hsl(var(--timeline-cream))", fontSize: 10 }}
+                className="text-xs sm:text-sm"
                 tickLine={{ stroke: "hsl(var(--timeline-sage))" }}
                 label={{
                   value: yAxisLabel,
                   angle: -90,
                   position: "insideLeft",
                   fill: "hsl(var(--timeline-sage))",
-                  fontSize: 12,
+                  fontSize: 11,
                 }}
               />
 
@@ -139,7 +141,7 @@ export default function StackedAreaChart({
                 }}
                 iconType="circle"
                 formatter={(value) => (
-                  <span className="text-sm text-foreground/80">{value}</span>
+                  <span className="text-xs sm:text-sm text-foreground/80">{value}</span>
                 )}
               />
 
@@ -162,14 +164,14 @@ export default function StackedAreaChart({
 
         {/* Legend Labels Below Chart */}
         <div className="mt-6 pt-6 border-t border-timeline-sage/20">
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
             {areas.map((area, index) => (
               <div key={area.dataKey} className="flex items-center gap-3" data-testid={`legend-item-${index}`}>
                 <div
                   className="w-4 h-4 rounded-full"
                   style={{ backgroundColor: area.color }}
                 />
-                <span className="text-sm text-foreground/70" data-testid={`legend-label-${index}`}>{area.name}</span>
+                <span className="text-xs sm:text-sm text-foreground/70" data-testid={`legend-label-${index}`}>{area.name}</span>
               </div>
             ))}
           </div>

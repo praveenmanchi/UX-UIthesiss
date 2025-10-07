@@ -34,16 +34,16 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 export default function UXToolEvolutionChart() {
   return (
     <div className="w-full">
-      <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-6 transition-all duration-300 hover:border-[#8AA97A]/20">
+      <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-[#8AA97A]/20">
         <div className="mb-4">
           <span className="text-[#f4f4e4]/50 uppercase tracking-wider text-xs font-mono">Fig 01</span>
-          <h3 className="text-2xl font-semibold font-display text-[#f4f4e4] mt-1">Design Tool Evolution & Professional Growth</h3>
-          <p className="text-sm text-[#f4f4e4]/70 mt-2">
+          <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-[#f4f4e4] mt-1">Design Tool Evolution & Professional Growth</h3>
+          <p className="text-xs sm:text-sm md:text-base text-[#f4f4e4]/70 mt-2">
             Tracking the correlation between tool capabilities and industry expansion over four decades
           </p>
         </div>
         
-        <div className="h-80 w-full">
+        <div className="h-64 sm:h-80 md:h-96 w-full">
           <ResponsiveContainer width="100%" height="100%">
             <ComposedChart data={data} margin={{ top: 20, right: 30, left: 20, bottom: 60 }}>
               <CartesianGrid 
@@ -55,35 +55,38 @@ export default function UXToolEvolutionChart() {
               <XAxis 
                 dataKey="period" 
                 stroke="transparent"
-                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                className="text-xs sm:text-sm"
                 axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                 tickLine={false}
               />
               <YAxis 
                 yAxisId="left"
                 stroke="transparent"
-                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                className="text-xs sm:text-sm"
                 axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                 tickLine={false}
                 label={{ 
                   value: 'UX Professionals (thousands)', 
                   angle: -90, 
                   position: 'insideLeft',
-                  style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 12 }
+                  style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
                 }}
               />
               <YAxis 
                 yAxisId="right"
                 orientation="right"
                 stroke="transparent"
-                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                className="text-xs sm:text-sm"
                 axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                 tickLine={false}
                 label={{ 
                   value: 'Collaboration Capability (%)', 
                   angle: 90, 
                   position: 'insideRight',
-                  style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 12 }
+                  style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
                 }}
                 domain={[0, 100]}
               />
@@ -101,7 +104,7 @@ export default function UXToolEvolutionChart() {
                     users: 'UX Professionals',
                     collab: 'Collaboration Capability'
                   };
-                  return <span className="text-xs text-[#f4f4e4]/80">{labels[value] || value}</span>;
+                  return <span className="text-xs sm:text-sm text-[#f4f4e4]/80">{labels[value] || value}</span>;
                 }}
               />
               <Bar 

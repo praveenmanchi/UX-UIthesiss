@@ -115,16 +115,16 @@ const CustomTooltip = ({ active, payload, label }: any) => {
 // Custom legend component
 const CustomLegend = () => {
   return (
-    <div className="flex justify-center gap-6 mt-4">
+    <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 mt-4">
       <div className="flex items-center gap-2">
         <div className="w-4 h-4 bg-[#8AA97A] rounded-sm" />
-        <span className="text-xs text-[#f4f4e4]/90 font-medium">
+        <span className="text-xs sm:text-sm text-[#f4f4e4]/90 font-medium">
           Job Postings (thousands)
         </span>
       </div>
       <div className="flex items-center gap-2">
         <div className="w-4 h-4 bg-[#9BB88B] rounded-full" />
-        <span className="text-xs text-[#f4f4e4]/90 font-medium">
+        <span className="text-xs sm:text-sm text-[#f4f4e4]/90 font-medium">
           Search Interest Index (0-100)
         </span>
       </div>
@@ -136,18 +136,18 @@ export default function JobMarketChart() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-6 transition-all duration-300 hover:border-[#8AA97A]/20">
+        <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-[#8AA97A]/20">
           <div className="mb-6">
             <span className="text-[#f4f4e4]/50 uppercase tracking-wider text-xs font-mono">Fig 04</span>
-            <h3 className="text-2xl font-semibold font-display text-[#f4f4e4] mt-1">
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-[#f4f4e4] mt-1">
               UX/UI Job Market Growth
             </h3>
-            <p className="text-sm text-[#f4f4e4]/70 mt-2">
+            <p className="text-xs sm:text-sm md:text-base text-[#f4f4e4]/70 mt-2">
               Annual job postings and search interest trends
             </p>
           </div>
           
-          <div className="h-96 w-full">
+          <div className="h-64 sm:h-80 md:h-96 w-full">
             <ResponsiveContainer width="100%" height="100%">
               <ComposedChart 
                 data={jobMarketData} 
@@ -164,7 +164,8 @@ export default function JobMarketChart() {
                 <XAxis 
                   dataKey="year" 
                   stroke="transparent"
-                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                  className="text-xs sm:text-sm"
                   axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                   tickLine={false}
                   interval={0}
@@ -177,7 +178,8 @@ export default function JobMarketChart() {
                   yAxisId="postings"
                   orientation="left"
                   stroke="transparent"
-                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                  className="text-xs sm:text-sm"
                   axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                   tickLine={false}
                   domain={[0, 150]}
@@ -186,7 +188,7 @@ export default function JobMarketChart() {
                     value: 'Job Postings (thousands)', 
                     angle: -90, 
                     position: 'insideLeft',
-                    style: { fill: '#8AA97A', opacity: 0.8, fontSize: 11 }
+                    style: { fill: '#8AA97A', opacity: 0.8, fontSize: 10 }
                   }}
                 />
                 
@@ -195,7 +197,8 @@ export default function JobMarketChart() {
                   yAxisId="interest"
                   orientation="right"
                   stroke="transparent"
-                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }}
+                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                  className="text-xs sm:text-sm"
                   axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
                   tickLine={false}
                   domain={[0, 100]}
@@ -203,7 +206,7 @@ export default function JobMarketChart() {
                     value: 'Search Interest Index', 
                     angle: 90, 
                     position: 'insideRight',
-                    style: { fill: '#9BB88B', opacity: 0.8, fontSize: 11 }
+                    style: { fill: '#9BB88B', opacity: 0.8, fontSize: 10 }
                   }}
                 />
                 

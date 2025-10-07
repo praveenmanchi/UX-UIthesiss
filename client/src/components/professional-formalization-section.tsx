@@ -303,24 +303,24 @@ export default function ProfessionalFormalizationSection() {
   ];
 
   return (
-    <section className="py-24 px-4 sm:px-6 lg:px-8" data-testid="section-professional-formalization">
+    <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12" data-testid="section-professional-formalization">
       <div className="max-w-6xl mx-auto">
         {/* Opening Narrative */}
         <div className="max-w-4xl mx-auto mb-20">
-          <h2 className="font-display text-5xl sm:text-6xl font-bold mb-8 leading-tight" data-testid="text-formalization-heading">
+          <h2 className="font-display text-3xl sm:text-4xl lg:text-5xl font-bold mb-8 leading-tight" data-testid="text-formalization-heading">
             The Birth of a Profession: When Design Became Science
           </h2>
           
           <div className="prose prose-lg space-y-6 text-foreground/90 leading-relaxed">
-            <p className="text-xl">
+            <p className="text-base sm:text-lg lg:text-xl">
               In 1993, a cognitive scientist at Apple did something revolutionary: he gave a name to what designers had been doing intuitively for years. When Don Norman coined "User Experience," he didn't just create a job title — he legitimized an entire field of study, transforming design from art into science, from opinion into methodology.
             </p>
             
-            <p>
+            <p className="text-sm sm:text-base">
               The formalization of UX marked a pivotal shift in how companies approached product development. No longer could interfaces be designed based on engineering constraints or executive preferences. A new breed of professionals emerged, armed with psychology degrees, research methodologies, and an unwavering focus on the end user. They didn't just make things pretty; they made them work for humans.
             </p>
 
-            <p>
+            <p className="text-sm sm:text-base">
               Between 1993 and 2000, the field exploded from a handful of pioneers to thousands of practitioners. Universities launched programs, consultancies opened doors, and Fortune 500 companies scrambled to build UX teams. This is the story of how user experience transformed from radical idea to essential business function.
             </p>
           </div>
@@ -330,7 +330,7 @@ export default function ProfessionalFormalizationSection() {
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-12">
             <BookOpen className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-3xl font-semibold">Key Moments in UX History</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold">Key Moments in UX History</h3>
           </div>
           
           <div className="relative">
@@ -342,7 +342,7 @@ export default function ProfessionalFormalizationSection() {
                 <div key={event.year} className="relative pl-20" data-testid={`timeline-${event.year}`}>
                   {/* Year Badge */}
                   <div className="absolute left-0 top-0 w-16 h-16 rounded-full bg-background border-2 border-accent/50 flex items-center justify-center">
-                    <span className="text-sm font-bold">{event.year}</span>
+                    <span className="text-xs sm:text-sm font-bold">{event.year}</span>
                   </div>
                   
                   {/* Content Card */}
@@ -354,10 +354,10 @@ export default function ProfessionalFormalizationSection() {
                   } border-accent/30`}>
                     <div className="flex items-start justify-between">
                       <div>
-                        <h4 className="text-xl font-bold mb-2">{event.event}</h4>
-                        <p className="text-foreground/70">{event.detail}</p>
+                        <h4 className="text-lg sm:text-xl font-bold mb-2">{event.event}</h4>
+                        <p className="text-sm sm:text-base text-foreground/70">{event.detail}</p>
                       </div>
-                      <div className={`px-3 py-1 rounded-full text-xs font-semibold ${
+                      <div className={`px-3 py-1 rounded-full text-xs sm:text-sm font-semibold ${
                         event.type === 'milestone' ? 'bg-accent/20 text-accent' :
                         event.type === 'publication' ? 'bg-blue-500/20 text-blue-400' :
                         event.type === 'company' ? 'bg-green-500/20 text-green-400' :
@@ -390,10 +390,10 @@ export default function ProfessionalFormalizationSection() {
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-12">
             <User className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-3xl font-semibold">The Pioneers Who Defined the Field</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold">The Pioneers Who Defined the Field</h3>
           </div>
           
-          <div className="space-y-12">
+          <div className="space-y-8">
             {pioneers.map((pioneer, index) => {
               const images = [
                 DonNormanImg,
@@ -404,59 +404,57 @@ export default function ProfessionalFormalizationSection() {
               ];
               
               return (
-                <Card key={pioneer.name} className="p-8 bg-card/50 backdrop-blur border-accent/30" data-testid={`pioneer-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
-                  <div className="grid lg:grid-cols-3 gap-8">
-                    {/* Profile Info with Image */}
-                    <div className="lg:col-span-1">
-                      {/* Profile Image */}
-                      <div className="mb-6">
-                        <img 
-                          src={images[index]} 
-                          alt={`${pioneer.name} - ${pioneer.title}`}
-                          className="w-full aspect-square object-cover rounded-lg border border-accent/20"
-                        />
-                      </div>
-                      
-                      <div className="mb-4">
-                        <h4 className="text-2xl font-bold mb-1">{pioneer.name}</h4>
-                        <p className="text-accent text-sm font-semibold">{pioneer.title}</p>
-                        <p className="text-muted-foreground text-sm">{pioneer.role}</p>
-                        <p className="text-muted-foreground text-xs mt-1">{pioneer.company}</p>
-                      </div>
-                      
-                      <div className="mb-4">
-                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">Key Publication</p>
-                        <p className="text-sm font-medium">{pioneer.keyPublication}</p>
-                      </div>
-                      
-                      <div>
-                        <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-2">Philosophy</p>
-                        <p className="text-sm italic text-foreground/70">{pioneer.philosophy}</p>
-                      </div>
+                <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`pioneer-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
+                  <div className="grid md:grid-cols-[320px_1fr] gap-0">
+                    {/* Image Section */}
+                    <div className="bg-black/40 p-6">
+                      <img 
+                        src={images[index]} 
+                        alt={pioneer.name}
+                        className="w-full aspect-square object-cover rounded-lg"
+                      />
                     </div>
                     
-                    {/* Contributions & Impact */}
-                    <div className="lg:col-span-2">
-                      <blockquote className="border-l-4 border-accent/50 pl-4 mb-6">
-                        <p className="text-lg italic text-foreground/80">"{pioneer.quote}"</p>
-                      </blockquote>
+                    {/* Content Section */}
+                    <div className="p-8">
+                      {/* Header with Quote */}
+                      <div className="mb-8">
+                        <h4 className="text-xl sm:text-2xl font-bold mb-1">{pioneer.name}</h4>
+                        <p className="text-accent text-xs sm:text-sm font-semibold mb-1">{pioneer.title}</p>
+                        <p className="text-muted-foreground text-xs sm:text-sm mb-4">{pioneer.role} • {pioneer.company}</p>
+                        
+                        <blockquote className="border-l-4 border-accent/50 pl-4 mt-6">
+                          <p className="italic text-foreground/70 text-xs sm:text-sm">"{pioneer.quote}"</p>
+                        </blockquote>
+                      </div>
                       
-                      <div className="grid sm:grid-cols-2 gap-6">
+                      {/* Grid Layout for Info Sections */}
+                      <div className="grid md:grid-cols-2 gap-8">
+                        {/* Key Contributions */}
                         <div>
-                          <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-3">Key Contributions</p>
-                          <ul className="space-y-2">
+                          <p className="text-xs sm:text-sm text-accent font-bold uppercase tracking-wider mb-4">Key Contributions</p>
+                          <ul className="space-y-3">
                             {pioneer.contributions.map((contribution, idx) => (
-                              <li key={idx} className="flex items-start gap-2 text-sm">
-                                <CheckCircle className="w-4 h-4 text-accent mt-0.5 flex-shrink-0" />
-                                <span className="text-foreground/80">{contribution}</span>
+                              <li key={idx} className="flex items-start gap-3 text-xs sm:text-sm">
+                                <span className="text-accent font-mono text-xs mt-0.5 flex-shrink-0">0{idx + 1}</span>
+                                <span className="text-foreground/80 leading-relaxed">{contribution}</span>
                               </li>
                             ))}
                           </ul>
                         </div>
                         
+                        {/* Industry Impact */}
                         <div>
-                          <p className="text-xs text-accent font-semibold uppercase tracking-wider mb-3">Industry Impact</p>
-                          <p className="text-sm text-foreground/80">{pioneer.impact}</p>
+                          <p className="text-xs sm:text-sm text-accent font-bold uppercase tracking-wider mb-4">Industry Impact</p>
+                          <p className="text-xs sm:text-sm text-foreground/80 leading-relaxed mb-6">{pioneer.impact}</p>
+                          
+                          {/* Key Publication */}
+                          <p className="text-xs sm:text-sm text-accent font-bold uppercase tracking-wider mb-2">Key Publication</p>
+                          <p className="text-xs sm:text-sm text-foreground/80 mb-6">{pioneer.keyPublication}</p>
+                          
+                          {/* Philosophy */}
+                          <p className="text-xs sm:text-sm text-accent font-bold uppercase tracking-wider mb-2">Philosophy</p>
+                          <p className="text-xs sm:text-sm italic text-foreground/70">{pioneer.philosophy}</p>
                         </div>
                       </div>
                     </div>
@@ -471,7 +469,7 @@ export default function ProfessionalFormalizationSection() {
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-12">
             <Building2 className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-3xl font-semibold">The First UX Teams & Consultancies</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold">The First UX Teams & Consultancies</h3>
           </div>
           
           <div className="grid gap-6 mb-12">
@@ -480,21 +478,21 @@ export default function ProfessionalFormalizationSection() {
                 <div className="flex flex-wrap items-center justify-between gap-4">
                   <div className="flex items-center gap-4">
                     <div className="w-12 h-12 rounded-lg bg-accent/20 flex items-center justify-center">
-                      <span className="text-xs font-bold">{milestone.year}</span>
+                      <span className="text-xs sm:text-sm font-bold">{milestone.year}</span>
                     </div>
                     <div>
-                      <h4 className="text-lg font-bold">{milestone.company}: {milestone.event}</h4>
-                      <p className="text-sm text-foreground/70">{milestone.detail}</p>
+                      <h4 className="text-base sm:text-lg font-bold">{milestone.company}: {milestone.event}</h4>
+                      <p className="text-xs sm:text-sm text-foreground/70">{milestone.detail}</p>
                     </div>
                   </div>
                   <div className="flex gap-6">
                     <div className="text-right">
-                      <p className="text-sm font-bold text-accent">{milestone.employees}</p>
-                      <p className="text-xs text-muted-foreground">Team Size</p>
+                      <p className="text-xs sm:text-sm font-bold text-accent">{milestone.employees}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">Team Size</p>
                     </div>
                     <div className="text-right">
-                      <p className="text-sm font-bold text-accent">{milestone.budget}</p>
-                      <p className="text-xs text-muted-foreground">Annual Budget</p>
+                      <p className="text-xs sm:text-sm font-bold text-accent">{milestone.budget}</p>
+                      <p className="text-xs sm:text-sm text-muted-foreground">Annual Budget</p>
                     </div>
                   </div>
                 </div>
@@ -507,19 +505,19 @@ export default function ProfessionalFormalizationSection() {
             <div className="flex items-start gap-4">
               <Briefcase className="w-6 h-6 text-blue-400 mt-1" />
               <div>
-                <h4 className="text-xl font-semibold mb-3 text-blue-400">Rise of UX Consultancies</h4>
+                <h4 className="text-lg sm:text-xl font-semibold mb-3 text-blue-400">Rise of UX Consultancies</h4>
                 <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
                   <div>
-                    <p className="font-semibold mb-2">Nielsen Norman Group (1998)</p>
-                    <p className="text-sm text-foreground/70">First pure-play UX consultancy. Clients included Microsoft, IBM, and Sun. Established evidence-based design practice.</p>
+                    <p className="text-sm sm:text-base font-semibold mb-2">Nielsen Norman Group (1998)</p>
+                    <p className="text-xs sm:text-sm text-foreground/70">First pure-play UX consultancy. Clients included Microsoft, IBM, and Sun. Established evidence-based design practice.</p>
                   </div>
                   <div>
-                    <p className="font-semibold mb-2">Cooper (1992)</p>
-                    <p className="text-sm text-foreground/70">Pioneered interaction design consulting. Created Visual Basic interface. Developed persona methodology for clients.</p>
+                    <p className="text-sm sm:text-base font-semibold mb-2">Cooper (1992)</p>
+                    <p className="text-xs sm:text-sm text-foreground/70">Pioneered interaction design consulting. Created Visual Basic interface. Developed persona methodology for clients.</p>
                   </div>
                   <div>
-                    <p className="font-semibold mb-2">Adaptive Path (2001)</p>
-                    <p className="text-sm text-foreground/70">Founded by Jesse James Garrett and peers. Focused on UX strategy. Coined Ajax, advanced web standards.</p>
+                    <p className="text-sm sm:text-base font-semibold mb-2">Adaptive Path (2001)</p>
+                    <p className="text-xs sm:text-sm text-foreground/70">Founded by Jesse James Garrett and peers. Focused on UX strategy. Coined Ajax, advanced web standards.</p>
                   </div>
                 </div>
               </div>
@@ -531,7 +529,7 @@ export default function ProfessionalFormalizationSection() {
         <div className="mb-24">
           <div className="flex items-center gap-4 mb-12">
             <GraduationCap className="w-6 h-6 text-accent" />
-            <h3 className="font-display text-3xl font-semibold">Evolution of UX Job Titles & Compensation</h3>
+            <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold">Evolution of UX Job Titles & Compensation</h3>
           </div>
           
           <div className="grid gap-4">

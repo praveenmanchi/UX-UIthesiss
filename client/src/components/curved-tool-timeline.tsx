@@ -245,11 +245,11 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
           transition={{ duration: 0.6 }}
           className="mb-12 text-center"
         >
-          <h3 className="font-display text-3xl sm:text-4xl font-semibold mb-4" data-testid="timeline-title">
+          <h3 className="font-display text-2xl sm:text-3xl md:text-4xl font-semibold mb-4" data-testid="timeline-title">
             {title}
           </h3>
           {description && (
-            <p className="text-lg text-muted-foreground max-w-3xl mx-auto" data-testid="timeline-description">
+            <p className="text-sm sm:text-base md:text-lg font-sans text-muted-foreground max-w-3xl mx-auto" data-testid="timeline-description">
               {description}
             </p>
           )}
@@ -257,14 +257,14 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
       )}
 
       {/* Category Filters */}
-      <div className="mb-8 flex flex-wrap items-center gap-3 justify-center">
-        <p className="text-sm font-mono text-muted-foreground mr-2">Filter by:</p>
+      <div className="mb-8 flex flex-wrap items-center gap-2 sm:gap-3 md:gap-4 justify-center">
+        <p className="text-xs sm:text-sm font-mono text-muted-foreground mr-2">Filter by:</p>
         {categories.map(category => (
           <motion.button
             key={category}
             onClick={() => toggleCategory(category)}
             className={`
-              px-4 py-2 rounded-full text-sm font-medium transition-all
+              px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-sans font-medium transition-all
               ${activeCategories.has(category)
                 ? 'bg-timeline-sage text-background'
                 : 'bg-timeline-sage/20 text-timeline-sage hover:bg-timeline-sage/30'
@@ -280,7 +280,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
         {activeCategories.size > 0 && (
           <motion.button
             onClick={clearFilters}
-            className="px-4 py-2 rounded-full text-sm font-medium bg-timeline-terracotta/20 text-timeline-terracotta hover:bg-timeline-terracotta/30 transition-all"
+            className="px-3 sm:px-4 py-1.5 sm:py-2 rounded-full text-xs sm:text-sm font-sans font-medium bg-timeline-terracotta/20 text-timeline-terracotta hover:bg-timeline-terracotta/30 transition-all"
             initial={{ opacity: 0, scale: 0.8 }}
             animate={{ opacity: 1, scale: 1 }}
             whileHover={{ scale: 1.05 }}
@@ -297,7 +297,7 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
           {/* SVG Timeline */}
           <svg
             viewBox="0 0 100 100"
-            className="w-full h-[400px] sm:h-[500px]"
+            className="w-full h-64 sm:h-80 md:h-96"
             preserveAspectRatio="xMidYMid meet"
             data-testid="timeline-svg"
           >
@@ -454,24 +454,24 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
             transition={{ duration: 0.3 }}
             className="mt-8"
           >
-            <Card className="p-6 chart-dark-container border-timeline-sage/30" data-testid={`tool-detail-${activeTool.id}`}>
+            <Card className="p-4 sm:p-6 md:p-8 chart-dark-container border-timeline-sage/30" data-testid={`tool-detail-${activeTool.id}`}>
               <div className="flex items-start gap-4">
                 <div className="p-3 rounded-lg bg-timeline-sage/10 text-timeline-sage">
                   {activeTool.icon}
                 </div>
                 <div className="flex-1">
                   <div className="flex items-baseline gap-3 mb-2">
-                    <h4 className="font-display text-2xl font-bold text-timeline-cream" data-testid="detail-tool-name">
+                    <h4 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-timeline-cream" data-testid="detail-tool-name">
                       {activeTool.name}
                     </h4>
-                    <span className="text-sm text-timeline-sage font-mono" data-testid="detail-tool-year">
+                    <span className="text-xs sm:text-sm text-timeline-sage font-mono" data-testid="detail-tool-year">
                       {activeTool.year}
                     </span>
-                    <span className="text-xs px-2 py-1 rounded bg-timeline-sage/20 text-timeline-sage" data-testid="detail-tool-category">
+                    <span className="text-[10px] sm:text-xs px-2 py-1 rounded bg-timeline-sage/20 text-timeline-sage" data-testid="detail-tool-category">
                       {activeTool.category}
                     </span>
                   </div>
-                  <p className="text-foreground/80 leading-relaxed" data-testid="detail-tool-description">
+                  <p className="font-sans text-xs sm:text-sm md:text-base text-foreground/80 leading-relaxed" data-testid="detail-tool-description">
                     {activeTool.description}
                   </p>
                 </div>
@@ -482,18 +482,18 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
       </AnimatePresence>
 
       {/* Legend */}
-      <div className="mt-8 flex flex-wrap gap-6 justify-center text-sm text-muted-foreground">
+      <div className="mt-8 flex flex-wrap gap-2 sm:gap-3 md:gap-4 justify-center text-xs sm:text-sm text-muted-foreground">
         <div className="flex items-center gap-2" data-testid="legend-design-tools">
           <div className="w-3 h-3 rounded-full bg-timeline-sage" />
-          <span>Design Tools</span>
+          <span className="font-sans">Design Tools</span>
         </div>
         <div className="flex items-center gap-2" data-testid="legend-selected">
           <div className="w-3 h-3 rounded-full bg-timeline-terracotta" />
-          <span>Selected/Hover</span>
+          <span className="font-sans">Selected/Hover</span>
         </div>
         <div className="flex items-center gap-2" data-testid="legend-path">
           <div className="h-0.5 w-8 bg-timeline-sage opacity-30" style={{ backgroundImage: 'repeating-linear-gradient(90deg, var(--timeline-sage), var(--timeline-sage) 4px, transparent 4px, transparent 8px)' }} />
-          <span>Timeline Path</span>
+          <span className="font-sans">Timeline Path</span>
         </div>
       </div>
     </div>
