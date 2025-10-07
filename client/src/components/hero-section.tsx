@@ -30,7 +30,7 @@ export default function HeroSection() {
                 <rect x="10" y="26" width="60" height="8" fill="currentColor" />
                 <rect x="10" y="42" width="60" height="8" fill="currentColor" />
               </svg>
-              Defense
+              UX & UI
             </span>
             <span className="block">Reformation</span>
           </h1>
@@ -43,9 +43,7 @@ export default function HeroSection() {
               transitionDelay: '300ms'
             }}
           >
-            How User Experience and Interface Design
-            <br />
-            Evolved from Academic Research to Global Industry
+            How User Experience and Interface Design Evolved from Academic Research to Global Industry
           </h2>
         </div>
 
@@ -86,8 +84,8 @@ export default function HeroSection() {
         <div className="max-w-7xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-8 text-sm sm:text-base">
           <div>
             <p className="text-muted-foreground uppercase tracking-wider text-xs sm:text-sm mb-1">Written By</p>
-            <p className="font-semibold text-sm sm:text-base">UX/UI Research Team</p>
-            <p className="text-muted-foreground text-xs sm:text-sm">Historical Analysis</p>
+            <p className="font-semibold text-sm sm:text-base">Praveen Manchi</p>
+            <p className="text-muted-foreground text-xs sm:text-sm">UX/UI Designer</p>
           </div>
           <div>
             <p className="text-muted-foreground uppercase tracking-wider text-xs sm:text-sm mb-1">Published</p>
