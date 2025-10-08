@@ -90,15 +90,15 @@ const marketData = [
   },
 ];
 
-// Color palette - muted editorial palette for consistent design
+// Color palette - IBM Carbon Design System colors
 const toolColors: Record<string, string> = {
-  Figma: '#8AA97A',      // Sage - primary accent
-  Sketch: '#C8956B',     // Terracotta
-  Photoshop: '#7A9A8A',  // Sage-teal
-  'Adobe XD': '#8AA97A', // Sage variant
-  InVision: '#C8956B',   // Terracotta variant
-  Framer: '#7A9A8A',     // Sage-teal variant
-  Others: '#666666',     // Neutral gray
+  Figma: 'hsl(217, 100%, 53%)',      // IBM Carbon Blue
+  Sketch: 'hsl(292, 48%, 55%)',      // Purple
+  Photoshop: 'hsl(142, 63%, 39%)',   // Success green
+  'Adobe XD': 'hsl(47, 86%, 52%)',   // Yellow
+  InVision: 'hsl(354, 81%, 49%)',    // Red
+  Framer: 'hsl(180, 29%, 50%)',      // Teal
+  Others: 'hsl(0, 0%, 40%)',         // Neutral gray
 };
 
 // Custom tooltip component
@@ -108,8 +108,8 @@ const CustomTooltip = ({ active, payload, label }: any) => {
     const sortedPayload = [...payload].sort((a, b) => b.value - a.value);
     
     return (
-      <div className="bg-black border border-accent/20 rounded-lg px-4 py-3 shadow-xl transition-opacity duration-200 min-w-[200px]">
-        <p className="font-display font-semibold text-white mb-2">{label}</p>
+      <div className="bg-card dark:bg-card border border-primary/40 rounded-lg px-4 py-3 shadow-xl transition-opacity duration-200 min-w-[200px]">
+        <p className="font-display font-semibold text-foreground mb-2">{label}</p>
         {sortedPayload.map((entry: any) => {
           if (entry.value > 0) {
             return (
@@ -119,9 +119,9 @@ const CustomTooltip = ({ active, payload, label }: any) => {
                     className="w-3 h-3 rounded-sm" 
                     style={{ backgroundColor: entry.color }}
                   />
-                  <span className="text-sm font-sans text-white/90">{entry.name}</span>
+                  <span className="text-sm font-sans text-foreground/90">{entry.name}</span>
                 </div>
-                <span className="text-sm font-mono font-semibold text-white">
+                <span className="text-sm font-mono font-semibold text-foreground">
                   {entry.value}%
                 </span>
               </div>
@@ -130,7 +130,7 @@ const CustomTooltip = ({ active, payload, label }: any) => {
           return null;
         })}
         {data?.milestone && (
-          <p className="text-xs font-sans text-accent mt-3 pt-2 border-t border-accent/20 italic">
+          <p className="text-xs font-sans text-primary mt-3 pt-2 border-t border-primary/20 italic">
             ✦ {data.milestone}
           </p>
         )}
@@ -152,17 +152,17 @@ const CustomLegend = ({ payload, onToggle, hiddenTools }: any) => {
             onClick={() => onToggle(entry.value)}
             className={`flex items-center gap-2 px-3 py-1.5 rounded-lg transition-all duration-200 
               ${isHidden 
-                ? 'opacity-40 bg-[#1a1a1a] hover:opacity-60' 
-                : 'bg-[#8AA97A]/10 hover:bg-[#8AA97A]/20'
+                ? 'opacity-40 bg-card hover:opacity-60' 
+                : 'bg-primary/10 hover:bg-primary/20'
               }`}
           >
             <div 
               className="w-3 h-3 rounded-sm transition-all duration-200"
               style={{ 
-                backgroundColor: isHidden ? '#666' : entry.color,
+                backgroundColor: isHidden ? 'hsl(0, 0%, 40%)' : entry.color,
               }}
             />
-            <span className="text-xs sm:text-sm font-sans text-[#f4f4e4]/90 font-medium">
+            <span className="text-xs sm:text-sm font-sans text-foreground/90 font-medium">
               {entry.value}
             </span>
           </button>
@@ -197,13 +197,13 @@ export default function MarketShareChart() {
   return (
     <section className="py-16 px-4 sm:px-6 lg:px-8">
       <div className="max-w-6xl mx-auto">
-        <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-[#8AA97A]/20">
+        <div className="bg-primary/[0.02] rounded-xl border border-primary/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-primary/20">
           <div className="mb-6">
-            <span className="text-[#f4f4e4]/50 uppercase tracking-wider text-xs font-mono">Fig 02</span>
-            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-[#f4f4e4] mt-1">
+            <span className="text-muted-foreground uppercase tracking-wider text-xs font-mono">Fig 02</span>
+            <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-foreground mt-1">
               Design Tool Market Share Evolution
             </h3>
-            <p className="text-xs sm:text-sm md:text-base font-sans text-[#f4f4e4]/70 mt-2">
+            <p className="text-xs sm:text-sm md:text-base font-sans text-foreground/70 mt-2">
               Percentage of professional designers using each tool as primary (2010-2024)
             </p>
           </div>
@@ -216,24 +216,24 @@ export default function MarketShareChart() {
               >
                 <CartesianGrid 
                   strokeDasharray="3 3" 
-                  stroke="#8AA97A" 
+                  stroke="hsl(217, 100%, 53%)" 
                   opacity={0.05}
                   verticalPoints={[0]}
                 />
                 <XAxis 
                   dataKey="year" 
                   stroke="transparent"
-                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                  tick={{ fill: 'hsl(0, 0%, 55%)', fontSize: 10 }}
                   className="text-xs sm:text-sm"
-                  axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
+                  axisLine={{ stroke: 'hsl(0, 0%, 88%)', opacity: 0.1 }}
                   tickLine={false}
                   interval={0}
                 />
                 <YAxis 
                   stroke="transparent"
-                  tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                  tick={{ fill: 'hsl(0, 0%, 55%)', fontSize: 10 }}
                   className="text-xs sm:text-sm"
-                  axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
+                  axisLine={{ stroke: 'hsl(0, 0%, 88%)', opacity: 0.1 }}
                   tickLine={false}
                   domain={[0, 100]}
                   tickFormatter={(value) => `${value}%`}
@@ -241,12 +241,12 @@ export default function MarketShareChart() {
                     value: 'Market Share (%)', 
                     angle: -90, 
                     position: 'insideLeft',
-                    style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
+                    style: { fill: 'hsl(0, 0%, 55%)', fontSize: 11 }
                   }}
                 />
                 <Tooltip 
                   content={<CustomTooltip />}
-                  cursor={{ fill: '#8AA97A', opacity: 0.05 }}
+                  cursor={{ fill: 'hsl(217, 100%, 53%)', opacity: 0.05 }}
                   animationDuration={200}
                 />
                 <Legend 
@@ -335,41 +335,41 @@ export default function MarketShareChart() {
           </div>
           
           {/* Key Milestones */}
-          <div className="mt-8 pt-6 border-t border-[#8AA97A]/10">
-            <h4 className="text-sm font-display font-semibold text-[#f4f4e4]/90 mb-3">Key Milestones:</h4>
+          <div className="mt-8 pt-6 border-t border-primary/10">
+            <h4 className="text-sm font-display font-semibold text-foreground/90 mb-3">Key Milestones:</h4>
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
               <div className="flex items-start gap-3">
-                <span className="text-[#8AA97A] text-lg">•</span>
+                <span className="text-primary text-lg">•</span>
                 <div>
-                  <p className="text-xs font-mono text-[#f4f4e4]/80">2010</p>
-                  <p className="text-xs font-sans text-[#f4f4e4]/60">Sketch launches, challenges Photoshop</p>
+                  <p className="text-xs font-mono text-foreground/80">2010</p>
+                  <p className="text-xs font-sans text-muted-foreground">Sketch launches, challenges Photoshop</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-[#8AA97A] text-lg">•</span>
+                <span className="text-primary text-lg">•</span>
                 <div>
-                  <p className="text-xs font-mono text-[#f4f4e4]/80">2016</p>
-                  <p className="text-xs font-sans text-[#f4f4e4]/60">Figma introduces real-time collaboration</p>
+                  <p className="text-xs font-mono text-foreground/80">2016</p>
+                  <p className="text-xs font-sans text-muted-foreground">Figma introduces real-time collaboration</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-[#8AA97A] text-lg">•</span>
+                <span className="text-primary text-lg">•</span>
                 <div>
-                  <p className="text-xs font-mono text-[#f4f4e4]/80">2020</p>
-                  <p className="text-xs font-sans text-[#f4f4e4]/60">Figma becomes market leader</p>
+                  <p className="text-xs font-mono text-foreground/80">2020</p>
+                  <p className="text-xs font-sans text-muted-foreground">Figma becomes market leader</p>
                 </div>
               </div>
               <div className="flex items-start gap-3">
-                <span className="text-[#8AA97A] text-lg">•</span>
+                <span className="text-primary text-lg">•</span>
                 <div>
-                  <p className="text-xs font-mono text-[#f4f4e4]/80">2022</p>
-                  <p className="text-xs font-sans text-[#f4f4e4]/60">Adobe acquires Figma for $20B</p>
+                  <p className="text-xs font-mono text-foreground/80">2022</p>
+                  <p className="text-xs font-sans text-muted-foreground">Adobe acquires Figma for $20B</p>
                 </div>
               </div>
             </div>
           </div>
           
-          <p className="text-xs text-[#f4f4e4]/50 mt-6 font-mono">
+          <p className="text-xs text-muted-foreground mt-6 font-mono">
             Source: Designer Tools Survey, State of Design Reports (2010-2024)
           </p>
         </div>

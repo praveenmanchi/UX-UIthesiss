@@ -37,28 +37,30 @@ export default function AnimatedBarChart({ data, title, description, bars }: Ani
         <div className="h-64 sm:h-80 md:h-96 w-full">
           <ResponsiveContainer width="100%" height="100%">
           <BarChart data={data} margin={{ top: 5, right: 30, left: 20, bottom: 5 }}>
-            <CartesianGrid strokeDasharray="3 3" stroke="rgba(138, 169, 122, 0.1)" />
+            <CartesianGrid strokeDasharray="3 3" stroke="hsl(217, 100%, 53%)" opacity={0.05} />
             <XAxis 
               dataKey="name" 
-              stroke="rgba(244, 244, 228, 0.5)"
-              tick={{ fontSize: 10 }}
+              stroke="transparent"
+              tick={{ fill: 'hsl(0, 0%, 55%)', fontSize: 10 }}
               className="text-xs sm:text-sm"
-              style={{ fontFamily: 'JetBrains Mono' }}
+              axisLine={{ stroke: 'hsl(0, 0%, 88%)', opacity: 0.1 }}
+              tickLine={false}
             />
             <YAxis 
-              stroke="rgba(244, 244, 228, 0.5)"
-              tick={{ fontSize: 10 }}
+              stroke="transparent"
+              tick={{ fill: 'hsl(0, 0%, 55%)', fontSize: 10 }}
               className="text-xs sm:text-sm"
-              style={{ fontFamily: 'JetBrains Mono' }}
+              axisLine={{ stroke: 'hsl(0, 0%, 88%)', opacity: 0.1 }}
+              tickLine={false}
             />
             <Tooltip
               contentStyle={{
-                backgroundColor: 'rgba(18, 18, 18, 0.9)',
-                border: '1px solid rgba(138, 169, 122, 0.3)',
+                backgroundColor: 'hsl(var(--card))',
+                border: '1px solid hsl(217, 100%, 53%, 0.4)',
                 borderRadius: '8px',
-                fontFamily: 'JetBrains Mono'
+                color: 'hsl(var(--foreground))'
               }}
-              labelStyle={{ color: 'rgba(244, 244, 228, 0.9)' }}
+              labelStyle={{ color: 'hsl(var(--foreground))' }}
             />
             <Legend 
               wrapperStyle={{ 

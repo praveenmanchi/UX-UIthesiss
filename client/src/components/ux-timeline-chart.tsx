@@ -26,8 +26,8 @@ const CustomDot = (props: any) => {
           cx={cx} 
           cy={cy} 
           r={5} 
-          fill="#8AA97A" 
-          stroke="#8AA97A" 
+          fill="hsl(217, 100%, 53%)" 
+          stroke="hsl(217, 100%, 53%)" 
           strokeWidth={2}
           className="transition-all duration-200"
         />
@@ -41,16 +41,16 @@ const CustomTooltip = ({ active, payload }: any) => {
   if (active && payload && payload.length) {
     const data = payload[0].payload;
     return (
-      <div className="bg-[#121212] border border-[#8AA97A]/40 rounded-lg px-4 py-3 shadow-xl transition-all duration-200">
-        <p className="font-semibold text-[#f4f4e4] mb-2">{data.year}</p>
-        <p className="text-sm text-[#f4f4e4]/90">
+      <div className="bg-card dark:bg-card border border-primary/40 rounded-lg px-4 py-3 shadow-xl transition-all duration-200">
+        <p className="font-semibold text-foreground mb-2">{data.year}</p>
+        <p className="text-sm text-foreground/90">
           Professionals: 
-          <span className="ml-2 font-mono font-semibold text-[#8AA97A]">
+          <span className="ml-2 font-mono font-semibold text-primary">
             {data.professionals.toLocaleString()}
           </span>
         </p>
         {data.milestone && (
-          <p className="text-xs text-[#f4f4e4]/60 mt-2">
+          <p className="text-xs text-muted-foreground mt-2">
             {data.milestone}
           </p>
         )}
@@ -66,13 +66,13 @@ export default function UXTimelineChart() {
       <section id="formalization" className="py-16 px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           <div className="space-y-6">
-            <div className="bg-[#8AA97A]/[0.02] rounded-xl border border-[#8AA97A]/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-[#8AA97A]/20">
+            <div className="bg-primary/[0.02] rounded-xl border border-primary/10 p-4 sm:p-6 md:p-8 transition-all duration-300 hover:border-primary/20">
               <div className="mb-4">
-                <span className="text-[#f4f4e4]/50 uppercase tracking-wider text-xs font-mono">Fig 03</span>
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-[#f4f4e4] mt-1">
+                <span className="text-muted-foreground uppercase tracking-wider text-xs font-mono">Fig 03</span>
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-semibold font-display text-foreground mt-1">
                   UX/UI Professional Roles Evolution Timeline
                 </h3>
-                <p className="text-xs sm:text-sm md:text-base text-[#f4f4e4]/70 mt-2">
+                <p className="text-xs sm:text-sm md:text-base text-foreground/70 mt-2">
                   Exponential growth of UX professionals from GUI inception to industry maturity
                 </p>
               </div>
@@ -82,36 +82,36 @@ export default function UXTimelineChart() {
                   <LineChart data={data} margin={{ top: 20, right: 30, left: 60, bottom: 60 }}>
                     <CartesianGrid 
                       strokeDasharray="3 3" 
-                      stroke="#8AA97A" 
+                      stroke="hsl(217, 100%, 53%)" 
                       opacity={0.05}
                       verticalPoints={[0]}
                     />
                     <XAxis 
                       dataKey="year" 
                       stroke="transparent"
-                      tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                      tick={{ fill: 'hsl(0, 0%, 55%)', fontSize: 10 }}
                       className="text-xs sm:text-sm"
-                      axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
+                      axisLine={{ stroke: 'hsl(0, 0%, 88%)', opacity: 0.1 }}
                       tickLine={false}
                       label={{ 
                         value: 'Year', 
                         position: 'insideBottom', 
                         offset: -10,
-                        style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
+                        style: { fill: 'hsl(0, 0%, 55%)', fontSize: 11 }
                       }}
                       domain={[1970, 2025]}
                     />
                     <YAxis 
                       stroke="transparent"
-                      tick={{ fill: '#f4f4e4', opacity: 0.7, fontSize: 10 }}
+                      tick={{ fill: 'hsl(0, 0%, 55%)', fontSize: 10 }}
                       className="text-xs sm:text-sm"
-                      axisLine={{ stroke: '#f4f4e4', opacity: 0.1 }}
+                      axisLine={{ stroke: 'hsl(0, 0%, 88%)', opacity: 0.1 }}
                       tickLine={false}
                       label={{ 
                         value: 'Professional Roles (log scale)', 
                         angle: -90, 
                         position: 'insideLeft',
-                        style: { fill: '#f4f4e4', opacity: 0.7, fontSize: 11 }
+                        style: { fill: 'hsl(0, 0%, 55%)', fontSize: 11 }
                       }}
                       scale="log"
                       domain={[1, 1000000]}
@@ -128,20 +128,20 @@ export default function UXTimelineChart() {
                     />
                     <Tooltip 
                       content={<CustomTooltip />}
-                      cursor={{ stroke: '#8AA97A', strokeWidth: 1, opacity: 0.2 }}
+                      cursor={{ stroke: 'hsl(217, 100%, 53%)', strokeWidth: 1, opacity: 0.2 }}
                       animationDuration={200}
                     />
                     <Line 
                       type="monotone" 
                       dataKey="professionals" 
-                      stroke="#8AA97A"
+                      stroke="hsl(217, 100%, 53%)"
                       strokeWidth={3}
                       dot={<CustomDot />}
                       activeDot={{ 
                         r: 7, 
-                        fill: '#DB4545',
+                        fill: 'hsl(354, 81%, 49%)',
                         strokeWidth: 2,
-                        stroke: '#DB4545'
+                        stroke: 'hsl(354, 81%, 49%)'
                       }}
                       animationDuration={1500}
                       animationBegin={0}
@@ -150,34 +150,34 @@ export default function UXTimelineChart() {
                 </ResponsiveContainer>
               </div>
               
-              <p className="text-xs text-[#f4f4e4]/50 mt-4 font-mono">
+              <p className="text-xs text-muted-foreground mt-4 font-mono">
                 Source: Industry research on UX/UI professional growth patterns (1973-2025)
               </p>
             </div>
 
             <div className="space-y-4 pt-4">
-              <h4 className="font-semibold text-sm uppercase tracking-wider text-[#f4f4e4]/70">Key Milestones</h4>
+              <h4 className="font-semibold text-sm uppercase tracking-wider text-foreground/70">Key Milestones</h4>
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {data.filter(d => d.milestone).map((item, index) => (
                   <div 
                     key={item.year}
-                    className="flex items-start space-x-3 p-3 bg-[#8AA97A]/[0.02] rounded-lg border border-[#8AA97A]/10 transition-all duration-200 hover:border-[#8AA97A]/20"
+                    className="flex items-start space-x-3 p-3 bg-primary/[0.02] rounded-lg border border-primary/10 transition-all duration-200 hover:border-primary/20"
                     data-testid={`milestone-${item.year}`}
                   >
-                    <div className="w-2 h-2 rounded-full bg-[#8AA97A] mt-1.5 flex-shrink-0 animate-pulse" />
+                    <div className="w-2 h-2 rounded-full bg-primary mt-1.5 flex-shrink-0 animate-pulse" />
                     <div className="flex-1 min-w-0">
                       <div className="flex items-baseline justify-between">
-                        <span className="font-mono text-sm font-semibold text-[#f4f4e4]">{item.year}</span>
-                        <span className="text-xs text-[#f4f4e4]/60">{item.professionals.toLocaleString()} roles</span>
+                        <span className="font-mono text-sm font-semibold text-foreground">{item.year}</span>
+                        <span className="text-xs text-muted-foreground">{item.professionals.toLocaleString()} roles</span>
                       </div>
-                      <p className="text-sm text-[#f4f4e4]/80 mt-0.5">{item.milestone}</p>
+                      <p className="text-sm text-foreground/80 mt-0.5">{item.milestone}</p>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            <p className="text-xs text-[#f4f4e4]/50 pt-4 font-mono">
+            <p className="text-xs text-muted-foreground pt-4 font-mono">
               Note: Professional roles estimates based on industry growth and tool adoption data
             </p>
           </div>

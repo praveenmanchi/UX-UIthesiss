@@ -31,8 +31,8 @@ export default function StackedAreaChart({
   const CustomTooltip = ({ active, payload, label }: any) => {
     if (active && payload && payload.length) {
       return (
-        <div className="bg-black border border-accent/20 p-4 rounded-lg shadow-xl" data-testid="chart-tooltip">
-          <p className="font-mono text-white font-bold mb-2" data-testid="tooltip-label">{label}</p>
+        <div className="bg-card dark:bg-card border border-primary/40 p-4 rounded-lg shadow-xl" data-testid="chart-tooltip">
+          <p className="font-mono text-foreground font-bold mb-2" data-testid="tooltip-label">{label}</p>
           {payload.map((entry: any, index: number) => (
             <div key={index} className="flex items-center gap-2 text-sm" data-testid={`tooltip-entry-${index}`}>
               <div
@@ -40,7 +40,7 @@ export default function StackedAreaChart({
                 style={{ backgroundColor: entry.color }}
               />
               <span className="text-foreground/80">{entry.name}:</span>
-              <span className="font-semibold text-white" data-testid={`tooltip-value-${index}`}>
+              <span className="font-semibold text-foreground" data-testid={`tooltip-value-${index}`}>
                 {typeof entry.value === 'number' ? entry.value.toFixed(1) : entry.value}M
               </span>
             </div>
@@ -65,7 +65,7 @@ export default function StackedAreaChart({
     >
       <Card className="chart-dark-container">
         <div className="mb-6">
-          <h4 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-timeline-cream mb-2">
+          <h4 className="font-display text-xl sm:text-2xl md:text-3xl font-bold text-foreground mb-2">
             {title}
           </h4>
           {description && (
@@ -107,28 +107,31 @@ export default function StackedAreaChart({
 
               <CartesianGrid
                 strokeDasharray="3 3"
-                stroke="hsl(88 16% 53% / 0.1)"
+                stroke="hsl(217, 100%, 53%)"
+                opacity={0.05}
                 vertical={false}
               />
 
               <XAxis
                 dataKey="year"
-                stroke="hsl(var(--timeline-sage))"
-                tick={{ fill: "hsl(var(--timeline-cream))", fontSize: 10 }}
+                stroke="transparent"
+                tick={{ fill: "hsl(0, 0%, 55%)", fontSize: 10 }}
                 className="text-xs sm:text-sm"
-                tickLine={{ stroke: "hsl(var(--timeline-sage))" }}
+                axisLine={{ stroke: "hsl(0, 0%, 88%)", opacity: 0.1 }}
+                tickLine={false}
               />
 
               <YAxis
-                stroke="hsl(var(--timeline-sage))"
-                tick={{ fill: "hsl(var(--timeline-cream))", fontSize: 10 }}
+                stroke="transparent"
+                tick={{ fill: "hsl(0, 0%, 55%)", fontSize: 10 }}
                 className="text-xs sm:text-sm"
-                tickLine={{ stroke: "hsl(var(--timeline-sage))" }}
+                axisLine={{ stroke: "hsl(0, 0%, 88%)", opacity: 0.1 }}
+                tickLine={false}
                 label={{
                   value: yAxisLabel,
                   angle: -90,
                   position: "insideLeft",
-                  fill: "hsl(var(--timeline-sage))",
+                  fill: "hsl(0, 0%, 55%)",
                   fontSize: 11,
                 }}
               />
@@ -163,7 +166,7 @@ export default function StackedAreaChart({
         </div>
 
         {/* Legend Labels Below Chart */}
-        <div className="mt-6 pt-6 border-t border-timeline-sage/20">
+        <div className="mt-6 pt-6 border-t border-primary/20">
           <div className="grid grid-cols-1 sm:grid-cols-2 gap-2 sm:gap-3 md:gap-4">
             {areas.map((area, index) => (
               <div key={area.dataKey} className="flex items-center gap-3" data-testid={`legend-item-${index}`}>

@@ -75,13 +75,13 @@ export default function ToolsEvolutionScatter() {
   const getEraColor = (era: string) => {
     switch (era) {
       case "Print to Digital Era":
-        return "#7A9A8A"; // Muted sage-teal
+        return "hsl(217, 100%, 53%)"; // IBM Carbon Blue
       case "Web Revolution Era":
-        return "#C8956B"; // Terracotta
+        return "hsl(292, 48%, 55%)"; // Purple for categorical
       case "Modern Design Tools Era":
-        return "#8AA97A"; // Sage
+        return "hsl(142, 63%, 39%)"; // Success green
       default:
-        return "#a0aec0";
+        return "hsl(0, 0%, 63%)";
     }
   };
 
@@ -95,34 +95,34 @@ export default function ToolsEvolutionScatter() {
   };
 
   return (
-    <div className="w-full bg-[#f5f2ed] py-8 sm:py-10 md:py-12 px-4 sm:px-6 rounded-lg">
+    <div className="w-full bg-card dark:bg-card py-8 sm:py-10 md:py-12 px-4 sm:px-6 rounded-lg">
       <div className="max-w-6xl mx-auto">
-        <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-2 text-black">
+        <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-2 text-foreground">
           Design Tools Evolution (1977-2019)
         </h3>
         
         {/* Legend */}
         <div className="flex justify-center gap-2 sm:gap-3 md:gap-4 mb-8 flex-wrap">
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#7A9A8A]" />
-            <span className="text-xs sm:text-sm font-sans text-black">Print to Digital Era</span>
+            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(217, 100%, 53%)" }} />
+            <span className="text-xs sm:text-sm font-sans text-foreground">Print to Digital Era</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#C8956B]" />
-            <span className="text-xs sm:text-sm font-sans text-black">Web Revolution Era</span>
+            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(292, 48%, 55%)" }} />
+            <span className="text-xs sm:text-sm font-sans text-foreground">Web Revolution Era</span>
           </div>
           <div className="flex items-center gap-2">
-            <div className="w-3 h-3 rounded-full bg-[#8AA97A]" />
-            <span className="text-xs sm:text-sm font-sans text-black">Modern Design Tools Era</span>
+            <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(142, 63%, 39%)" }} />
+            <span className="text-xs sm:text-sm font-sans text-foreground">Modern Design Tools Era</span>
           </div>
         </div>
 
         {/* Chart Container */}
-        <div className="relative bg-white/30 border border-black/10 rounded-lg p-4 sm:p-6 md:p-8">
+        <div className="relative bg-background border border-primary/10 rounded-lg p-4 sm:p-6 md:p-8">
           {/* Y-axis labels */}
           <div className="absolute left-0 top-4 sm:top-6 md:top-8 bottom-4 sm:bottom-6 md:bottom-8 w-24 sm:w-28 md:w-32 flex flex-col justify-between text-right pr-2 sm:pr-3 md:pr-4">
             {categories.map((cat, index) => (
-              <div key={cat} className="text-[10px] font-sans text-black/70 leading-tight" style={{ 
+              <div key={cat} className="text-[10px] font-sans text-muted-foreground leading-tight" style={{ 
                 transform: 'translateY(-50%)',
                 position: 'absolute',
                 top: `${(index / (categories.length - 1)) * 100}%`,
@@ -139,7 +139,7 @@ export default function ToolsEvolutionScatter() {
             {years.map((year) => (
               <div
                 key={`grid-v-${year}`}
-                className="absolute top-0 bottom-0 border-l border-black/5"
+                className="absolute top-0 bottom-0 border-l border-primary/5"
                 style={{ left: `${getXPosition(year)}%` }}
               />
             ))}
@@ -148,7 +148,7 @@ export default function ToolsEvolutionScatter() {
             {categories.map((cat, index) => (
               <div
                 key={`grid-h-${cat}`}
-                className="absolute left-0 right-0 border-t border-black/5"
+                className="absolute left-0 right-0 border-t border-primary/5"
                 style={{ top: `${(index / (categories.length - 1)) * 100}%` }}
               />
             ))}
@@ -181,7 +181,7 @@ export default function ToolsEvolutionScatter() {
                 
                 {/* Tooltip on hover */}
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                  <div className="bg-black text-white text-xs px-3 py-2 rounded shadow-xl whitespace-nowrap">
+                  <div className="bg-card dark:bg-card text-foreground text-xs px-3 py-2 rounded shadow-xl whitespace-nowrap border border-primary/20">
                     {tool.name} ({tool.year})
                   </div>
                 </div>
@@ -193,7 +193,7 @@ export default function ToolsEvolutionScatter() {
               {years.map((year) => (
                 <div
                   key={`year-${year}`}
-                  className="text-[10px] sm:text-xs text-black/70 font-mono"
+                  className="text-[10px] sm:text-xs text-muted-foreground font-mono"
                   style={{ position: 'absolute', left: `${getXPosition(year)}%`, transform: 'translateX(-50%)' }}
                 >
                   {year}
@@ -204,10 +204,10 @@ export default function ToolsEvolutionScatter() {
 
           {/* Axis labels */}
           <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 translate-y-12">
-            <span className="text-xs sm:text-sm font-sans font-medium text-black/60">Year</span>
+            <span className="text-xs sm:text-sm font-sans font-medium text-muted-foreground">Year</span>
           </div>
           <div className="absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-8 sm:-translate-x-10 md:-translate-x-12 -rotate-90 origin-center">
-            <span className="text-xs sm:text-sm font-sans font-medium text-black/60">Tool Categories</span>
+            <span className="text-xs sm:text-sm font-sans font-medium text-muted-foreground">Tool Categories</span>
           </div>
         </div>
       </div>
