@@ -218,37 +218,46 @@ export default function ThesesSection() {
     },
     {
       number: 6,
-      title: "Geographic Impossibilities: Location-Based Constraints",
+      title: "Geographic Impossibilities: India-Specific Constraints for Managers",
       content: (
         <>
-          UX/UI practices spread geographically over time. Regional adoption dates create location-specific experience limits. Silicon Valley saw first roles in{" "}
+          UX/UI practices spread geographically over time. For Indian managers claiming 20-25 years while staying in India, the timeline proves impossibility. UX adoption in India began experimentally in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">1995 (mainstream by 2005)</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">late 1990s during Y2K boom</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 30 years in Silicon Valley. 10-year gap from first roles to mainstream.</p>
+              <p className="text-sm">1997-1999: Experimental UX driven by IT outsourcing and global firms introducing processes. Pre-2000 UX was "non-existent" or experimental.</p>
             </TooltipContent>
           </Tooltip>
-          . NYC/Boston followed in 1998 (mainstream 2008), London in 2000 (mainstream 2010), Western Europe in 2003 (mainstream 2012), India in{" "}
+          , when global firms introduced UX processes to align with international standards. Formal/mainstream UX roles emerged around{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">late 1990s (mainstream early 2000s)</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2000 with S-curve adoption</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 25-27 years in India. Y2K and IT outsourcing boom enabled early UX roles.</p>
+              <p className="text-sm">Early adopters (2000-2007): ~2.5% of companies. Accelerated post-iPhone (2007) to 34% by 2015. Mainstream UX hit ~2010.</p>
             </TooltipContent>
           </Tooltip>
-          , Eastern Europe in{" "}
+          . Maximum possible experience for someone starting in India:{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2008 (mainstream 2018)</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">25 years (2000-2025)</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 17 years in Eastern Europe. Post-EU expansion digital economy growth.</p>
+              <p className="text-sm">Only for pioneers in experimental roles. Probability ~0.0125% globally for early involvement, even lower locally. Pre-2000 had crowded interfaces without user studies.</p>
             </TooltipContent>
           </Tooltip>
-          , Latin America in 2010 (mainstream 2020), and Africa/Middle East in 2012 (mainstream 2022). Claims like "UX designer in Bangalore since 1990" are impossible when no roles existed until late 1990s, "Leading UX in Prague 1995" predates regional adoption by 13 years.
+          , but only for pioneers—statistically rare. Claims of 20-25 years require starting between{" "}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2000-2005</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-sm">But mainstream UX (dedicated teams, design thinking) only hit ~2010, limiting realistic max to 15-20 years for most. Managerial positions postdate team formations.</p>
+            </TooltipContent>
+          </Tooltip>
+          . For managers (senior roles implying leadership in established teams), this is even tighter, as managerial positions postdate team formations. Claims like "Indian manager with 25 years UX experience" would need to have started in 2000, but pre-2000 UX was experimental. Claims exceeding 25 years are impossible; 20-25 are dubious without evidence of pioneering work in India.
         </>
       )
     },
@@ -326,73 +335,73 @@ export default function ThesesSection() {
     },
     {
       number: 9,
-      title: "Company Hiring Records: Corporate Timeline Verification in India",
+      title: "Company Hiring Records: Proving Impossibility for Indian Managers at Popular Companies",
       content: (
         <>
-          Major companies in India began hiring UX professionals at documented dates. Claims must align with corporate records. TCS began UX efforts in{" "}
+          For managers in specific companies who stayed in India, 20-25 years is impossible if their UX teams formed later. TCS began user-driven development by{" "}
           <Tooltip>
             <TooltipTrigger asChild>
               <span className="font-bold cursor-help border-b border-dotted border-black/40">late 1990s with formal practices developing in the early 2000s</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 25-27 years at TCS India (late 1990s-2025). Early experience design linked to TRDDC R&D center established in 1981, but UX-specific in late 1990s.</p>
+              <p className="text-sm">~25-28 years max if experimental start in 1997. Possible for 20-25 if started early, but managers likely post-2000 (max ~25). Claims &gt;25 impossible. Rare for pure India-stay as early work tied to global Y2K projects.</p>
             </TooltipContent>
           </Tooltip>
-          . Infosys started fostering design thinking and UX practices around{" "}
+          . Infosys launched design thinking initiative in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2014 under CEO Vishal Sikka</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2014 under Vishal Sikka</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 11 years at Infosys India. Claims before 2014 predate UX adoption in the company.</p>
+              <p className="text-sm">11 years max (2014-2025). Impossible for 20-25 years. Pre-2014 claims reference non-UX roles (e.g., general IT). UX via acquisitions like Brilliant Basics (2017), WongDoody (2018).</p>
             </TooltipContent>
           </Tooltip>
-          . Wipro established UX through Wipro Digital in{" "}
+          . Wipro Digital launched in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2014 with acquisitions like Designit in 2015</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2014, Designit acquired 2015</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 11 years at Wipro India. Pre-2014 UX was minimal.</p>
+              <p className="text-sm">11 years max. Impossible for 20-25 years. Pre-2014 UX was absent in India operations.</p>
             </TooltipContent>
           </Tooltip>
-          . Tech Mahindra began its CX/UX consulting practice in{" "}
+          . Tech Mahindra established UX research in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2015</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2007, formal practice ~2015</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 10 years at Tech Mahindra India. Early efforts around 2015 with 110 consultants by then.</p>
+              <p className="text-sm">18 years max from 2007. Impossible for 25 years. 20 years only if started exactly in 2005 (rare for managers). Precursor Satyam in late 1990s. Claims &gt;18 impossible.</p>
             </TooltipContent>
           </Tooltip>
-          . Google's India operations began UX-related work in{" "}
+          . Google India started UX in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2009 with UX research for products like Maps</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2008 for India-specific projects</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 16 years at Google India (2009-2025). Google India founded in 2004, but UX teams formed later.</p>
+              <p className="text-sm">17 years max. Impossible for 20-25 years. India ops from 2004, UX teams later. Maps adaptations drove UX focus.</p>
             </TooltipContent>
           </Tooltip>
-          . Apple began engaging with UX in India around{" "}
+          . Apple India UX began{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2018 through design evangelists and collaborations</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">~2020 with developer collaborations</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
               <p className="text-sm">Maximum 7 years at Apple India. Claims before 2018 are impossible as Apple’s UX presence was limited.</p>
             </TooltipContent>
           </Tooltip>
-          . Microsoft established UX roles in India by{" "}
+              <p className="text-sm">5 years max. Impossible for 20-25 years. Any higher claims require non-India experience. Limited presence before 2020.</p>
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">1998 with IDC, but dedicated UX around 2010s</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">~2010 in Hyderabad IDC</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 15 years at Microsoft India (2010-2025). Microsoft India founded in 1990, UX teams ramped up later.</p>
+              <p className="text-sm">15 years max. Impossible for 20-25 years. India ops from 1990, UX minimal pre-2010. Design teams formed in 2010s.</p>
             </TooltipContent>
           </Tooltip>
-          . Claims like "30 years UX at TCS India" are impossible (exceeds max by 3-5 years), "UX at Infosys since 2000" predates by 14 years, "Wipro UX lead in 2005" predates by 9 years, "Tech Mahindra UX since 2010" predates by 5 years, "Google India UX pioneer in 2000" predates by 9 years, or "Apple India designer in 2010" are verifiably false.
+          . This proves: For managers in Infosys, Wipro, Google, Apple, or Microsoft (majority cases), 20-25 years is mathematically impossible if stayed in India (5-17 years max). Even for TCS/Tech Mahindra, 25+ is impossible, and 20-25 requires verifiable pioneer status. Cross-reference with global constraints (UX coined 1993, tools like Figma 2016) amplifies impossibilities. Indian managers with legitimate 20-25 years likely had international experience or conflate non-UX IT roles with UX.
         </>
       )
     },

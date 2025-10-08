@@ -33,19 +33,19 @@ export default function IntroductionSection() {
           {/* Body Text */}
           <div className="space-y-6 text-black/90">
             <p className="text-sm sm:text-base leading-[1.8] text-justify">
-              Around 2025, hiring managers in India claim 24 years of UX/UI experience, recruiters validate 20-year professional histories, and senior designers inflate their backgrounds by a decade. A decade later, we have interns with more authentic experience than self-proclaimed "experts," 1,000+ false LinkedIn profiles claiming impossible timelines, and an unprecedented proliferation of fabricated UX credentials.
+              Around 2025, Indian managers claim 20-25 years of UX/UI experience while staying in India itself. Hiring managers validate impossible professional histories, and senior leaders inflate their backgrounds by citing roles that didn't exist. We have interns with more authentic experience than self-proclaimed "experts," 1,000+ false LinkedIn profiles claiming timelines that predate UX team formations in their own companies, and an unprecedented proliferation of fabricated credentials.
             </p>
 
             <p className="text-sm sm:text-base leading-[1.8] text-justify">
-              This is a hot war against professional integrity. The industry has empirically lost credibility. We must respond to this misinformation with facts.
+              This is a hot war against professional integrity. The industry has empirically lost credibility. We must prove with mathematical precision why these claims are impossible—particularly for managers who stayed in India, working at companies like TCS, Wipro, Infosys, Tech Mahindra, Google India, Apple India, and Microsoft India.
             </p>
 
             <p className="text-sm sm:text-base leading-[1.8] text-justify">
-              We have a peer problem: Mathematical impossibility. "Senior UX/UI Designer" is a euphemism to avoid the embarrassment of acknowledging that the profession is younger than claimed. In 1993, Don Norman was the only person with "User Experience" in his job title. Today, thousands claim experience predating the field's existence. The UX/UI industry requires historical accuracy, or it will lose credibility and plunge hiring into darkness under fraudulent resumes.
+              We have a peer problem: Geographic and timeline impossibility. UX/UI in India began experimentally in the late 1990s during the Y2K boom, with formal roles emerging around 2000. Maximum possible experience for someone starting in India: 25 years (2000-2025), but only for pioneers in experimental roles—statistically rare. For managers claiming 20-25 years at Infosys, Wipro, or Google India, where UX teams formed in 2014, 2014, and 2008 respectively, the mathematics proves impossibility. In 1993, Don Norman was the only person globally with "User Experience" in his job title. Today, thousands of Indian professionals claim experience predating not just the field's global existence, but India's regional adoption.
             </p>
 
             <p className="text-sm sm:text-base leading-[1.8] text-justify">
-              Given the vast claims we have seen about experience in these decades of digital transformation, it would be reasonable to wonder: what went wrong?
+              Given these claims about 20-25 years of UX experience in Indian service-based companies and tech giants operating in India, it would be reasonable to wonder: what does the data actually prove?
             </p>
           </div>
         </div>
