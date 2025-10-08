@@ -350,6 +350,7 @@ export default function OriginsSection() {
                         <img 
                           src={pioneer.image} 
                           alt={pioneer.name}
+                          loading="lazy"
                           className="w-full h-full object-cover"
                         />
                       </div>

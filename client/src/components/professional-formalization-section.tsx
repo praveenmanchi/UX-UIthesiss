@@ -409,6 +409,7 @@ export default function ProfessionalFormalizationSection() {
                       <img 
                         src={pioneer.image} 
                         alt={pioneer.name}
+                        loading="lazy"
                         className="w-full aspect-square object-cover rounded-lg"
                       />
                     </div>
