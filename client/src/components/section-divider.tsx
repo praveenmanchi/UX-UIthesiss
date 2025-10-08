@@ -65,7 +65,7 @@ export default function SectionDivider({ number, label, className }: SectionDivi
                 "font-display font-bold",
                 "text-[80px] sm:text-[100px] md:text-[120px] lg:text-[140px]",
                 "leading-none select-none",
-                "text-[#8AA97A]",
+                "text-primary",
                 "opacity-[0.12]"
               )}
               aria-hidden="true"
@@ -80,7 +80,7 @@ export default function SectionDivider({ number, label, className }: SectionDivi
               {/* Decorative line */}
               <div
                 className={cn(
-                  "h-[2px] bg-gradient-to-r from-[#8AA97A]/60 to-transparent",
+                  "h-[2px] bg-gradient-to-r from-primary/60 to-transparent",
                   "transition-all duration-1000 ease-out",
                   isVisible ? "opacity-100 w-24 sm:w-32 md:w-40" : "opacity-0 w-0"
                 )}
@@ -120,7 +120,7 @@ export default function SectionDivider({ number, label, className }: SectionDivi
                   height="24"
                   viewBox="0 0 24 24"
                   fill="none"
-                  className="text-[#8AA97A]/40"
+                  className="text-primary/40"
                 >
                   <rect
                     x="3"
@@ -142,7 +142,7 @@ export default function SectionDivider({ number, label, className }: SectionDivi
             {/* Subtle underline */}
             <div
               className={cn(
-                "mt-4 h-[1px] bg-gradient-to-r from-[#8AA97A]/30 via-[#8AA97A]/10 to-transparent",
+                "mt-4 h-[1px] bg-gradient-to-r from-primary/30 via-primary/10 to-transparent",
                 "transition-all duration-1200 ease-out",
                 isVisible ? "opacity-100 w-full" : "opacity-0 w-0"
               )}
@@ -169,9 +169,9 @@ export default function SectionDivider({ number, label, className }: SectionDivi
               <div
                 key={i}
                 className={cn(
-                  "w-1.5 h-1.5 rounded-full bg-[#8AA97A]/20",
+                  "w-1.5 h-1.5 rounded-full bg-primary/20",
                   "transition-all duration-300",
-                  i === 4 && "bg-[#8AA97A]/40" // Center dot slightly brighter
+                  i === 4 && "bg-primary/40" // Center dot slightly brighter
                 )}
                 style={{
                   transitionDelay: `${700 + i * 50}ms`,

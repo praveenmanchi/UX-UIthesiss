@@ -12,7 +12,7 @@ export default function AmericanFlag({ className }: AmericanFlagProps) {
       xmlns="http://www.w3.org/2000/svg"
     >
       {/* Flag stripes */}
-      <rect x="0" y="0" width="120" height="80" fill="#f4f4e4"/>
+      <rect x="0" y="0" width="120" height="80" fill="hsl(0, 0%, 96%)"/>
       <rect x="0" y="6.15" width="120" height="6.15" className="flag-gradient"/>
       <rect x="0" y="18.46" width="120" height="6.15" className="flag-gradient"/>
       <rect x="0" y="30.77" width="120" height="6.15" className="flag-gradient"/>
@@ -24,7 +24,7 @@ export default function AmericanFlag({ className }: AmericanFlagProps) {
       <rect x="0" y="0" width="48" height="43.08" fill="#2a2a2a"/>
       
       {/* Stars (simplified grid pattern) */}
-      <g fill="#f4f4e4">
+      <g fill="hsl(0, 0%, 96%)">
         <circle cx="6" cy="5" r="1.5"/>
         <circle cx="14" cy="5" r="1.5"/>
         <circle cx="22" cy="5" r="1.5"/>

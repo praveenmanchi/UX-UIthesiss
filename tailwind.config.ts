@@ -62,11 +62,6 @@ export default {
           ring: "var(--sidebar-ring)",
         },
         "flag-green": "var(--flag-green)",
-        sage: {
-          DEFAULT: "#8AA97A",
-          light: "var(--sage-light)",
-          dark: "var(--sage-dark)",
-        },
       },
       fontFamily: {
         sans: ["var(--font-sans)"],
