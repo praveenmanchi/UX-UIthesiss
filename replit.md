@@ -39,11 +39,6 @@ This project is a React-based web application presenting "The History of UX/UI D
 - **Image Lazy Loading**: Added `loading="lazy"` to all pioneer/visionary images for improved initial page load performance
 - **Skeleton Loaders**: Created `ImageWithSkeleton` component with shimmer animation and fade-in transitions for smooth loading states
 - **Mobile Responsive Cards**: Updated grid layouts to stack properly on mobile (grid-cols-1 md:grid-cols-[300px_1fr])
-- **Search Functionality**: Implemented comprehensive fuzzy search using Fuse.js
-  - Searches across all visionaries and pioneers content
-  - Keyboard shortcut support (⌘K / Ctrl+K)
-  - Smooth scroll to matching results
-  - Search button in navigation header
 - **Cartographer Plugin Fix**: Disabled @replit/vite-plugin-cartographer due to Vite 5/Babel incompatibility
   - Eliminated "traverse is not a function" warnings from development logs
   - Added REPLIT_ENABLE_CARTOGRAPHER env flag for future re-enabling
@@ -289,7 +284,6 @@ Organized layering from `--z-base` (0) to `--z-tooltip` (70):
 - clsx & tailwind-merge for className management
 - Wouter for routing
 - Recharts for data visualization
-- Fuse.js for fuzzy search functionality
 
 **Development Tools**
 - Replit Vite plugins (cartographer, dev-banner, runtime-error-modal)
