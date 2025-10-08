@@ -15,11 +15,25 @@ This project is a React-based web application presenting "The History of UX/UI D
   - Light mode: Black logo via CSS filter `brightness-0`
   - Dark mode: White logo via `brightness-0 invert`
 
-## Codebase Cleanup
-- Removed duplicate reading progress implementations (kept context version)
-- Deleted 29 unused UI components (accordion, alert-dialog, carousel, menubar, etc.)
-- Removed 21 unused npm dependencies
-- Cleaned up unused hooks and utilities
+## Codebase Cleanup (October 8, 2025)
+- **Phase 1** (Earlier): Removed duplicate reading progress implementations (kept context version)
+- **Phase 1** (Earlier): Deleted 29 unused UI components (accordion, alert-dialog, carousel, menubar, etc.)
+- **Phase 1** (Earlier): Removed 21 unused npm dependencies
+- **Phase 1** (Earlier): Cleaned up unused hooks and utilities
+
+- **Phase 2** (Latest): Deleted 8 unused component files:
+  - reading-progress-bar.tsx, video-section.tsx, ux-timeline-chart.tsx
+  - section1.tsx, ux-tool-evolution-chart.tsx, progress-indicator.tsx
+  - animated-bar-chart.tsx, animated-line-chart.tsx
+- **Phase 2**: Completed IBM Carbon color migration across ALL files:
+  - Updated section-divider, gui-revolution-section, curved-tool-timeline, timeline-track
+  - Migrated origins-section scatter plot colors to IBM palette
+  - Removed all legacy sage green (#8AA97A) and cream (#f4f4e4) references
+- **Phase 2**: Deleted 6 unused UI components + uninstalled npm packages:
+  - badge, chart, dialog, input, popover, scroll-area
+  - Uninstalled @radix-ui/react-dialog, @radix-ui/react-popover, @radix-ui/react-scroll-area
+- **Phase 2**: Cleaned attached_assets folder (kept only UXUI-logo.svg)
+- **Phase 2**: Fixed broken image imports after accidental Visionaries folder deletion
 
 ## Design System Implementation
 Established comprehensive design system with CSS custom properties in `client/src/index.css`:
