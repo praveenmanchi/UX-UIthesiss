@@ -2,7 +2,7 @@ export default function IntroductionSection() {
   return (
     <section 
       id="introduction" 
-      className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-[#f5f2ed]" 
+      className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-background" 
       data-testid="section-introduction"
     >
       <div className="max-w-5xl mx-auto">
@@ -10,7 +10,7 @@ export default function IntroductionSection() {
           {/* Section Label */}
           <div>
             <span 
-              className="text-[#6b6b6b] uppercase tracking-[0.2em] text-xs sm:text-sm font-sans font-medium" 
+              className="text-muted-foreground uppercase tracking-[0.2em] text-xs sm:text-sm font-sans font-medium" 
               data-testid="label-introduction"
             >
               Introduction
@@ -20,7 +20,7 @@ export default function IntroductionSection() {
           {/* Headline */}
           <div className="space-y-6">
             <h2 
-              className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.1] text-black" 
+              className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.1] text-foreground" 
               data-testid="text-intro-heading"
             >
               As professionals, we are in an undeclared state of confusion.
@@ -31,7 +31,7 @@ export default function IntroductionSection() {
           </div>
 
           {/* Body Text */}
-          <div className="space-y-6 text-black/90">
+          <div className="space-y-6 text-foreground/90">
             <p className="text-sm sm:text-base leading-[1.8] text-justify">
               Around 2025, Indian managers claim 20-25 years of UX/UI experience while staying in India itself. Hiring managers validate impossible professional histories, and senior leaders inflate their backgrounds by citing roles that didn't exist. We have interns with more authentic experience than self-proclaimed "experts," 1,000+ false LinkedIn profiles claiming timelines that predate UX team formations in their own companies, and an unprecedented proliferation of fabricated credentials.
             </p>

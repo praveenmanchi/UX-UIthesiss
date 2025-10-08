@@ -241,7 +241,7 @@ export default function OriginsSection() {
                     {criticalMomentsYears.map((year) => (
                       <div
                         key={`grid-v-${year}`}
-                        className="absolute top-0 bottom-0 border-l border-black/5"
+                        className="absolute top-0 bottom-0 border-l border-foreground/5"
                         style={{ left: `${getCriticalMomentsXPosition(year)}%` }}
                       />
                     ))}
@@ -250,7 +250,7 @@ export default function OriginsSection() {
                     {criticalMomentsCategories.map((cat, index) => (
                       <div
                         key={`grid-h-${cat}`}
-                        className="absolute left-0 right-0 border-t border-black/5"
+                        className="absolute left-0 right-0 border-t border-foreground/5"
                         style={{ top: `${(index / (criticalMomentsCategories.length - 1)) * 100}%` }}
                       />
                     ))}
