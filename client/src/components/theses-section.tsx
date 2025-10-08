@@ -10,7 +10,7 @@ export default function ThesesSection() {
   const theses = [
     {
       number: 1,
-      title: "Mathematical Timeline Impossibility: The 32-Year Maximum",
+      title: "Mathematical Timeline Impossibility: To have 25-20 years of UX & UI experience. ",
       content: (
         <>
           Don Norman coined "User Experience" in <span className="font-bold">1993</span> at Apple. This establishes an absolute mathematical constraint:{" "}
@@ -233,10 +233,10 @@ export default function ThesesSection() {
           . NYC/Boston followed in 1998 (mainstream 2008), London in 2000 (mainstream 2010), Western Europe in 2003 (mainstream 2012), India in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2005 (mainstream 2015)</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">late 1990s (mainstream early 2000s)</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Maximum 20 years in India. Tech outsourcing boom enabled UX roles.</p>
+              <p className="text-sm">Maximum 25-27 years in India. Y2K and IT outsourcing boom enabled early UX roles.</p>
             </TooltipContent>
           </Tooltip>
           , Eastern Europe in{" "}
@@ -248,7 +248,7 @@ export default function ThesesSection() {
               <p className="text-sm">Maximum 17 years in Eastern Europe. Post-EU expansion digital economy growth.</p>
             </TooltipContent>
           </Tooltip>
-          , Latin America in 2010 (mainstream 2020), and Africa/Middle East in 2012 (mainstream 2022). Claims like "UX designer in Bangalore since 1990" are impossible when no roles existed until 2005, "Leading UX in Prague 1995" predates regional adoption by 13 years.
+          , Latin America in 2010 (mainstream 2020), and Africa/Middle East in 2012 (mainstream 2022). Claims like "UX designer in Bangalore since 1990" are impossible when no roles existed until late 1990s, "Leading UX in Prague 1995" predates regional adoption by 13 years.
         </>
       )
     },
@@ -326,37 +326,73 @@ export default function ThesesSection() {
     },
     {
       number: 9,
-      title: "Company Hiring Records: Corporate Timeline Verification",
+      title: "Company Hiring Records: Corporate Timeline Verification in India",
       content: (
         <>
-          Major companies began hiring UX professionals at documented dates. Claims must align with corporate records. Apple hired Don Norman in{" "}
+          Major companies in India began hiring UX professionals at documented dates. Claims must align with corporate records. TCS began UX efforts in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">1993 and established a UX team by 1995</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">late 1990s with formal practices developing in the early 2000s</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Don Norman as VP User Experience was the first formal UX role in tech.</p>
+              <p className="text-sm">Maximum 25-27 years at TCS India (late 1990s-2025). Early experience design linked to TRDDC R&D center established in 1981, but UX-specific in late 1990s.</p>
             </TooltipContent>
           </Tooltip>
-          . Microsoft began UX hiring in 1995 with a team by 1998. Google's first UX hire was in{" "}
+          . Infosys started fostering design thinking and UX practices around{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2001 with a team established in 2004</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2014 under CEO Vishal Sikka</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Google founded 1998. Maximum 24 years Google UX experience (2001-2025).</p>
+              <p className="text-sm">Maximum 11 years at Infosys India. Claims before 2014 predate UX adoption in the company.</p>
             </TooltipContent>
           </Tooltip>
-          . Amazon started in 1998 with a team by 2002. Facebook hired its first UX professional in{" "}
+          . Wipro established UX through Wipro Digital in{" "}
           <Tooltip>
             <TooltipTrigger asChild>
-              <span className="font-bold cursor-help border-b border-dotted border-black/40">2006 with a team by 2008</span>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2014 with acquisitions like Designit in 2015</span>
             </TooltipTrigger>
             <TooltipContent className="max-w-xs">
-              <p className="text-sm">Facebook founded 2004. Claims before 2006 predate company's UX department.</p>
+              <p className="text-sm">Maximum 11 years at Wipro India. Pre-2014 UX was minimal.</p>
             </TooltipContent>
           </Tooltip>
-          . IBM began in 1997 with a team by 2000. Airbnb's first hire was in 2009 with a team by 2012. Uber started in 2010 with a team by 2013. Claims like "Google UX in 1995" or "Facebook designer in 2000" are verifiably false.
+          . Tech Mahindra began its CX/UX consulting practice in{" "}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2015</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-sm">Maximum 10 years at Tech Mahindra India. Early efforts around 2015 with 110 consultants by then.</p>
+            </TooltipContent>
+          </Tooltip>
+          . Google's India operations began UX-related work in{" "}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2009 with UX research for products like Maps</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-sm">Maximum 16 years at Google India (2009-2025). Google India founded in 2004, but UX teams formed later.</p>
+            </TooltipContent>
+          </Tooltip>
+          . Apple began engaging with UX in India around{" "}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">2018 through design evangelists and collaborations</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-sm">Maximum 7 years at Apple India. Claims before 2018 are impossible as Apple’s UX presence was limited.</p>
+            </TooltipContent>
+          </Tooltip>
+          . Microsoft established UX roles in India by{" "}
+          <Tooltip>
+            <TooltipTrigger asChild>
+              <span className="font-bold cursor-help border-b border-dotted border-black/40">1998 with IDC, but dedicated UX around 2010s</span>
+            </TooltipTrigger>
+            <TooltipContent className="max-w-xs">
+              <p className="text-sm">Maximum 15 years at Microsoft India (2010-2025). Microsoft India founded in 1990, UX teams ramped up later.</p>
+            </TooltipContent>
+          </Tooltip>
+          . Claims like "30 years UX at TCS India" are impossible (exceeds max by 3-5 years), "UX at Infosys since 2000" predates by 14 years, "Wipro UX lead in 2005" predates by 9 years, "Tech Mahindra UX since 2010" predates by 5 years, "Google India UX pioneer in 2000" predates by 9 years, or "Apple India designer in 2010" are verifiably false.
         </>
       )
     },
