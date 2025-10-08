@@ -18,6 +18,7 @@ import {
 } from "lucide-react";
 import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
+import ImageWithSkeleton from "@/components/image-with-skeleton";
 
 import DonNormanImg from "@assets/Don-Norman_headshot.jpg";
 import JakobNielsenImg from "@assets/jakob-nielsen.webp";
@@ -403,10 +404,10 @@ export default function ProfessionalFormalizationSection() {
             {pioneers.map((pioneer, index) => {
               return (
                 <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`pioneer-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
-                  <div className="grid md:grid-cols-[320px_1fr] gap-0">
+                  <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-0">
                     {/* Image Section */}
                     <div className="bg-black/40 p-6">
-                      <img 
+                      <ImageWithSkeleton
                         src={pioneer.image} 
                         alt={pioneer.name}
                         loading="lazy"

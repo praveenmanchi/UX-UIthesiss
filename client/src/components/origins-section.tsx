@@ -6,6 +6,7 @@ import DataCallout from "@/components/data-callout";
 import ExpandablePioneerCard from "@/components/expandable-pioneer-card";
 import FadeInSection from "@/components/fade-in-section";
 import ComputingDemocratizationScatter from "@/components/computing-democratization-scatter";
+import ImageWithSkeleton from "@/components/image-with-skeleton";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
@@ -344,10 +345,10 @@ export default function OriginsSection() {
               {pioneers.map((pioneer, index) => {
                 return (
                   <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`visionary-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
-                    <div className="grid md:grid-cols-[300px_1fr] gap-0">
+                    <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-0">
                       {/* Image Section */}
-                      <div className="bg-black/40">
-                        <img 
+                      <div className="bg-black/40 min-h-[250px] md:min-h-0">
+                        <ImageWithSkeleton
                           src={pioneer.image} 
                           alt={pioneer.name}
                           loading="lazy"
