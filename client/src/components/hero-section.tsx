@@ -98,7 +98,7 @@ export default function HeroSection() {
           </div>
           <div className="flex items-end">
             <div className="flex flex-col items-start gap-2">
-              <span className="text-xs sm:text-sm font-mono text-muted uppercase tracking-wider flex items-center gap-2">
+              <span className="text-xs sm:text-sm font-mono text-foreground uppercase tracking-wider flex items-center gap-2">
                 <ArrowDown className="w-3 h-3" />
                 Scroll to read
               </span>

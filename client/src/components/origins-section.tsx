@@ -155,7 +155,7 @@ export default function OriginsSection() {
             {/* Section Label and Pagination Dots */}
             <div className="flex items-start justify-between">
               <span 
-                className="text-black/60 uppercase tracking-[0.2em] text-xs sm:text-sm font-sans font-medium" 
+                className="text-foreground/60 uppercase tracking-[0.2em] text-xs sm:text-sm font-sans font-medium" 
                 data-testid="label-section-1"
               >
                 Section 1
@@ -172,14 +172,14 @@ export default function OriginsSection() {
             
             {/* Headline */}
             <h2 
-              className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.1] text-black" 
+              className="font-display text-3xl sm:text-4xl lg:text-5xl font-normal leading-[1.1] text-foreground" 
               data-testid="text-origins-heading"
             >
               Before the pixel, there was the vision
             </h2>
 
             {/* Body Text */}
-            <div className="space-y-6 text-black/90">
+            <div className="space-y-6 text-foreground/90">
               <p className="text-sm sm:text-base leading-[1.8] text-justify">
                 Long before screens glowed with graphical interfaces, before mice clicked and fingers tapped, visionaries imagined a future where humans and computers would collaborate as partners. This is the untold prehistory of UX/UI design — a story that begins not with pixels, but with profound questions about human cognition and information architecture.
               </p>
@@ -203,7 +203,7 @@ export default function OriginsSection() {
           <div className="mb-24">
             <div className="w-full bg-[#f5f2ed] py-12 px-6 rounded-lg">
               <div className="max-w-6xl mx-auto">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-2 text-black">
+                <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-2 text-foreground">
                   Critical Moments in Pre-Digital Interface History
                 </h3>
                 
@@ -211,20 +211,20 @@ export default function OriginsSection() {
                 <div className="flex justify-center gap-6 mb-8 flex-wrap">
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(217, 100%, 53%)" }} />
-                    <span className="text-xs sm:text-sm font-sans text-black">Early Era (1963-1970)</span>
+                    <span className="text-xs sm:text-sm font-sans text-foreground">Early Era (1963-1970)</span>
                   </div>
                   <div className="flex items-center gap-2">
                     <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(142, 63%, 39%)" }} />
-                    <span className="text-xs sm:text-sm font-sans text-black">GUI Era (1971-1981)</span>
+                    <span className="text-xs sm:text-sm font-sans text-foreground">GUI Era (1971-1981)</span>
                   </div>
                 </div>
 
                 {/* Chart Container */}
-                <div className="relative bg-white/30 border border-black/10 rounded-lg p-4 sm:p-6 md:p-8">
+                <div className="relative bg-muted/50 border border-foreground/10 rounded-lg p-4 sm:p-6 md:p-8">
                   {/* Y-axis labels */}
                   <div className="absolute left-0 top-4 sm:top-6 md:top-8 bottom-4 sm:bottom-6 md:bottom-8 w-24 sm:w-32 md:w-40 flex flex-col justify-between text-right pr-2 sm:pr-3 md:pr-4">
                     {criticalMomentsCategories.map((cat, index) => (
-                      <div key={cat} className="text-[10px] sm:text-xs font-sans text-black/70 leading-tight" style={{ 
+                      <div key={cat} className="text-[10px] sm:text-xs font-sans text-foreground/70 leading-tight" style={{ 
                         transform: 'translateY(-50%)',
                         position: 'absolute',
                         top: `${(index / (criticalMomentsCategories.length - 1)) * 100}%`,
@@ -282,10 +282,10 @@ export default function OriginsSection() {
                         
                         {/* Hover tooltip */}
                         <div className="absolute left-1/2 -translate-x-1/2 top-full mt-2 opacity-0 group-hover:opacity-100 transition-opacity duration-200 pointer-events-none z-10">
-                          <div className="bg-black text-white text-xs rounded-lg px-3 py-2 shadow-xl max-w-xs">
+                          <div className="bg-card border border-primary/40 text-foreground text-xs rounded-lg px-3 py-2 shadow-xl max-w-xs">
                             <div className="font-bold">{moment.name}</div>
-                            <div className="text-white/70">{moment.year} - {moment.person}</div>
-                            <div className="text-white/60 text-[10px] mt-1">{moment.description}</div>
+                            <div className="text-muted-foreground">{moment.year} - {moment.person}</div>
+                            <div className="text-muted-foreground text-[10px] mt-1">{moment.description}</div>
                           </div>
                         </div>
                       </motion.div>
@@ -296,7 +296,7 @@ export default function OriginsSection() {
                       {criticalMomentsYears.map((year) => (
                         <div
                           key={`x-label-${year}`}
-                          className="text-[10px] sm:text-xs text-black/70 font-mono"
+                          className="text-[10px] sm:text-xs text-foreground/70 font-mono"
                           style={{ 
                             position: 'absolute',
                             left: `${getCriticalMomentsXPosition(year)}%`,

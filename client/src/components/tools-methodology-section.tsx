@@ -33,27 +33,27 @@ export default function ToolsMethodologySection() {
   return (
     <section className="relative" data-testid="section-tools-methodology">
       {/* Header Section */}
-      <div className="bg-[#6b7a5d] py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
+      <div className="bg-muted py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
         <div className="max-w-4xl mx-auto">
           <div className="flex items-center justify-between mb-8">
-            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-white/70">Section 3</p>
+            <p className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground">Section 3</p>
             <div className="flex gap-2">
-              <div className="w-2 h-2 rounded-full bg-white/30" />
-              <div className="w-2 h-2 rounded-full bg-white" />
-              <div className="w-2 h-2 rounded-full bg-white/30" />
+              <div className="w-2 h-2 rounded-full bg-foreground/30" />
+              <div className="w-2 h-2 rounded-full bg-foreground" />
+              <div className="w-2 h-2 rounded-full bg-foreground/30" />
             </div>
           </div>
-          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-light leading-tight text-white mb-6">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-display font-light leading-tight text-foreground mb-6">
             Tools & Methodology Evolution
           </h2>
-          <p className="text-base sm:text-lg text-white/90 max-w-3xl leading-relaxed">
+          <p className="text-base sm:text-lg text-foreground/90 max-w-3xl leading-relaxed">
             The evolution of UX/UI design tools mirrors the profession's journey from print adaptation to digital-native thinking. What began as designers using Photoshop to slice images for web pages has transformed into a sophisticated ecosystem of collaborative, cloud-based platforms that enable real-time design systems at scale.
           </p>
         </div>
       </div>
 
-      {/* Content Section - Light Cream Background */}
-      <div className="bg-[#f5f2ed] py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
+      {/* Content Section */}
+      <div className="bg-background py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
         <div className="max-w-4xl mx-auto space-y-16">
           {/* Insights */}
           {insights.slice(0, 2).map((insight) => (
@@ -61,10 +61,10 @@ export default function ToolsMethodologySection() {
               <div className="flex gap-6 items-start" data-testid={`insight-${insight.number}`}>
                 {/* Circled Number */}
                 <div 
-                  className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-black flex items-center justify-center"
+                  className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-foreground flex items-center justify-center"
                   data-testid={`number-insight-${insight.number}`}
                 >
-                  <span className="text-black font-mono text-xs sm:text-sm font-bold">
+                  <span className="text-foreground font-mono text-xs sm:text-sm font-bold">
                     {String(insight.number).padStart(2, '0')}
                   </span>
                 </div>
@@ -72,13 +72,13 @@ export default function ToolsMethodologySection() {
                 {/* Content */}
                 <div className="flex-1 space-y-3">
                   <h4 
-                    className="text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight text-black"
+                    className="text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight text-foreground"
                     data-testid={`title-insight-${insight.number}`}
                   >
                     {insight.title}
                   </h4>
                   <p 
-                    className="text-sm sm:text-base leading-[1.8] text-justify text-black/90"
+                    className="text-sm sm:text-base leading-[1.8] text-justify text-foreground/90"
                     data-testid={`description-insight-${insight.number}`}
                   >
                     {insight.content}
@@ -101,10 +101,10 @@ export default function ToolsMethodologySection() {
               <div className="flex gap-6 items-start" data-testid={`insight-${insight.number}`}>
                 {/* Circled Number */}
                 <div 
-                  className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-black flex items-center justify-center"
+                  className="flex-shrink-0 w-12 h-12 rounded-full border-2 border-foreground flex items-center justify-center"
                   data-testid={`number-insight-${insight.number}`}
                 >
-                  <span className="text-black font-mono text-xs sm:text-sm font-bold">
+                  <span className="text-foreground font-mono text-xs sm:text-sm font-bold">
                     {String(insight.number).padStart(2, '0')}
                   </span>
                 </div>
@@ -112,13 +112,13 @@ export default function ToolsMethodologySection() {
                 {/* Content */}
                 <div className="flex-1 space-y-3">
                   <h4 
-                    className="text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight text-black"
+                    className="text-xl sm:text-2xl md:text-3xl font-display font-bold leading-tight text-foreground"
                     data-testid={`title-insight-${insight.number}`}
                   >
                     {insight.title}
                   </h4>
                   <p 
-                    className="text-sm sm:text-base leading-[1.8] text-justify text-black/90"
+                    className="text-sm sm:text-base leading-[1.8] text-justify text-foreground/90"
                     data-testid={`description-insight-${insight.number}`}
                   >
                     {insight.content}
