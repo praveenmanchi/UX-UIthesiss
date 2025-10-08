@@ -10,9 +10,15 @@ export default defineConfig({
     ...(process.env.NODE_ENV !== "production" &&
     process.env.REPL_ID !== undefined
       ? [
-          await import("@replit/vite-plugin-cartographer").then((m) =>
-            m.cartographer(),
-          ),
+          // Cartographer disabled due to Vite 5/Babel incompatibility ("traverse is not a function")
+          // Re-enable with REPLIT_ENABLE_CARTOGRAPHER=true when upstream fix is released
+          ...(process.env.REPLIT_ENABLE_CARTOGRAPHER === "true"
+            ? [
+                await import("@replit/vite-plugin-cartographer").then((m) =>
+                  m.cartographer(),
+                ),
+              ]
+            : []),
           await import("@replit/vite-plugin-dev-banner").then((m) =>
             m.devBanner(),
           ),

@@ -13,12 +13,14 @@ import Footer from "@/components/footer";
 import StickyNavigation from "@/components/sticky-navigation";
 import ScrollProgress from "@/components/scroll-progress";
 import SectionDivider from "@/components/section-divider";
+import SearchDialog from "@/components/search-dialog";
 
 export default function Home() {
   return (
     <div className="font-sans antialiased">
       <ScrollProgress />
       <NavigationHeader />
+      <SearchDialog />
       <HeroSection />
       <StickyNavigation />
       
