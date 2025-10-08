@@ -8,8 +8,6 @@ import TimelineMinimap from "@/components/timeline-minimap";
 import StackedAreaChart from "@/components/stacked-area-chart";
 import ProportionalBarGroup from "@/components/proportional-bar-group";
 import FadeInSection from "@/components/fade-in-section";
-import AnimatedLineChart from "@/components/animated-line-chart";
-import AnimatedBarChart from "@/components/animated-bar-chart";
 
 export default function GuiRevolutionSection() {
   const timelineEvents = [
