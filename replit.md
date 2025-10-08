@@ -4,6 +4,17 @@ This project is a React-based web application presenting "The History of UX/UI D
 
 # Recent Changes (October 2025)
 
+## IBM Carbon Design System Migration (October 8, 2025)
+- Migrated entire application from sage green color palette to IBM Carbon Design System
+- **Light Theme**: White background (#ffffff) with IBM Blue (#0f62fe) primary color
+- **Dark Theme**: Carbon Gray 100 (#161616) with light blue (#78a9ff) primary color
+- Updated all 13+ chart components to use IBM Carbon colors (blue, green, purple, red, yellow)
+- Replaced hardcoded text colors with theme-aware Tailwind classes (text-foreground, text-muted-foreground)
+- Improved chart axis contrast with medium grey (hsl(0, 0%, 45%)) for better visibility in both themes
+- Added custom logo (UXUI-logo.svg) to header and footer with dynamic color changes:
+  - Light mode: Black logo via CSS filter `brightness-0`
+  - Dark mode: White logo via `brightness-0 invert`
+
 ## Codebase Cleanup
 - Removed duplicate reading progress implementations (kept context version)
 - Deleted 29 unused UI components (accordion, alert-dialog, carousel, menubar, etc.)
@@ -12,7 +23,7 @@ This project is a React-based web application presenting "The History of UX/UI D
 
 ## Design System Implementation
 Established comprehensive design system with CSS custom properties in `client/src/index.css`:
-- **Color System**: Editorial palette with sage, terracotta, cream, charcoal
+- **Color System**: IBM Carbon Design System palette with blue primary, grays, and accent colors
 - **Typography Scale**: Fluid responsive typography with 10 size levels
 - **Spacing System**: Base-8 scale from 0 to 128px
 - **Shadows**: 7-level shadow system
@@ -28,21 +39,30 @@ Preferred communication style: Simple, everyday language.
 
 ## Color Tokens
 
-**Base Colors**
-- `--background`: hsl(0, 0%, 4%) - Dark background
-- `--foreground`: hsl(60, 25%, 94%) - Cream text
-- `--accent`: hsl(88, 16%, 53%) - Sage accent
+**IBM Carbon Design System**
 
-**Editorial Palette**
-- `--sage-teal`: hsl(165, 16%, 55%)
-- `--terracotta`: hsl(24, 30%, 58%)
-- `--sage`: hsl(88, 16%, 55%)
-- `--cream`: hsl(56, 24%, 82%)
-- `--charcoal`: hsl(120, 5%, 8%)
+**Light Theme**
+- `--background`: hsl(0, 0%, 100%) - White (#ffffff)
+- `--foreground`: hsl(0, 0%, 9%) - Almost black text (#161616)
+- `--primary`: hsl(217, 100%, 53%) - IBM Blue (#0f62fe)
+- `--muted`: hsl(0, 0%, 96%) - Light gray background (#f4f4f4)
+- `--muted-foreground`: hsl(0, 0%, 45%) - Medium gray text
+- `--accent`: hsl(217, 100%, 53%) - IBM Blue accent
 
-**Chart Colors**
-- `--chart-1` through `--chart-5`: Coordinated visualization palette
-- `--chart-dark-bg`: hsl(120, 5%, 3%)
+**Dark Theme**
+- `--background`: hsl(0, 0%, 9%) - Carbon Gray 100 (#161616)
+- `--foreground`: hsl(0, 0%, 96%) - Light text (#f4f4f4)
+- `--primary`: hsl(215, 100%, 73%) - Light IBM Blue (#78a9ff)
+- `--muted`: hsl(0, 0%, 15%) - Dark gray background (#262626)
+- `--muted-foreground`: hsl(0, 0%, 70%) - Light gray text
+- `--accent`: hsl(215, 100%, 73%) - Light blue accent
+
+**Chart Colors** (IBM Carbon palette)
+- Primary Blue: hsl(217, 100%, 53%) - #0f62fe
+- Success Green: hsl(142, 63%, 39%) - #198038
+- Purple: hsl(292, 48%, 55%) - #a56eff
+- Red: hsl(354, 81%, 49%) - #da1e28
+- Yellow: hsl(47, 86%, 52%) - #f1c21b
 
 ## Typography
 
