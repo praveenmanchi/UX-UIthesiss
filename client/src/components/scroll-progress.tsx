@@ -52,8 +52,8 @@ export default function ScrollProgress() {
         <div
           className={cn(
             "h-full transition-all duration-150 ease-out",
-            "bg-[#8AA97A]",
-            "shadow-[0_0_10px_rgba(138,153,122,0.5)]"
+            "bg-primary",
+            "shadow-[0_0_10px_rgba(15,98,254,0.5)]"
           )}
           style={{
             width: `${scrollProgress}%`,
@@ -65,7 +65,7 @@ export default function ScrollProgress() {
         {/* Subtle glow effect at the end of the progress bar */}
         <div
           className={cn(
-            "absolute top-0 h-full w-8 bg-gradient-to-r from-[#8AA97A] to-transparent opacity-60",
+            "absolute top-0 h-full w-8 bg-gradient-to-r from-primary to-transparent opacity-60",
             "blur-sm transition-all duration-150"
           )}
           style={{
