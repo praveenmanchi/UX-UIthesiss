@@ -7,51 +7,52 @@
   /* DESIGN SYSTEM TOKENS */
   /* ================================ */
   
-  /* === COLOR SYSTEM === */
-  /* Base Colors */
-  --background: hsl(0, 0%, 4%); /* #0a0a0a */
-  --foreground: hsl(60, 25%, 94%); /* #f4f4e4 cream text */
-  --card: hsl(0, 0%, 7%);
-  --card-foreground: hsl(60, 25%, 94%);
-  --popover: hsl(0, 0%, 4%);
-  --popover-foreground: hsl(60, 25%, 94%);
+  /* === IBM CARBON COLOR SYSTEM === */
+  /* Base Colors - White Theme */
+  --background: hsl(0, 0%, 100%); /* #ffffff */
+  --foreground: hsl(0, 0%, 9%); /* #161616 text-01 */
+  --card: hsl(0, 0%, 96%); /* #f4f4f4 ui-01 */
+  --card-foreground: hsl(0, 0%, 9%);
+  --popover: hsl(0, 0%, 100%);
+  --popover-foreground: hsl(0, 0%, 9%);
   
   /* Primary & Secondary */
-  --primary: hsl(60, 25%, 94%);
-  --primary-foreground: hsl(0, 0%, 4%);
-  --secondary: hsl(0, 0%, 15%);
-  --secondary-foreground: hsl(60, 25%, 94%);
+  --primary: hsl(217, 100%, 53%); /* #0f62fe interactive-01 */
+  --primary-foreground: hsl(0, 0%, 100%);
+  --secondary: hsl(0, 0%, 15%); /* #262626 ui-01 dark */
+  --secondary-foreground: hsl(0, 0%, 100%);
   
   /* Accent & States */
-  --accent: hsl(88, 16%, 53%); /* #8AA97A sage accent */
-  --accent-foreground: hsl(60, 25%, 94%);
-  --muted: hsl(0, 0%, 25%);
-  --muted-foreground: hsl(0, 0%, 55%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(60, 25%, 94%);
+  --accent: hsl(217, 100%, 53%); /* #0f62fe */
+  --accent-foreground: hsl(0, 0%, 100%);
+  --muted: hsl(0, 0%, 96%); /* #f4f4f4 */
+  --muted-foreground: hsl(0, 0%, 55%); /* #8d8d8d text-03 */
+  --destructive: hsl(354, 81%, 49%); /* #da1e28 danger-01 */
+  --destructive-foreground: hsl(0, 0%, 100%);
   
   /* UI Elements */
-  --border: hsl(0, 0%, 18%);
-  --input: hsl(0, 0%, 18%);
-  --ring: hsl(88, 16%, 53%);
+  --border: hsl(0, 0%, 88%); /* #e0e0e0 ui-03 */
+  --input: hsl(0, 0%, 96%);
+  --ring: hsl(217, 100%, 53%);
   
-  /* Editorial Color Palette */
-  --sage-teal: hsl(165, 16%, 55%); /* #7A9A8A */
-  --terracotta: hsl(24, 30%, 58%); /* #C8956B */
-  --sage: hsl(88, 16%, 55%); /* #8AA97A */
-  --sage-light: hsl(88, 16%, 63%);
-  --sage-dark: hsl(88, 16%, 43%);
-  --cream: hsl(56, 24%, 82%);
-  --charcoal: hsl(120, 5%, 8%);
-  --beige: hsl(48, 18%, 75%);
+  /* IBM Carbon Extended Palette */
+  --carbon-blue: hsl(217, 100%, 53%); /* #0f62fe */
+  --carbon-blue-hover: hsl(220, 100%, 46%); /* #0353e9 */
+  --carbon-blue-active: hsl(220, 100%, 31%); /* #002d9c */
+  --carbon-text-primary: hsl(0, 0%, 9%); /* #161616 */
+  --carbon-text-secondary: hsl(0, 0%, 32%); /* #525252 */
+  --carbon-text-tertiary: hsl(0, 0%, 55%); /* #8d8d8d */
+  --carbon-success: hsl(142, 63%, 39%); /* #24a148 */
+  --carbon-warning: hsl(47, 86%, 52%); /* #f1c21b */
+  --carbon-error: hsl(354, 81%, 49%); /* #da1e28 */
   
-  /* Chart Colors */
-  --chart-1: hsl(88, 16%, 53%);
-  --chart-2: hsl(88, 16%, 43%);
-  --chart-3: hsl(88, 16%, 63%);
-  --chart-4: hsl(0, 0%, 40%);
-  --chart-5: hsl(0, 84%, 60%);
-  --chart-dark-bg: hsl(120, 5%, 3%);
+  /* Chart Colors - IBM Carbon */
+  --chart-1: hsl(217, 100%, 53%); /* Blue */
+  --chart-2: hsl(142, 63%, 39%); /* Green */
+  --chart-3: hsl(292, 48%, 55%); /* Purple */
+  --chart-4: hsl(354, 81%, 49%); /* Red */
+  --chart-5: hsl(47, 86%, 52%); /* Yellow */
+  --chart-dark-bg: hsl(0, 0%, 96%);
   
   /* === TYPOGRAPHY SYSTEM === */
   /* Font Families */
@@ -201,25 +202,27 @@
 }
 
 .dark {
-  --background: hsl(0, 0%, 4%);
-  --foreground: hsl(60, 25%, 94%);
-  --card: hsl(0, 0%, 7%);
-  --card-foreground: hsl(60, 25%, 94%);
-  --popover: hsl(0, 0%, 4%);
-  --popover-foreground: hsl(60, 25%, 94%);
-  --primary: hsl(60, 25%, 94%);
-  --primary-foreground: hsl(0, 0%, 4%);
-  --secondary: hsl(0, 0%, 15%);
-  --secondary-foreground: hsl(60, 25%, 94%);
-  --muted: hsl(0, 0%, 25%);
-  --muted-foreground: hsl(0, 0%, 55%);
-  --accent: hsl(88, 16%, 53%);
-  --accent-foreground: hsl(60, 25%, 94%);
-  --destructive: hsl(0, 84%, 60%);
-  --destructive-foreground: hsl(60, 25%, 94%);
-  --border: hsl(0, 0%, 18%);
-  --input: hsl(0, 0%, 18%);
-  --ring: hsl(88, 16%, 53%);
+  /* IBM Carbon Dark Theme (Gray 100) */
+  --background: hsl(0, 0%, 9%); /* #161616 */
+  --foreground: hsl(0, 0%, 96%); /* #f4f4f4 text-01 */
+  --card: hsl(0, 0%, 15%); /* #262626 ui-01 */
+  --card-foreground: hsl(0, 0%, 96%);
+  --popover: hsl(0, 0%, 9%);
+  --popover-foreground: hsl(0, 0%, 96%);
+  --primary: hsl(217, 100%, 70%); /* #78a9ff link-01 dark */
+  --primary-foreground: hsl(0, 0%, 9%);
+  --secondary: hsl(0, 0%, 22%); /* #393939 ui-02 */
+  --secondary-foreground: hsl(0, 0%, 96%);
+  --muted: hsl(0, 0%, 15%);
+  --muted-foreground: hsl(0, 0%, 78%); /* #c6c6c6 text-02 */
+  --accent: hsl(217, 100%, 70%);
+  --accent-foreground: hsl(0, 0%, 9%);
+  --destructive: hsl(354, 95%, 66%); /* #ff8389 danger dark */
+  --destructive-foreground: hsl(0, 0%, 9%);
+  --border: hsl(0, 0%, 32%); /* #525252 ui-03 */
+  --input: hsl(0, 0%, 15%);
+  --ring: hsl(217, 100%, 70%);
+  --chart-dark-bg: hsl(0, 0%, 9%);
 }
 
 @layer base {
@@ -282,12 +285,12 @@
   
   /* Selection Colors */
   ::selection {
-    background-color: hsl(88 16% 53% / 0.3);
+    background-color: hsl(217 100% 53% / 0.2);
     color: hsl(var(--foreground));
   }
   
   ::-moz-selection {
-    background-color: hsl(88 16% 53% / 0.3);
+    background-color: hsl(217 100% 53% / 0.2);
     color: hsl(var(--foreground));
   }
   
@@ -309,20 +312,20 @@
   }
   
   ::-webkit-scrollbar-thumb {
-    background: hsl(88 16% 53% / 0.3);
+    background: hsl(217 100% 53% / 0.3);
     border-radius: 6px;
     border: 2px solid hsl(var(--background));
     transition: background var(--transition-base);
   }
   
   ::-webkit-scrollbar-thumb:hover {
-    background: hsl(88 16% 53% / 0.5);
+    background: hsl(217 100% 53% / 0.5);
   }
   
   /* Firefox Scrollbar */
   * {
     scrollbar-width: thin;
-    scrollbar-color: hsl(88 16% 53% / 0.3) hsl(var(--background));
+    scrollbar-color: hsl(217 100% 53% / 0.3) hsl(var(--background));
   }
 }
 
@@ -382,16 +385,16 @@
   }
 
   .glass-card {
-    background: rgba(18, 18, 18, 0.6);
+    background: rgba(244, 244, 244, 0.6);
     backdrop-filter: blur(20px);
     -webkit-backdrop-filter: blur(20px);
-    border: 1px solid rgba(138, 169, 122, 0.2);
+    border: 1px solid rgba(15, 98, 254, 0.2);
     transition: all var(--transition-slow);
   }
 
   .glass-card:hover {
-    background: rgba(18, 18, 18, 0.8);
-    border-color: rgba(138, 169, 122, 0.4);
+    background: rgba(244, 244, 244, 0.8);
+    border-color: rgba(15, 98, 254, 0.4);
     transform: translateY(-4px);
     box-shadow: var(--shadow-2xl);
   }
@@ -425,13 +428,13 @@
   /* Section Divider */
   .section-divider {
     height: 1px;
-    background: linear-gradient(90deg, transparent, hsl(88 16% 53% / 0.4), transparent);
+    background: linear-gradient(90deg, transparent, hsl(217 100% 53% / 0.3), transparent);
   }
 
   /* Thesis Number */
   .thesis-number {
-    background: linear-gradient(135deg, hsl(0 0% 16%) 0%, hsl(0 0% 10%) 100%);
-    border: 1px solid hsl(88 16% 53% / 0.5);
+    background: hsl(0 0% 96%);
+    border: 1px solid hsl(217 100% 53% / 0.5);
   }
   
   /* Button Hover Effects */
@@ -449,7 +452,7 @@
     width: 0;
     height: 0;
     border-radius: 50%;
-    background: hsl(88 16% 53% / 0.2);
+    background: hsl(217 100% 53% / 0.15);
     transform: translate(-50%, -50%);
     transition: width var(--transition-slow), height var(--transition-slow);
   }
@@ -472,7 +475,7 @@
     left: 0;
     width: 0;
     height: 2px;
-    background: hsl(var(--sage));
+    background: hsl(217 100% 53%);
     transition: width var(--transition-base);
   }
   
@@ -487,7 +490,7 @@
   }
   
   .card-hover:hover {
-    border-color: hsl(88 16% 53% / 0.5);
+    border-color: hsl(217 100% 53% / 0.5);
     box-shadow: var(--shadow-lg);
   }
   
@@ -503,7 +506,7 @@
     left: 0;
     width: 100%;
     height: 2px;
-    background: linear-gradient(90deg, transparent, var(--sage), transparent);
+    background: linear-gradient(90deg, transparent, hsl(217 100% 53%), transparent);
     transform: translateY(-50%);
   }
   
@@ -512,8 +515,8 @@
     width: 16px;
     height: 16px;
     border-radius: 50%;
-    background: var(--sage);
-    box-shadow: 0 0 0 4px hsl(var(--background)), 0 0 20px var(--sage);
+    background: hsl(217 100% 53%);
+    box-shadow: 0 0 0 4px hsl(var(--background)), 0 0 20px hsl(217 100% 53%);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     cursor: pointer;
   }
@@ -521,21 +524,21 @@
   .timeline-dot:hover {
     width: 20px;
     height: 20px;
-    box-shadow: 0 0 0 6px hsl(var(--background)), 0 0 30px var(--sage);
+    box-shadow: 0 0 0 6px hsl(var(--background)), 0 0 30px hsl(217 100% 53%);
   }
   
   .timeline-dot.active {
     width: 20px;
     height: 20px;
-    background: var(--cream);
-    box-shadow: 0 0 0 6px hsl(var(--background)), 0 0 40px var(--cream);
+    background: hsl(220 100% 46%);
+    box-shadow: 0 0 0 6px hsl(var(--background)), 0 0 40px hsl(220 100% 46%);
   }
   
   .timeline-marker {
     position: absolute;
     width: 2px;
     height: 60px;
-    background: linear-gradient(180deg, var(--sage), transparent);
+    background: linear-gradient(180deg, hsl(217 100% 53%), transparent);
     top: 100%;
     left: 50%;
     transform: translateX(-50%);
@@ -544,7 +547,7 @@
   /* Chart Container */
   .chart-dark-container {
     background: var(--chart-dark-bg);
-    border: 1px solid hsl(88 16% 53% / 0.15);
+    border: 1px solid hsl(217 100% 53% / 0.15);
     border-radius: var(--radius);
     padding: var(--space-8);
   }
