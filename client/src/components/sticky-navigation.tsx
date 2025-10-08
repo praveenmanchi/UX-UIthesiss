@@ -4,6 +4,7 @@ import { Button } from "@/components/ui/button";
 import ShareButtons from "./share-buttons";
 import BylineStrip from "./byline-strip";
 import { cn } from "@/lib/utils";
+import logoSvg from "@assets/UXUI-logo.svg";
 
 export default function StickyNavigation() {
   const [isVisible, setIsVisible] = useState(false);
@@ -98,13 +99,13 @@ export default function StickyNavigation() {
           <div className="flex items-center justify-between h-16">
             {/* Left: Branding and Condensed Byline */}
             <div className="flex items-center space-x-4 flex-shrink-0">
-              <div className="flex items-center space-x-2">
-                <svg className="w-5 h-5" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-                  <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="#8AA97A" strokeWidth="2" strokeLinejoin="round"/>
-                  <path d="M2 17L12 22L22 17" stroke="#8AA97A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                  <path d="M2 12L12 17L22 12" stroke="#8AA97A" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
-                </svg>
-                <span className="font-display font-semibold text-sm sm:text-base">UX/UI Timeline</span>
+              <div className="flex items-center">
+                <img 
+                  src={logoSvg} 
+                  alt="UX/UI Timeline" 
+                  className="h-6 w-auto brightness-0 dark:brightness-0 dark:invert"
+                  data-testid="logo-sticky"
+                />
               </div>
               {/* Condensed Byline - Hidden on mobile */}
               <div className="hidden md:block border-l border-accent/20 pl-4">
