@@ -310,7 +310,7 @@ export default function ProfessionalFormalizationSection() {
   ];
 
   return (
-    <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12" data-testid="section-professional-formalization">
+    <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-primary/5" data-testid="section-professional-formalization">
       <div className="max-w-6xl mx-auto">
         {/* Opening Narrative */}
         <div className="max-w-4xl mx-auto mb-20">

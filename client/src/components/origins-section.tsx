@@ -197,7 +197,7 @@ export default function OriginsSection() {
       </section>
 
       {/* Main Content Section with Original Styling */}
-      <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12" data-testid="section-origins">
+      <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-primary/5" data-testid="section-origins">
         <div className="max-w-6xl mx-auto">
           {/* Critical Moments Scatter Plot */}
           <div className="mb-24">
