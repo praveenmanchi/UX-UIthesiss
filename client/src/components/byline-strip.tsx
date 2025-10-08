@@ -42,19 +42,19 @@ export default function BylineStrip({ variant = "full", showScrollProgress = fal
   
   if (variant === "condensed") {
     return (
-      <div className="flex items-center gap-3 text-xs font-mono text-muted">
+      <div className="flex items-center gap-3 text-xs font-mono text-primary">
         <div className="flex items-center gap-1">
           <User className="w-3 h-3" />
           <span>{author.split(" ").map(w => w[0]).join("")}</span>
         </div>
-        <span className="text-accent/50">•</span>
+        <span className="text-primary/50">•</span>
         <div className="flex items-center gap-1">
           <Clock className="w-3 h-3" />
           <span>{readingTimeMinutes} min</span>
         </div>
         {showScrollProgress && (
           <>
-            <span className="text-accent/50">•</span>
+            <span className="text-primary/50">•</span>
             <div className="flex items-center gap-1">
               <TrendingUp className="w-3 h-3" />
               <span>{scrollProgress}%</span>

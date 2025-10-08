@@ -1,25 +1,8 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Input } from '@/components/ui/input';
 import { Separator } from '@/components/ui/separator';
-import { Mail, Twitter, Linkedin, Github, Rss, ExternalLink, CheckCircle } from 'lucide-react';
+import { Twitter, Linkedin, Github, Rss, ExternalLink } from 'lucide-react';
 import logoSvg from "@assets/UXUI-logo.svg";
 
 export default function Footer() {
-  const [email, setEmail] = useState('');
-  const [isSubscribed, setIsSubscribed] = useState(false);
-  const [isSubmitting, setIsSubmitting] = useState(false);
-
-  const handleSubscribe = async (e: React.FormEvent) => {
-    e.preventDefault();
-    if (!email) return;
-    
-    setIsSubmitting(true);
-    // Simulate API call
-    await new Promise(resolve => setTimeout(resolve, 1500));
-    setIsSubscribed(true);
-    setIsSubmitting(false);
-  };
 
   const citations = [
     {
@@ -100,57 +83,6 @@ export default function Footer() {
 
   return (
     <footer className="bg-background border-t border-accent mt-32">
-      {/* Email Capture Section */}
-      <section className="bg-secondary/20 py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
-        <div className="max-w-7xl mx-auto">
-          <div className="max-w-2xl mx-auto text-center">
-            {!isSubscribed ? (
-              <>
-                <h3 className="font-display text-xl sm:text-2xl md:text-3xl font-semibold mb-3">Stay Updated on UX/UI Research</h3>
-                <p className="text-sm sm:text-base text-muted-foreground mb-8">Get insights on design evolution and industry analysis</p>
-                
-                <form onSubmit={handleSubscribe} className="flex flex-col sm:flex-row gap-3 max-w-md mx-auto">
-                  <Input
-                    type="email"
-                    placeholder="Enter your email"
-                    value={email}
-                    onChange={(e: React.ChangeEvent<HTMLInputElement>) => setEmail(e.target.value)}
-                    className="flex-1 bg-background border-accent/30 focus:border-accent"
-                    required
-                    data-testid="input-email-subscribe"
-                  />
-                  <Button 
-                    type="submit" 
-                    disabled={isSubmitting}
-                    className="bg-accent hover:bg-accent/90 text-background font-semibold"
-                    data-testid="button-subscribe"
-                  >
-                    {isSubmitting ? (
-                      <>Subscribing...</>
-                    ) : (
-                      <>
-                        <Mail className="w-4 h-4 mr-2" />
-                        Subscribe
-                      </>
-                    )}
-                  </Button>
-                </form>
-                
-                <p className="text-xs sm:text-sm text-muted-foreground mt-4">
-                  We respect your privacy. Unsubscribe at any time.
-                </p>
-              </>
-            ) : (
-              <div className="flex flex-col items-center justify-center space-y-3">
-                <CheckCircle className="w-12 h-12 text-accent" />
-                <h3 className="font-display text-xl sm:text-2xl font-semibold">Thank You for Subscribing!</h3>
-                <p className="text-sm sm:text-base text-muted-foreground">You'll receive our latest research insights soon.</p>
-              </div>
-            )}
-          </div>
-        </div>
-      </section>
-
       {/* Resources Section */}
       <section className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12">
         <div className="max-w-7xl mx-auto">
