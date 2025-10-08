@@ -174,8 +174,8 @@ export default function GuiRevolutionSection() {
       year: "1984",
       label: "Mac launches",
       segments: [
-        { value: 0.07, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
-        { value: 0.01, color: "hsl(56, 22%, 75%)", label: "Other GUI" }
+        { value: 0.07, color: "hsl(217, 100%, 53%)", label: "Macintosh" },
+        { value: 0.01, color: "hsl(142, 63%, 39%)", label: "Other GUI" }
       ],
       total: 0.08
     },
@@ -183,8 +183,8 @@ export default function GuiRevolutionSection() {
       year: "1990",
       label: "Windows 3.0 breakthrough",
       segments: [
-        { value: 1.5, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
-        { value: 10, color: "hsl(56, 22%, 75%)", label: "Windows" }
+        { value: 1.5, color: "hsl(217, 100%, 53%)", label: "Macintosh" },
+        { value: 10, color: "hsl(142, 63%, 39%)", label: "Windows" }
       ],
       total: 11.5
     },
@@ -192,8 +192,8 @@ export default function GuiRevolutionSection() {
       year: "1995",
       label: "Windows 95 dominance",
       segments: [
-        { value: 4.5, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
-        { value: 60, color: "hsl(56, 22%, 75%)", label: "Windows" }
+        { value: 4.5, color: "hsl(217, 100%, 53%)", label: "Macintosh" },
+        { value: 60, color: "hsl(142, 63%, 39%)", label: "Windows" }
       ],
       total: 64.5
     },
@@ -201,8 +201,8 @@ export default function GuiRevolutionSection() {
       year: "2000",
       label: "Peak market saturation",
       segments: [
-        { value: 3.5, color: "hsl(88, 20%, 48%)", label: "Macintosh" },
-        { value: 300, color: "hsl(56, 22%, 75%)", label: "Windows" }
+        { value: 3.5, color: "hsl(217, 100%, 53%)", label: "Macintosh" },
+        { value: 300, color: "hsl(142, 63%, 39%)", label: "Windows" }
       ],
       total: 303.5
     }
@@ -326,8 +326,8 @@ export default function GuiRevolutionSection() {
         <StackedAreaChart
           data={marketAreaData}
           areas={[
-            { dataKey: "macs", name: "Macintosh Users", color: "hsl(88, 20%, 48%)" },
-            { dataKey: "windows", name: "Windows Users", color: "hsl(56, 22%, 75%)" }
+            { dataKey: "macs", name: "Macintosh Users", color: "hsl(217, 100%, 53%)" },
+            { dataKey: "windows", name: "Windows Users", color: "hsl(142, 63%, 39%)" }
           ]}
           title="GUI Operating System Adoption (1984-2000)"
           description="The dramatic shift from Macintosh dominance to Windows ubiquity"

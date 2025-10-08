@@ -18,11 +18,6 @@ import {
 } from "lucide-react";
 import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
-import DonNormanImg from "@assets/Visionaries/Don-Norman_headshot.jpg";
-import JakobNielsenImg from "@assets/Visionaries/jakob-nielsen.webp";
-import AlanCooperImg from "@assets/Visionaries/AlanCooper.jpg";
-import JesseGarrettImg from "@assets/Visionaries/Jesse-James-Garrett.jpg";
-import SteveKrugImg from "@assets/Visionaries/Steve_Krug.png";
 
 export default function ProfessionalFormalizationSection() {
   const timelineEvents = [
@@ -396,11 +391,11 @@ export default function ProfessionalFormalizationSection() {
           <div className="space-y-8">
             {pioneers.map((pioneer, index) => {
               const images = [
-                DonNormanImg,
-                JakobNielsenImg,
-                AlanCooperImg,
-                JesseGarrettImg,
-                SteveKrugImg
+                "",
+                "",
+                "",
+                "",
+                ""
               ];
               
               return (

@@ -46,17 +46,17 @@ export default function CurvedToolTimeline({ title, description }: CurvedToolTim
   const [activeCategories, setActiveCategories] = useState<Set<string>>(new Set());
 
   const toolConnections: ToolConnection[] = [
-    { from: "photoshop", to: "flash", label: "Graphics Evolution", color: "hsl(88, 16%, 53%)" },
-    { from: "flash", to: "fireworks", label: "Graphics Evolution", color: "hsl(88, 16%, 53%)" },
-    { from: "photoshop", to: "fireworks", label: "Adobe Graphics", color: "hsl(24, 30%, 58%)" },
-    { from: "fireworks", to: "adobexd", label: "Adobe Suite", color: "hsl(24, 30%, 58%)" },
-    { from: "sketch", to: "figma", label: "UI Design Evolution", color: "hsl(56, 24%, 82%)" },
-    { from: "sketch", to: "adobexd", label: "UI Tools", color: "hsl(56, 24%, 82%)" },
-    { from: "balsamiq", to: "invision", label: "Prototyping", color: "hsl(48, 18%, 75%)" },
-    { from: "invision", to: "framer", label: "Advanced Prototyping", color: "hsl(48, 18%, 75%)" },
-    { from: "invision", to: "figma", label: "Collaboration", color: "hsl(120, 5%, 8%)" },
-    { from: "figma", to: "penpot", label: "Open Collaboration", color: "hsl(120, 5%, 8%)" },
-    { from: "sketch", to: "abstract", label: "Version Control", color: "hsl(24, 30%, 58%)" }
+    { from: "photoshop", to: "flash", label: "Graphics Evolution", color: "hsl(217, 100%, 53%)" },
+    { from: "flash", to: "fireworks", label: "Graphics Evolution", color: "hsl(217, 100%, 53%)" },
+    { from: "photoshop", to: "fireworks", label: "Adobe Graphics", color: "hsl(292, 48%, 55%)" },
+    { from: "fireworks", to: "adobexd", label: "Adobe Suite", color: "hsl(292, 48%, 55%)" },
+    { from: "sketch", to: "figma", label: "UI Design Evolution", color: "hsl(142, 63%, 39%)" },
+    { from: "sketch", to: "adobexd", label: "UI Tools", color: "hsl(142, 63%, 39%)" },
+    { from: "balsamiq", to: "invision", label: "Prototyping", color: "hsl(47, 86%, 52%)" },
+    { from: "invision", to: "framer", label: "Advanced Prototyping", color: "hsl(47, 86%, 52%)" },
+    { from: "invision", to: "figma", label: "Collaboration", color: "hsl(354, 81%, 49%)" },
+    { from: "figma", to: "penpot", label: "Open Collaboration", color: "hsl(354, 81%, 49%)" },
+    { from: "sketch", to: "abstract", label: "Version Control", color: "hsl(292, 48%, 55%)" }
   ];
 
   const tools: Tool[] = [

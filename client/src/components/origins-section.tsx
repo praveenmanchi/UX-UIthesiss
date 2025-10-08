@@ -8,11 +8,6 @@ import FadeInSection from "@/components/fade-in-section";
 import ComputingDemocratizationScatter from "@/components/computing-democratization-scatter";
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
-import VannevarBushImg from "@assets/Visionaries/Vannevar-Bush-1500-800.jpg";
-import DouglasEngelbartImg from "@assets/Visionaries/Douglas_Engelbart.jpg";
-import IvanSutherlandImg from "@assets/Visionaries/300px-Ivan_Sutherland_1592.jpg";
-import AlanKayImg from "@assets/Visionaries/Kay.webp";
-import LarryTeslerImg from "@assets/Visionaries/Larry Tesler .jpg";
 
 interface CriticalMomentDataPoint {
   name: string;
@@ -76,11 +71,11 @@ export default function OriginsSection() {
   const getCriticalMomentsEraColor = (era: string) => {
     switch (era) {
       case "Early Era":
-        return "#7A9A8A"; // Muted sage-teal
+        return "hsl(217, 100%, 53%)"; // IBM Blue
       case "GUI Era":
-        return "#C8956B"; // Terracotta
+        return "hsl(142, 63%, 39%)"; // Success Green
       default:
-        return "#a0aec0";
+        return "hsl(0, 0%, 45%)";
     }
   };
 
@@ -203,11 +198,11 @@ export default function OriginsSection() {
                 {/* Legend */}
                 <div className="flex justify-center gap-6 mb-8 flex-wrap">
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#7A9A8A]" />
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(217, 100%, 53%)" }} />
                     <span className="text-xs sm:text-sm font-sans text-black">Early Era (1963-1970)</span>
                   </div>
                   <div className="flex items-center gap-2">
-                    <div className="w-3 h-3 rounded-full bg-[#C8956B]" />
+                    <div className="w-3 h-3 rounded-full" style={{ backgroundColor: "hsl(142, 63%, 39%)" }} />
                     <span className="text-xs sm:text-sm font-sans text-black">GUI Era (1971-1981)</span>
                   </div>
                 </div>
@@ -337,11 +332,11 @@ export default function OriginsSection() {
             <div className="space-y-8">
               {pioneers.map((pioneer, index) => {
                 const images = [
-                  VannevarBushImg,
-                  DouglasEngelbartImg,
-                  IvanSutherlandImg,
-                  AlanKayImg,
-                  LarryTeslerImg
+                  "",
+                  "",
+                  "",
+                  "",
+                  ""
                 ];
                 
                 return (

@@ -31,40 +31,40 @@ const ERAS: Era[] = [
     yearRange: "1960-1984",
     startYear: 1960,
     endYear: 1984,
-    color: "hsl(88, 16%, 53%)",
-    gradient: "linear-gradient(90deg, hsl(88, 16%, 53%, 0.08), hsl(88, 16%, 53%, 0.15), hsl(88, 16%, 53%, 0.08))"
+    color: "hsl(217, 100%, 53%)",
+    gradient: "linear-gradient(90deg, hsl(217, 100%, 53%, 0.08), hsl(217, 100%, 53%, 0.15), hsl(217, 100%, 53%, 0.08))"
   },
   {
     name: "GUI Revolution",
     yearRange: "1984-1995",
     startYear: 1984,
     endYear: 1995,
-    color: "hsl(56, 24%, 82%)",
-    gradient: "linear-gradient(90deg, hsl(56, 24%, 82%, 0.08), hsl(56, 24%, 82%, 0.15), hsl(56, 24%, 82%, 0.08))"
+    color: "hsl(142, 63%, 39%)",
+    gradient: "linear-gradient(90deg, hsl(142, 63%, 39%, 0.08), hsl(142, 63%, 39%, 0.15), hsl(142, 63%, 39%, 0.08))"
   },
   {
     name: "Web Era",
     yearRange: "1995-2010",
     startYear: 1995,
     endYear: 2010,
-    color: "hsl(24, 30%, 58%)",
-    gradient: "linear-gradient(90deg, hsl(24, 30%, 58%, 0.08), hsl(24, 30%, 58%, 0.15), hsl(24, 30%, 58%, 0.08))"
+    color: "hsl(292, 48%, 55%)",
+    gradient: "linear-gradient(90deg, hsl(292, 48%, 55%, 0.08), hsl(292, 48%, 55%, 0.15), hsl(292, 48%, 55%, 0.08))"
   },
   {
     name: "Modern Era",
     yearRange: "2010-2020",
     startYear: 2010,
     endYear: 2020,
-    color: "hsl(48, 18%, 75%)",
-    gradient: "linear-gradient(90deg, hsl(48, 18%, 75%, 0.08), hsl(48, 18%, 75%, 0.15), hsl(48, 18%, 75%, 0.08))"
+    color: "hsl(47, 86%, 52%)",
+    gradient: "linear-gradient(90deg, hsl(47, 86%, 52%, 0.08), hsl(47, 86%, 52%, 0.15), hsl(47, 86%, 52%, 0.08))"
   },
   {
     name: "AI Era",
     yearRange: "2020+",
     startYear: 2020,
     endYear: 2030,
-    color: "hsl(120, 5%, 8%)",
-    gradient: "linear-gradient(90deg, hsl(120, 5%, 8%, 0.08), hsl(120, 5%, 8%, 0.15), hsl(120, 5%, 8%, 0.08))"
+    color: "hsl(354, 81%, 49%)",
+    gradient: "linear-gradient(90deg, hsl(354, 81%, 49%, 0.08), hsl(354, 81%, 49%, 0.15), hsl(354, 81%, 49%, 0.08))"
   }
 ];
 
