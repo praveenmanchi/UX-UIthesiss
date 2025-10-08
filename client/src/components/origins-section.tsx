@@ -9,6 +9,12 @@ import ComputingDemocratizationScatter from "@/components/computing-democratizat
 import { motion } from "framer-motion";
 import { ReactNode } from "react";
 
+import VannevarBushImg from "@assets/Vannevar-Bush-1500-800.jpg";
+import DouglasEngelbartImg from "@assets/Douglas_Engelbart.jpg";
+import IvanSutherlandImg from "@assets/300px-Ivan_Sutherland_1592.jpg";
+import AlanKayImg from "@assets/Kay.webp";
+import LarryTeslerImg from "@assets/Larry Tesler .jpg";
+
 interface CriticalMomentDataPoint {
   name: string;
   year: number;
@@ -95,7 +101,8 @@ export default function OriginsSection() {
       years: "1890-1974",
       contribution: "His 1945 essay 'As We May Think' described the Memex, envisioning a future where humans could navigate vast amounts of interconnected information through associative trails - the conceptual foundation of hypertext.",
       quote: "Consider a future device... in which an individual stores all his books, records, and communications, and which is mechanized so that it may be consulted with exceeding speed and flexibility.",
-      legacy: "Inspired Douglas Engelbart and Ted Nelson to pursue hypertext systems"
+      legacy: "Inspired Douglas Engelbart and Ted Nelson to pursue hypertext systems",
+      image: VannevarBushImg
     },
     {
       name: "Douglas Engelbart",
@@ -103,7 +110,8 @@ export default function OriginsSection() {
       years: "1925-2013",
       contribution: "Founded the Augmentation Research Center at Stanford Research Institute. Invented the computer mouse, developed early hypertext systems, and pioneered collaborative computing tools.",
       quote: "The digital revolution is far more significant than the invention of writing or even of printing.",
-      legacy: "His 1968 demo influenced every major advancement in personal computing"
+      legacy: "His 1968 demo influenced every major advancement in personal computing",
+      image: DouglasEngelbartImg
     },
     {
       name: "Ivan Sutherland",
@@ -111,7 +119,8 @@ export default function OriginsSection() {
       years: "1938-Present",
       contribution: "Created Sketchpad in 1963, demonstrating that computers could be used for more than just processing numbers. Introduced concepts of graphical computing and direct manipulation interfaces.",
       quote: "The ultimate display would, of course, be a room within which the computer can control the existence of matter.",
-      legacy: "Father of computer graphics, VR pioneer, Turing Award winner"
+      legacy: "Father of computer graphics, VR pioneer, Turing Award winner",
+      image: IvanSutherlandImg
     },
     {
       name: "Alan Kay",
@@ -119,7 +128,8 @@ export default function OriginsSection() {
       years: "1940-Present",
       contribution: "Conceived the Dynabook concept - a portable computer for children. Led development of Smalltalk at Xerox PARC, creating the first true object-oriented programming language with a graphical interface.",
       quote: "The best way to predict the future is to invent it.",
-      legacy: "Influenced Steve Jobs, pioneered modern educational computing"
+      legacy: "Influenced Steve Jobs, pioneered modern educational computing",
+      image: AlanKayImg
     },
     {
       name: "Larry Tesler",
@@ -127,7 +137,8 @@ export default function OriginsSection() {
       years: "1945-2020",
       contribution: "Invented cut, copy, and paste operations. Advocated for modeless interfaces where users don't need to switch between different states. Made computing more intuitive for non-programmers.",
       quote: "There's no mode that can't be eliminated.",
-      legacy: "His 'no modes' philosophy shaped modern user interface design"
+      legacy: "His 'no modes' philosophy shaped modern user interface design",
+      image: LarryTeslerImg
     }
   ];
 
@@ -331,21 +342,13 @@ export default function OriginsSection() {
             
             <div className="space-y-8">
               {pioneers.map((pioneer, index) => {
-                const images = [
-                  "",
-                  "",
-                  "",
-                  "",
-                  ""
-                ];
-                
                 return (
                   <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`visionary-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
                     <div className="grid md:grid-cols-[300px_1fr] gap-0">
                       {/* Image Section */}
                       <div className="bg-black/40">
                         <img 
-                          src={images[index]} 
+                          src={pioneer.image} 
                           alt={pioneer.name}
                           className="w-full h-full object-cover"
                         />

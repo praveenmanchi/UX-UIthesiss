@@ -19,6 +19,12 @@ import {
 import PullQuote from "@/components/pull-quote";
 import DataCallout from "@/components/data-callout";
 
+import DonNormanImg from "@assets/Don-Norman_headshot.jpg";
+import JakobNielsenImg from "@assets/jakob-nielsen.webp";
+import AlanCooperImg from "@assets/AlanCooper.jpg";
+import JesseGarrettImg from "@assets/Jesse-James-Garrett.jpg";
+import SteveKrugImg from "@assets/Steve_Krug.png";
+
 export default function ProfessionalFormalizationSection() {
   const timelineEvents = [
     {
@@ -74,7 +80,8 @@ export default function ProfessionalFormalizationSection() {
       quote: "I invented the term because I thought human interface and usability were too narrow. I wanted to cover all aspects of the person's experience with the system.",
       impact: "Transformed design from aesthetic exercise to scientific discipline",
       keyPublication: "The Design of Everyday Things (1988)",
-      philosophy: "Design for how people actually behave, not how you wish they would"
+      philosophy: "Design for how people actually behave, not how you wish they would",
+      image: DonNormanImg
     },
     {
       name: "Jakob Nielsen",
@@ -90,7 +97,8 @@ export default function ProfessionalFormalizationSection() {
       quote: "Users spend most of their time on other sites. This means that users prefer your site to work the same way as all the other sites they already know.",
       impact: "Made usability testing accessible and affordable for all companies",
       keyPublication: "Usability Engineering (1994)",
-      philosophy: "Simplicity wins over complexity, always"
+      philosophy: "Simplicity wins over complexity, always",
+      image: JakobNielsenImg
     },
     {
       name: "Alan Cooper",
@@ -106,7 +114,8 @@ export default function ProfessionalFormalizationSection() {
       quote: "The inmates are running the asylum - programmers design for themselves, not users.",
       impact: "Shifted focus from features to user goals and behaviors",
       keyPublication: "About Face: The Essentials of Interaction Design (1995)",
-      philosophy: "Design for specific people with specific needs, not generic users"
+      philosophy: "Design for specific people with specific needs, not generic users",
+      image: AlanCooperImg
     },
     {
       name: "Jesse James Garrett",
@@ -122,7 +131,8 @@ export default function ProfessionalFormalizationSection() {
       quote: "User experience is the quality of experience a person has when interacting with a specific design.",
       impact: "Provided clear framework for understanding UX layers and dependencies",
       keyPublication: "The Elements of User Experience (2002)",
-      philosophy: "Every design decision affects user experience at multiple levels"
+      philosophy: "Every design decision affects user experience at multiple levels",
+      image: JesseGarrettImg
     },
     {
       name: "Steve Krug",
@@ -138,7 +148,8 @@ export default function ProfessionalFormalizationSection() {
       quote: "Don't make me think! When I look at a web page it should be self-evident, obvious, self-explanatory.",
       impact: "Democratized UX knowledge beyond specialist practitioners",
       keyPublication: "Don't Make Me Think (2000)",
-      philosophy: "The best designs are those that require the least cognitive effort"
+      philosophy: "The best designs are those that require the least cognitive effort",
+      image: SteveKrugImg
     }
   ];
 
@@ -390,21 +401,13 @@ export default function ProfessionalFormalizationSection() {
           
           <div className="space-y-8">
             {pioneers.map((pioneer, index) => {
-              const images = [
-                "",
-                "",
-                "",
-                "",
-                ""
-              ];
-              
               return (
                 <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`pioneer-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
                   <div className="grid md:grid-cols-[320px_1fr] gap-0">
                     {/* Image Section */}
                     <div className="bg-black/40 p-6">
                       <img 
-                        src={images[index]} 
+                        src={pioneer.image} 
                         alt={pioneer.name}
                         className="w-full aspect-square object-cover rounded-lg"
                       />
