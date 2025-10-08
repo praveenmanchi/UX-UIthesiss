@@ -406,7 +406,7 @@ export default function ProfessionalFormalizationSection() {
                 <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`pioneer-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
                   <div className="grid grid-cols-1 md:grid-cols-[320px_1fr] gap-0">
                     {/* Image Section */}
-                    <div className="bg-black/40 p-6">
+                    <div className="bg-foreground/40 p-6">
                       <ImageWithSkeleton
                         src={pioneer.image} 
                         alt={pioneer.name}

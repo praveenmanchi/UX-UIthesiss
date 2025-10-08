@@ -180,10 +180,10 @@ export default function SalaryHeatmap() {
                         style={{ backgroundColor: color }}
                       >
                         <div className="p-3 rounded text-center">
-                          <div className="text-xs font-mono text-white dark:text-white font-semibold">
+                          <div className="text-xs font-mono text-foreground font-semibold">
                             ${avg}k
                           </div>
-                          <div className="text-[10px] text-white/80 dark:text-white/80 mt-1">
+                          <div className="text-[10px] text-foreground/80 mt-1">
                             ${salaryRange.min}-${salaryRange.max}k
                           </div>
                         </div>

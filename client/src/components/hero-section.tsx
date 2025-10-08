@@ -36,7 +36,7 @@ export default function HeroSection() {
           </h1>
           
           <h2 
-            className={`font-display text-xl sm:text-2xl lg:text-3xl text-muted-foreground leading-tight transition-all duration-700 ${
+            className={`font-display text-xl sm:text-2xl lg:text-3xl text-foreground/70 leading-tight transition-all duration-700 ${
               isVisible ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-8'
             }`}
             style={{ 

@@ -43,6 +43,11 @@ This project is a React-based web application presenting "The History of UX/UI D
   - Eliminated "traverse is not a function" warnings from development logs
   - Added REPLIT_ENABLE_CARTOGRAPHER env flag for future re-enabling
   - Clean, error-free development experience
+- **Design System Consistency (Final)**: Removed ALL legacy hardcoded colors and replaced with IBM Carbon theme-aware classes
+  - Eliminated old sage green (#6b7a5d), cream (#f5f2ed), and hardcoded grays
+  - Replaced text-white/text-black with text-foreground for dark mode compatibility
+  - Updated all bg-white/bg-gray to bg-background/bg-muted for theme consistency
+  - Fixed visibility issues in both light and dark modes
 
 ## Design System Implementation
 Established comprehensive design system with CSS custom properties in `client/src/index.css`:

@@ -145,9 +145,9 @@ export default function OriginsSection() {
 
   return (
     <>
-      {/* Opening Hero Section with Dark Sage Background */}
+      {/* Opening Hero Section */}
       <section 
-        className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-[#6b7a5d]" 
+        className="py-12 px-6 sm:py-16 sm:px-8 lg:py-20 lg:px-12 bg-muted" 
         data-testid="section-origins-hero"
       >
         <div className="max-w-5xl mx-auto">
@@ -163,10 +163,10 @@ export default function OriginsSection() {
               
               {/* Pagination Dots */}
               <div className="flex items-center gap-2" data-testid="pagination-dots">
-                <div className="w-2.5 h-2.5 rounded-full bg-black" data-testid="dot-active" />
-                <div className="w-2.5 h-2.5 rounded-full bg-black/20" data-testid="dot-inactive-1" />
-                <div className="w-2.5 h-2.5 rounded-full bg-black/20" data-testid="dot-inactive-2" />
-                <div className="w-2.5 h-2.5 rounded-full bg-black/20" data-testid="dot-inactive-3" />
+                <div className="w-2.5 h-2.5 rounded-full bg-foreground" data-testid="dot-active" />
+                <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" data-testid="dot-inactive-1" />
+                <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" data-testid="dot-inactive-2" />
+                <div className="w-2.5 h-2.5 rounded-full bg-foreground/20" data-testid="dot-inactive-3" />
               </div>
             </div>
             
@@ -201,7 +201,7 @@ export default function OriginsSection() {
         <div className="max-w-6xl mx-auto">
           {/* Critical Moments Scatter Plot */}
           <div className="mb-24">
-            <div className="w-full bg-[#f5f2ed] py-12 px-6 rounded-lg">
+            <div className="w-full bg-muted/30 py-12 px-6 rounded-lg">
               <div className="max-w-6xl mx-auto">
                 <h3 className="text-xl sm:text-2xl md:text-3xl font-display font-bold text-center mb-2 text-foreground">
                   Critical Moments in Pre-Digital Interface History
@@ -347,7 +347,7 @@ export default function OriginsSection() {
                   <Card key={pioneer.name} className="overflow-hidden bg-card/30 border-accent/20" data-testid={`visionary-${pioneer.name.toLowerCase().replace(' ', '-')}`}>
                     <div className="grid grid-cols-1 md:grid-cols-[300px_1fr] gap-0">
                       {/* Image Section */}
-                      <div className="bg-black/40 min-h-[250px] md:min-h-0">
+                      <div className="bg-foreground/40 min-h-[250px] md:min-h-0">
                         <ImageWithSkeleton
                           src={pioneer.image} 
                           alt={pioneer.name}

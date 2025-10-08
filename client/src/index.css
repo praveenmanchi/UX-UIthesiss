@@ -26,7 +26,7 @@
   --accent: hsl(217, 100%, 53%); /* #0f62fe */
   --accent-foreground: hsl(0, 0%, 100%);
   --muted: hsl(0, 0%, 96%); /* #f4f4f4 */
-  --muted-foreground: hsl(0, 0%, 55%); /* #8d8d8d text-03 */
+  --muted-foreground: hsl(0, 0%, 45%); /* Better contrast for readability */
   --destructive: hsl(354, 81%, 49%); /* #da1e28 danger-01 */
   --destructive-foreground: hsl(0, 0%, 100%);
   

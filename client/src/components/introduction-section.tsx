@@ -27,7 +27,7 @@ export default function IntroductionSection() {
             </h2>
             
             {/* Horizontal separator line */}
-            <div className="w-full h-[1px] bg-black/20" />
+            <div className="w-full h-[1px] bg-foreground/20" />
           </div>
 
           {/* Body Text */}

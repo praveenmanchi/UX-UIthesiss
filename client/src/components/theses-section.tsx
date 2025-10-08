@@ -450,7 +450,7 @@ export default function ThesesSection() {
           {/* Section Label */}
           <div className="text-center mb-16">
             <h2 
-              className="text-xs sm:text-sm uppercase tracking-[0.2em] text-[#6b6b6b] mb-4"
+              className="text-xs sm:text-sm uppercase tracking-[0.2em] text-muted-foreground mb-4"
               data-testid="label-professional-claims"
             >
               Professional Claims
